@@ -1,0 +1,307 @@
+# Korean translations for PROJECT.
+# Copyright (C) 2023 ORGANIZATION
+# This file is distributed under the same license as the PROJECT project.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2023.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: PROJECT VERSION\n"
+"Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
+"POT-Creation-Date: 2023-04-15 12:00+0000\n"
+"PO-Revision-Date: 2023-04-15 12:00+0000\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language: ko\n"
+"Language-Team: ko <LL@li.org>\n"
+"Plural-Forms: nplurals=1; plural=0\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.9.1\n"
+
+msgid "Visitor Counter"
+msgstr "방문자 카운터"
+
+msgid "Home"
+msgstr "홈"
+
+msgid "API Docs"
+msgstr "API 문서"
+
+msgid "Dashboard"
+msgstr "대시보드"
+
+msgid "Track Your Website Visitors"
+msgstr "웹사이트 방문자 추적"
+
+msgid "A lightweight, easy-to-use visitor counter for your website with a beautiful dashboard and API."
+msgstr "아름다운 대시보드와 API가 있는 가볍고 사용하기 쉬운 웹사이트 방문자 카운터입니다."
+
+msgid "Get Started"
+msgstr "시작하기"
+
+msgid "View Dashboard"
+msgstr "대시보드 보기"
+
+msgid "Features"
+msgstr "기능"
+
+msgid "Real-time Tracking"
+msgstr "실시간 추적"
+
+msgid "Track visitors in real-time with accurate counting and duplicate prevention."
+msgstr "정확한 카운팅과 중복 방지 기능으로 실시간으로 방문자를 추적합니다."
+
+msgid "Responsive Dashboard"
+msgstr "반응형 대시보드"
+
+msgid "View your visitor statistics on any device with our responsive dashboard."
+msgstr "반응형 대시보드로 모든 기기에서 방문자 통계를 확인할 수 있습니다."
+
+msgid "Easy Integration"
+msgstr "쉬운 통합"
+
+msgid "Simple API makes it easy to integrate with any website or application."
+msgstr "간단한 API로 모든 웹사이트나 애플리케이션에 쉽게 통합할 수 있습니다."
+
+msgid "Multiple Websites"
+msgstr "다중 웹사이트"
+
+msgid "Track visitors across multiple domains with a single account."
+msgstr "단일 계정으로 여러 도메인의 방문자를 추적합니다."
+
+msgid "Multilingual Support"
+msgstr "다국어 지원"
+
+msgid "Available in English, Korean, and Japanese."
+msgstr "영어, 한국어, 일본어로 제공됩니다."
+
+msgid "Dark/Light Theme"
+msgstr "다크/라이트 테마"
+
+msgid "Switch between dark and light themes for comfortable viewing."
+msgstr "편안한 보기를 위해 다크 및 라이트 테마 간 전환이 가능합니다."
+
+msgid "How It Works"
+msgstr "작동 방식"
+
+msgid "Add the Script"
+msgstr "스크립트 추가"
+
+msgid "Add our tracking script to your website."
+msgstr "웹사이트에 추적 스크립트를 추가합니다."
+
+msgid "Track Visitors"
+msgstr "방문자 추적"
+
+msgid "We automatically track unique visitors to your site."
+msgstr "사이트의 고유 방문자를 자동으로 추적합니다."
+
+msgid "View your dashboard to see visitor statistics."
+msgstr "대시보드에서 방문자 통계를 확인합니다."
+
+msgid "Ready to Get Started?"
+msgstr "시작할 준비가 되셨나요?"
+
+msgid "Start tracking your website visitors today."
+msgstr "오늘부터 웹사이트 방문자 추적을 시작하세요."
+
+msgid "Get Started Now"
+msgstr "지금 시작하기"
+
+msgid "API Documentation"
+msgstr "API 문서"
+
+msgid "The Visitor Counter API allows you to track visitors to your website and retrieve visitor statistics."
+msgstr "방문자 카운터 API를 사용하면 웹사이트 방문자를 추적하고 방문자 통계를 검색할 수 있습니다."
+
+msgid "Base URL"
+msgstr "기본 URL"
+
+msgid "Authentication"
+msgstr "인증"
+
+msgid "No authentication is required for basic usage. Your domain is used as an identifier."
+msgstr "기본 사용에는 인증이 필요하지 않습니다. 도메인이 식별자로 사용됩니다."
+
+msgid "Endpoints"
+msgstr "엔드포인트"
+
+msgid "Record a Visit"
+msgstr "방문 기록"
+
+msgid "Records a visit to your website."
+msgstr "웹사이트 방문을 기록합니다."
+
+msgid "Request Body"
+msgstr "요청 본문"
+
+msgid "Response"
+msgstr "응답"
+
+msgid "Example"
+msgstr "예시"
+
+msgid "Get Visit Statistics"
+msgstr "방문 통계 가져오기"
+
+msgid "Retrieves visitor statistics for your website."
+msgstr "웹사이트의 방문자 통계를 검색합니다."
+
+msgid "Query Parameters"
+msgstr "쿼리 매개변수"
+
+msgid "Integration"
+msgstr "통합"
+
+msgid "To integrate the Visitor Counter with your website, add the following script to your HTML:"
+msgstr "방문자 카운터를 웹사이트에 통합하려면 다음 스크립트를 HTML에 추가하세요:"
+
+msgid "Error Handling"
+msgstr "오류 처리"
+
+msgid "The API returns standard HTTP status codes:"
+msgstr "API는 표준 HTTP 상태 코드를 반환합니다:"
+
+msgid "The request was successful."
+msgstr "요청이 성공했습니다."
+
+msgid "The request was invalid."
+msgstr "요청이 유효하지 않습니다."
+
+msgid "The requested resource was not found."
+msgstr "요청한 리소스를 찾을 수 없습니다."
+
+msgid "An error occurred on the server."
+msgstr "서버에서 오류가 발생했습니다."
+
+msgid "Rate Limiting"
+msgstr "속도 제한"
+
+msgid "The API is rate limited to 100 requests per minute per IP address."
+msgstr "API는 IP 주소당 분당 100개의 요청으로 제한됩니다."
+
+msgid "Login"
+msgstr "로그인"
+
+msgid "Access Dashboard"
+msgstr "대시보드 접근"
+
+msgid "Enter your website domain to view your visitor statistics."
+msgstr "방문자 통계를 보려면 웹사이트 도메인을 입력하세요."
+
+msgid "Website Domain"
+msgstr "웹사이트 도메인"
+
+msgid "or"
+msgstr "또는"
+
+msgid "Coming soon: User accounts for managing multiple websites."
+msgstr "곧 출시: 여러 웹사이트를 관리하기 위한 사용자 계정."
+
+msgid "Dashboard for"
+msgstr "대시보드 -"
+
+msgid "Date Range"
+msgstr "날짜 범위"
+
+msgid "Today"
+msgstr "오늘"
+
+msgid "Yesterday"
+msgstr "어제"
+
+msgid "This Week"
+msgstr "이번 주"
+
+msgid "This Month"
+msgstr "이번 달"
+
+msgid "This Year"
+msgstr "올해"
+
+msgid "All Time"
+msgstr "전체 기간"
+
+msgid "Total Visitors"
+msgstr "총 방문자"
+
+msgid "today"
+msgstr "오늘"
+
+msgid "Since"
+msgstr "이후"
+
+msgid "vs last week"
+msgstr "지난 주 대비"
+
+msgid "vs last month"
+msgstr "지난 달 대비"
+
+msgid "Visitor Trends"
+msgstr "방문자 추세"
+
+msgid "Integration Code"
+msgstr "통합 코드"
+
+msgid "Tracking Code"
+msgstr "추적 코드"
+
+msgid "Display Widget"
+msgstr "표시 위젯"
+
+msgid "Copy Code"
+msgstr "코드 복사"
+
+msgid "Copied!"
+msgstr "복사됨!"
+
+msgid "visitors"
+msgstr "방문자"
+
+msgid "Visitors"
+msgstr "방문자"
+
+msgid "Not Found"
+msgstr "찾을 수 없음"
+
+msgid "Website Not Found"
+msgstr "웹사이트를 찾을 수 없음"
+
+msgid "We couldn't find any visitor data for the domain you entered."
+msgstr "입력한 도메인에 대한 방문자 데이터를 찾을 수 없습니다."
+
+msgid "This could be because:"
+msgstr "이유는 다음과 같을 수 있습니다:"
+
+msgid "The domain has not been registered with our service yet."
+msgstr "도메인이 아직 서비스에 등록되지 않았습니다."
+
+msgid "You may have mistyped the domain name."
+msgstr "도메인 이름을 잘못 입력했을 수 있습니다."
+
+msgid "The tracking script has not been installed on your website."
+msgstr "웹사이트에 추적 스크립트가 설치되지 않았습니다."
+
+msgid "Try Again"
+msgstr "다시 시도"
+
+msgid "Error"
+msgstr "오류"
+
+msgid "The page you are looking for does not exist."
+msgstr "찾고 있는 페이지가 존재하지 않습니다."
+
+msgid "An internal server error occurred."
+msgstr "내부 서버 오류가 발생했습니다."
+
+msgid "An error occurred."
+msgstr "오류가 발생했습니다."
+
+msgid "Go Home"
+msgstr "홈으로"
+
+msgid "Go Back"
+msgstr "뒤로 가기"
+
+msgid "Visitor Counter. All rights reserved."
+msgstr "방문자 카운터. 모든 권리 보유."

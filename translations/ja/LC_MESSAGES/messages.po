@@ -1,0 +1,307 @@
+# Japanese translations for PROJECT.
+# Copyright (C) 2023 ORGANIZATION
+# This file is distributed under the same license as the PROJECT project.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2023.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: PROJECT VERSION\n"
+"Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
+"POT-Creation-Date: 2023-04-15 12:00+0000\n"
+"PO-Revision-Date: 2023-04-15 12:00+0000\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language: ja\n"
+"Language-Team: ja <LL@li.org>\n"
+"Plural-Forms: nplurals=1; plural=0\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.9.1\n"
+
+msgid "Visitor Counter"
+msgstr "訪問者カウンター"
+
+msgid "Home"
+msgstr "ホーム"
+
+msgid "API Docs"
+msgstr "API ドキュメント"
+
+msgid "Dashboard"
+msgstr "ダッシュボード"
+
+msgid "Track Your Website Visitors"
+msgstr "ウェブサイトの訪問者を追跡"
+
+msgid "A lightweight, easy-to-use visitor counter for your website with a beautiful dashboard and API."
+msgstr "美しいダッシュボードとAPIを備えた、軽量で使いやすいウェブサイト訪問者カウンター。"
+
+msgid "Get Started"
+msgstr "始める"
+
+msgid "View Dashboard"
+msgstr "ダッシュボードを見る"
+
+msgid "Features"
+msgstr "機能"
+
+msgid "Real-time Tracking"
+msgstr "リアルタイム追跡"
+
+msgid "Track visitors in real-time with accurate counting and duplicate prevention."
+msgstr "正確なカウントと重複防止機能で訪問者をリアルタイムに追跡します。"
+
+msgid "Responsive Dashboard"
+msgstr "レスポンシブダッシュボード"
+
+msgid "View your visitor statistics on any device with our responsive dashboard."
+msgstr "レスポンシブダッシュボードで、どのデバイスからでも訪問者統計を確認できます。"
+
+msgid "Easy Integration"
+msgstr "簡単な統合"
+
+msgid "Simple API makes it easy to integrate with any website or application."
+msgstr "シンプルなAPIで、どのウェブサイトやアプリケーションにも簡単に統合できます。"
+
+msgid "Multiple Websites"
+msgstr "複数のウェブサイト"
+
+msgid "Track visitors across multiple domains with a single account."
+msgstr "単一のアカウントで複数のドメインの訪問者を追跡します。"
+
+msgid "Multilingual Support"
+msgstr "多言語サポート"
+
+msgid "Available in English, Korean, and Japanese."
+msgstr "英語、韓国語、日本語で利用可能です。"
+
+msgid "Dark/Light Theme"
+msgstr "ダーク/ライトテーマ"
+
+msgid "Switch between dark and light themes for comfortable viewing."
+msgstr "快適な閲覧のためにダークテーマとライトテーマを切り替えることができます。"
+
+msgid "How It Works"
+msgstr "仕組み"
+
+msgid "Add the Script"
+msgstr "スクリプトを追加"
+
+msgid "Add our tracking script to your website."
+msgstr "ウェブサイトに追跡スクリプトを追加します。"
+
+msgid "Track Visitors"
+msgstr "訪問者を追跡"
+
+msgid "We automatically track unique visitors to your site."
+msgstr "サイトのユニーク訪問者を自動的に追跡します。"
+
+msgid "View your dashboard to see visitor statistics."
+msgstr "ダッシュボードで訪問者統計を確認します。"
+
+msgid "Ready to Get Started?"
+msgstr "始める準備はできましたか？"
+
+msgid "Start tracking your website visitors today."
+msgstr "今日からウェブサイトの訪問者追跡を始めましょう。"
+
+msgid "Get Started Now"
+msgstr "今すぐ始める"
+
+msgid "API Documentation"
+msgstr "API ドキュメント"
+
+msgid "The Visitor Counter API allows you to track visitors to your website and retrieve visitor statistics."
+msgstr "訪問者カウンターAPIを使用すると、ウェブサイトの訪問者を追跡し、訪問者統計を取得できます。"
+
+msgid "Base URL"
+msgstr "ベースURL"
+
+msgid "Authentication"
+msgstr "認証"
+
+msgid "No authentication is required for basic usage. Your domain is used as an identifier."
+msgstr "基本的な使用には認証は必要ありません。ドメインが識別子として使用されます。"
+
+msgid "Endpoints"
+msgstr "エンドポイント"
+
+msgid "Record a Visit"
+msgstr "訪問を記録"
+
+msgid "Records a visit to your website."
+msgstr "ウェブサイトへの訪問を記録します。"
+
+msgid "Request Body"
+msgstr "リクエストボディ"
+
+msgid "Response"
+msgstr "レスポンス"
+
+msgid "Example"
+msgstr "例"
+
+msgid "Get Visit Statistics"
+msgstr "訪問統計を取得"
+
+msgid "Retrieves visitor statistics for your website."
+msgstr "ウェブサイトの訪問者統計を取得します。"
+
+msgid "Query Parameters"
+msgstr "クエリパラメータ"
+
+msgid "Integration"
+msgstr "統合"
+
+msgid "To integrate the Visitor Counter with your website, add the following script to your HTML:"
+msgstr "訪問者カウンターをウェブサイトに統合するには、次のスクリプトをHTMLに追加してください："
+
+msgid "Error Handling"
+msgstr "エラー処理"
+
+msgid "The API returns standard HTTP status codes:"
+msgstr "APIは標準のHTTPステータスコードを返します："
+
+msgid "The request was successful."
+msgstr "リクエストは成功しました。"
+
+msgid "The request was invalid."
+msgstr "リクエストが無効です。"
+
+msgid "The requested resource was not found."
+msgstr "要求されたリソースが見つかりませんでした。"
+
+msgid "An error occurred on the server."
+msgstr "サーバーでエラーが発生しました。"
+
+msgid "Rate Limiting"
+msgstr "レート制限"
+
+msgid "The API is rate limited to 100 requests per minute per IP address."
+msgstr "APIはIPアドレスごとに1分間に100リクエストに制限されています。"
+
+msgid "Login"
+msgstr "ログイン"
+
+msgid "Access Dashboard"
+msgstr "ダッシュボードにアクセス"
+
+msgid "Enter your website domain to view your visitor statistics."
+msgstr "訪問者統計を表示するには、ウェブサイトのドメインを入力してください。"
+
+msgid "Website Domain"
+msgstr "ウェブサイトドメイン"
+
+msgid "or"
+msgstr "または"
+
+msgid "Coming soon: User accounts for managing multiple websites."
+msgstr "近日公開：複数のウェブサイトを管理するためのユーザーアカウント。"
+
+msgid "Dashboard for"
+msgstr "ダッシュボード："
+
+msgid "Date Range"
+msgstr "日付範囲"
+
+msgid "Today"
+msgstr "今日"
+
+msgid "Yesterday"
+msgstr "昨日"
+
+msgid "This Week"
+msgstr "今週"
+
+msgid "This Month"
+msgstr "今月"
+
+msgid "This Year"
+msgstr "今年"
+
+msgid "All Time"
+msgstr "全期間"
+
+msgid "Total Visitors"
+msgstr "総訪問者数"
+
+msgid "today"
+msgstr "今日"
+
+msgid "Since"
+msgstr "以降"
+
+msgid "vs last week"
+msgstr "先週比"
+
+msgid "vs last month"
+msgstr "先月比"
+
+msgid "Visitor Trends"
+msgstr "訪問者傾向"
+
+msgid "Integration Code"
+msgstr "統合コード"
+
+msgid "Tracking Code"
+msgstr "トラッキングコード"
+
+msgid "Display Widget"
+msgstr "表示ウィジェット"
+
+msgid "Copy Code"
+msgstr "コードをコピー"
+
+msgid "Copied!"
+msgstr "コピーしました！"
+
+msgid "visitors"
+msgstr "訪問者"
+
+msgid "Visitors"
+msgstr "訪問者"
+
+msgid "Not Found"
+msgstr "見つかりません"
+
+msgid "Website Not Found"
+msgstr "ウェブサイトが見つかりません"
+
+msgid "We couldn't find any visitor data for the domain you entered."
+msgstr "入力されたドメインの訪問者データが見つかりませんでした。"
+
+msgid "This could be because:"
+msgstr "これは以下の理由が考えられます："
+
+msgid "The domain has not been registered with our service yet."
+msgstr "ドメインがまだサービスに登録されていません。"
+
+msgid "You may have mistyped the domain name."
+msgstr "ドメイン名を誤入力した可能性があります。"
+
+msgid "The tracking script has not been installed on your website."
+msgstr "ウェブサイトに追跡スクリプトがインストールされていません。"
+
+msgid "Try Again"
+msgstr "再試行"
+
+msgid "Error"
+msgstr "エラー"
+
+msgid "The page you are looking for does not exist."
+msgstr "お探しのページは存在しません。"
+
+msgid "An internal server error occurred."
+msgstr "内部サーバーエラーが発生しました。"
+
+msgid "An error occurred."
+msgstr "エラーが発生しました。"
+
+msgid "Go Home"
+msgstr "ホームに戻る"
+
+msgid "Go Back"
+msgstr "戻る"
+
+msgid "Visitor Counter. All rights reserved."
+msgstr "訪問者カウンター。全著作権所有。"

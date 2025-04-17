@@ -1,0 +1,210 @@
+{% extends 'layout.html' %}
+
+{% block title %}{{ _('API Documentation') }} - {{ _('Visitor Counter') }}{% endblock %}
+
+{% block content %}
+
+<style>
+:root {
+  --bg: #ffffff;
+  --text: #1e1e1e;
+  --code-bg: #f5f5f5;
+  --accent: #1f78ff;
+}
+.dark {
+  --bg: #121212;
+  --text: #eeeeee;
+  --code-bg: #1e1e1e;
+  --accent: #4dabf7;
+}
+body {
+  background-color: var(--bg);
+  color: var(--text);
+  font-family: 'Fira Code', monospace;
+  line-height: 1.6;
+}
+.container {
+  max-width: 960px;
+  margin: auto;
+  padding: 2rem 1rem;
+}
+h1, h2, h3 {
+  color: var(--accent);
+}
+pre {
+  background: var(--code-bg);
+  padding: 1rem;
+  overflow-x: auto;
+  border-radius: 6px;
+  font-size: 0.95rem;
+}
+a {
+  color: var(--accent);
+}
+button, .btn {
+  background: var(--accent);
+  color: white;
+  padding: 0.5rem 1rem;
+  border: none;
+  border-radius: 5px;
+  text-decoration: none;
+  cursor: pointer;
+}
+.card {
+  background: var(--code-bg);
+  padding: 1rem;
+  border-radius: 6px;
+  margin-bottom: 1rem;
+  border: 1px solid #ccc;
+}
+</style>
+
+<div class="api-docs">
+    <h1>{{ _('API Documentation') }}</h1>
+    
+    <section class="api-section">
+        <h2>{{ _('Introduction') }}</h2>
+        <p>{{ _('The Visitor Counter API allows you to track visitors to your website and retrieve visitor statistics.') }}</p>
+    </section>
+    
+    <section class="api-section">
+        <h2>{{ _('Base URL') }}</h2>
+        <div class="code-block">
+            <code>https://visitor.6developer.com</code>
+        </div>
+    </section>
+    
+    <section class="api-section">
+        <h2>{{ _('Authentication') }}</h2>
+        <p>{{ _('No authentication is required for basic usage. Your domain is used as an identifier.') }}</p>
+    </section>
+    
+    <section class="api-section">
+        <h2>{{ _('Endpoints') }}</h2>
+        
+        <div class="endpoint">
+            <h3>{{ _('Record a Visit') }}</h3>
+            <div class="endpoint-details">
+                <div class="method post">POST</div>
+                <div class="path">/visit</div>
+            </div>
+            <p>{{ _('Records a visit to your website.') }}</p>
+            
+            <h4>{{ _('Request Body') }}</h4>
+            <div class="code-block">
+<pre>{
+  "domain": "example.com",
+  "timezone": "America/New_York" // Optional, defaults to UTC
+}</pre>
+            </div>
+            
+            <h4>{{ _('Response') }}</h4>
+            <div class="code-block">
+<pre>{
+  "domain": "example.com",
+  "totalCount": 42,
+  "todayCount": 5
+}</pre>
+            </div>
+            
+            <h4>{{ _('Example') }}</h4>
+            <div class="code-block">
+<pre>fetch('https://visitor.6developer.com/visit', {
+  method: 'POST',
+  headers: { 'Content-Type': 'application/json' },
+  body: JSON.stringify({
+    domain: 'example.com',
+    timezone: Intl.DateTimeFormat().resolvedOptions().timeZone
+  })
+})
+.then(response => response.json())
+.then(data => console.log(data));</pre>
+            </div>
+        </div>
+        
+        <div class="endpoint">
+            <h3>{{ _('Get Visit Statistics') }}</h3>
+            <div class="endpoint-details">
+                <div class="method get">GET</div>
+                <div class="path">/visit?domain=example.com</div>
+            </div>
+            <p>{{ _('Retrieves visitor statistics for your website.') }}</p>
+            
+            <h4>{{ _('Query Parameters') }}</h4>
+            <div class="code-block">
+<pre>domain: "example.com" // Required</pre>
+            </div>
+            
+            <h4>{{ _('Response') }}</h4>
+            <div class="code-block">
+<pre>{
+  "domain": "example.com",
+  "totalCount": 42,
+  "todayCount": 5,
+  "todayDate": "2023-04-15",
+  "createdAt": "2023-01-01T00:00:00"
+}</pre>
+            </div>
+            
+            <h4>{{ _('Example') }}</h4>
+            <div class="code-block">
+<pre>fetch('https://visitor.6developer.com/visit?domain=example.com')
+  .then(response => response.json())
+  .then(data => console.log(data));</pre>
+            </div>
+        </div>
+    </section>
+    
+    <section class="api-section">
+        <h2>{{ _('Integration') }}</h2>
+        <p>{{ _('To integrate the Visitor Counter with your website, add the following script to your HTML:') }}</p>
+        
+        <div class="code-block">
+<pre>&lt;script&gt;
+(function() {
+  const domain = encodeURIComponent(window.location.hostname);
+  const timezone = encodeURIComponent(Intl.DateTimeFormat().resolvedOptions().timeZone);
+  
+  fetch('https://visitor.6developer.com/visit', {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify({ domain, timezone })
+  })
+  .then(response => response.json())
+  .then(data => {
+    console.log('Visitor count:', data);
+    // You can display the count on your page
+    if (document.getElementById('visitor-count')) {
+      document.getElementById('visitor-count').textContent = data.totalCount;
+    }
+  })
+  .catch(error => console.error('Error:', error));
+})();
+&lt;/script&gt;</pre>
+        </div>
+    </section>
+    
+    <section class="api-section">
+        <h2>{{ _('Error Handling') }}</h2>
+        <p>{{ _('The API returns standard HTTP status codes:') }}</p>
+        <ul>
+            <li><strong>200 OK</strong> - {{ _('The request was successful.') }}</li>
+            <li><strong>400 Bad Request</strong> - {{ _('The request was invalid.') }}</li>
+            <li><strong>404 Not Found</strong> - {{ _('The requested resource was not found.') }}</li>
+            <li><strong>500 Internal Server Error</strong> - {{ _('An error occurred on the server.') }}</li>
+        </ul>
+    </section>
+    
+    <section class="api-section">
+        <h2>{{ _('Rate Limiting') }}</h2>
+        <p>{{ _('The API is rate limited to 100 requests per minute per IP address.') }}</p>
+    </section>
+    
+    <section class="api-section cta">
+        <h2>{{ _('Ready to Get Started?') }}</h2>
+        <p>{{ _('Start tracking your website visitors today.') }}</p>
+        <a href="{{ url_for('login') }}" class="btn btn-primary">{{ _('View Dashboard') }}</a>
+    </section>
+</div>
+{% endblock %}
+

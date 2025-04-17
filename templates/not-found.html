@@ -1,0 +1,83 @@
+{% extends 'layout.html' %}
+
+{% block title %}{{ _('Not Found') }} - {{ _('Visitor Counter') }}{% endblock %}
+
+{% block content %}
+
+<style>
+:root {
+  --bg: #ffffff;
+  --text: #1e1e1e;
+  --code-bg: #f5f5f5;
+  --accent: #1f78ff;
+}
+.dark {
+  --bg: #121212;
+  --text: #eeeeee;
+  --code-bg: #1e1e1e;
+  --accent: #4dabf7;
+}
+body {
+  background-color: var(--bg);
+  color: var(--text);
+  font-family: 'Fira Code', monospace;
+  line-height: 1.6;
+}
+.container {
+  max-width: 960px;
+  margin: auto;
+  padding: 2rem 1rem;
+}
+h1, h2, h3 {
+  color: var(--accent);
+}
+pre {
+  background: var(--code-bg);
+  padding: 1rem;
+  overflow-x: auto;
+  border-radius: 6px;
+  font-size: 0.95rem;
+}
+a {
+  color: var(--accent);
+}
+button, .btn {
+  background: var(--accent);
+  color: white;
+  padding: 0.5rem 1rem;
+  border: none;
+  border-radius: 5px;
+  text-decoration: none;
+  cursor: pointer;
+}
+.card {
+  background: var(--code-bg);
+  padding: 1rem;
+  border-radius: 6px;
+  margin-bottom: 1rem;
+  border: 1px solid #ccc;
+}
+</style>
+
+<div class="error-container">
+    <div class="error-content">
+        <div class="error-icon">
+            <i class="fas fa-search"></i>
+        </div>
+        <h1>{{ _('Website Not Found') }}</h1>
+        <p>{{ _('We couldn\'t find any visitor data for the domain you entered.') }}</p>
+        <p>{{ _('This could be because:') }}</p>
+        <ul>
+            <li>{{ _('The domain has not been registered with our service yet.') }}</li>
+            <li>{{ _('You may have mistyped the domain name.') }}</li>
+            <li>{{ _('The tracking script has not been installed on your website.') }}</li>
+        </ul>
+        
+        <div class="error-actions">
+            <a href="{{ url_for('login') }}" class="btn btn-primary">{{ _('Try Again') }}</a>
+            <a href="{{ url_for('api_docs') }}" class="btn btn-secondary">{{ _('View API Docs') }}</a>
+        </div>
+    </div>
+</div>
+{% endblock %}
+

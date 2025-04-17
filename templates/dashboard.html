@@ -1,0 +1,271 @@
+{% extends 'layout.html' %}
+
+{% block title %}{{ _('Dashboard') }} - {{ site.domain }}{% endblock %}
+
+{% block content %}
+<div class="dashboard-container">
+    <header class="dashboard-header">
+        <h1>{{ _('Dashboard for') }} <span class="highlight">{{ site.domain }}</span></h1>
+        <div class="date-range-selector">
+            <label for="date-range">{{ _('Date Range') }}:</label>
+            <select id="date-range">
+                <option value="day">{{ _('Today') }}</option>
+                <option value="yesterday">{{ _('Yesterday') }}</option>
+                <option value="week">{{ _('This Week') }}</option>
+                <option value="month">{{ _('This Month') }}</option>
+                <option value="year">{{ _('This Year') }}</option>
+                <option value="all">{{ _('All Time') }}</option>
+            </select>
+        </div>
+    </header>
+
+    <div class="stats-grid">
+        <div class="stat-card">
+            <div class="stat-icon">
+                <i class="fas fa-users"></i>
+            </div>
+            <div class="stat-content">
+                <h3>{{ _('Total Visitors') }}</h3>
+                <p class="stat-value">{{ site.total_count }}</p>
+                <p class="stat-change positive">
+                    <i class="fas fa-arrow-up"></i> <span id="today-change">{{ today_change }}</span>% {{ _('today') }}
+                </p>
+            </div>
+        </div>
+        <div class="stat-card">
+            <div class="stat-icon">
+                <i class="fas fa-calendar-day"></i>
+            </div>
+            <div class="stat-content">
+                <h3>{{ _('Today') }}</h3>
+                <p class="stat-value">{{ site.today_count }}</p>
+                <p class="stat-change">{{ _('Since') }} <span id="since-date"></span></p>
+            </div>
+        </div>
+        <div class="stat-card">
+            <div class="stat-icon">
+                <i class="fas fa-calendar-week"></i>
+            </div>
+            <div class="stat-content">
+                <h3>{{ _('This Week') }}</h3>
+                <p class="stat-value" id="week-count">{{ week_total }}</p>
+                <p class="stat-change positive">
+                    <i class="fas fa-arrow-up"></i> <span id="week-change">{{ week_change }}</span>% {{ _('vs last week') }}
+                </p>
+            </div>
+        </div>
+        <div class="stat-card">
+            <div class="stat-icon">
+                <i class="fas fa-calendar-alt"></i>
+            </div>
+            <div class="stat-content">
+                <h3>{{ _('This Month') }}</h3>
+                <p class="stat-value" id="month-count">{{ month_total }}</p>
+                <p class="stat-change positive">
+                    <i class="fas fa-arrow-up"></i> <span id="month-change">{{ month_change }}</span>% {{ _('vs last month') }}
+                </p>
+            </div>
+        </div>
+    </div>
+
+    <div class="chart-container">
+        <h2>{{ _('Visitor Trends') }}</h2>
+        <canvas id="visitors-chart"></canvas>
+    </div>
+
+    <div class="integration-section">
+        <h2>{{ _('Integration Code') }}</h2>
+        <div class="code-tabs">
+            <button class="code-tab active" data-tab="tracking">{{ _('Tracking Code') }}</button>
+            <button class="code-tab" data-tab="display">{{ _('Display Widget') }}</button>
+        </div>
+        
+        <div class="code-content active" id="tracking-code">
+            <pre><code>(function() {
+  const domain = encodeURIComponent('{{ site.domain }}');
+  const timezone = encodeURIComponent(Intl.DateTimeFormat().resolvedOptions().timeZone);
+  
+  fetch('https://visitor.6developer.com/visit', {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify({ domain, timezone })
+  })
+  .then(response => response.json())
+  .catch(error => console.error('Error:', error));
+})();</code></pre>
+            <button id="copy-code" class="copy-button">{{ _('Copy Code') }}</button>
+        </div>
+        
+        <div class="code-content" id="display-code">
+            <pre><code>&lt;div id="visitor-counter"&gt;
+  &lt;span id="visitor-count"&gt;Loading...&lt;/span&gt; {{ _('visitors') }}
+&lt;/div&gt;
+
+&lt;script&gt;
+(function() {
+  const domain = encodeURIComponent('{{ site.domain }}');
+  const timezone = encodeURIComponent(Intl.DateTimeFormat().resolvedOptions().timeZone);
+  
+  fetch('https://visitor.6developer.com/visit', {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify({ domain, timezone })
+  })
+  .then(response => response.json())
+  .then(data => {
+    document.getElementById('visitor-count').textContent = data.totalCount;
+  })
+  .catch(error => console.error('Error:', error));
+})();
+&lt;/script&gt;</code></pre>
+            <button id="copy-display" class="copy-button">{{ _('Copy Code') }}</button>
+        </div>
+    </div>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<script>
+    // Use real data from the server
+    document.addEventListener('DOMContentLoaded', function() {
+        // Format date as "MMM DD, YYYY"
+        const createdDate = new Date("{{ site.created_at.strftime('%Y-%m-%d') }}");
+        document.getElementById('since-date').textContent = createdDate.toLocaleDateString(undefined, {
+            year: 'numeric',
+            month: 'short',
+            day: 'numeric'
+        });
+        
+        // Initialize chart with real data
+        initChart('week');
+        
+        // Handle date range changes
+        document.getElementById('date-range').addEventListener('change', function() {
+            initChart(this.value);
+        });
+        
+        // Removed: Integration code tabs removed
+        const codeTabs = document.querySelectorAll('.code-tab');
+        const codeContents = document.querySelectorAll('.code-content');
+        
+        codeTabs.forEach(tab => {
+            tab.addEventListener('click', () => {
+                const tabId = tab.getAttribute('data-tab');
+                
+                // Remove active class from all tabs and contents
+                codeTabs.forEach(t => t.classList.remove('active'));
+                codeContents.forEach(c => c.classList.remove('active'));
+                
+                // Add active class to current tab and content
+                tab.classList.add('active');
+                document.getElementById(`${tabId}-code`).classList.add('active');
+            });
+        });
+        
+        // Copy code buttons
+        // Removed: Copy code button.addEventListener('click', function() {
+            const codeBlock = this.previousElementSibling.textContent;
+            navigator.clipboard.writeText(codeBlock)
+                .then(() => {
+                    this.textContent = '{{ _('Copied!') }}';
+                    setTimeout(() => {
+                        this.textContent = '{{ _('Copy Code') }}';
+                    }, 2000);
+                });
+        });
+        
+        document.getElementById('copy-display').addEventListener('click', function() {
+            const codeBlock = this.previousElementSibling.textContent;
+            navigator.clipboard.writeText(codeBlock)
+                .then(() => {
+                    this.textContent = '{{ _('Copied!') }}';
+                    setTimeout(() => {
+                        this.textContent = '{{ _('Copy Code') }}';
+                    }, 2000);
+                });
+        });
+    });
+    
+    function initChart(range = 'day') {
+        const ctx = document.getElementById('visitors-chart').getContext('2d');
+        
+        if (window.visitorsChart) {
+            window.visitorsChart.destroy();
+        }
+        
+        let labels, data;
+        
+        if (range === 'day') {
+            // For day view, show hourly data (sample data for now)
+            labels = Array.from({length: 24}, (_, i) => `${i}:00`);
+            data = Array.from({length: 24}, () => Math.floor(Math.random() * 10));
+        } else if (range === 'week') {
+            // For week view, use real weekly data
+            labels = ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun'];
+            data = [
+                {{ week_data.get('Mon', 0) }},
+                {{ week_data.get('Tue', 0) }},
+                {{ week_data.get('Wed', 0) }},
+                {{ week_data.get('Thu', 0) }},
+                {{ week_data.get('Fri', 0) }},
+                {{ week_data.get('Sat', 0) }},
+                {{ week_data.get('Sun', 0) }}
+            ];
+        } else if (range === 'month') {
+            // For month view, use real monthly data
+            labels = Object.keys({{ month_data|tojson }});
+            data = Object.values({{ month_data|tojson }});
+        } else {
+            // For other views, use sample data
+            if (range === 'yesterday') {
+                labels = Array.from({length: 24}, (_, i) => `${i}:00`);
+                data = Array.from({length: 24}, () => Math.floor(Math.random() * 10));
+            } else if (range === 'year') {
+                labels = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
+                data = Array.from({length: 12}, () => Math.floor(Math.random() * 100));
+            } else { // all time
+                labels = Array.from({length: 12}, (_, i) => `${new Date().getFullYear() - (11-i)}`);
+                data = Array.from({length: 12}, (_, i) => Math.floor(Math.random() * 500 * (i+1)));
+            }
+        }
+        
+        window.visitorsChart = new Chart(ctx, {
+            type: 'line',
+            data: {
+                labels: labels,
+                datasets: [{
+                    label: '{{ _('Visitors') }}',
+                    data: data,
+                    backgroundColor: 'rgba(75, 192, 192, 0.2)',
+                    borderColor: 'rgba(75, 192, 192, 1)',
+                    borderWidth: 2,
+                    tension: 0.3,
+                    fill: true
+                }]
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                scales: {
+                    y: {
+                        beginAtZero: true,
+                        grid: {
+                            color: 'rgba(200, 200, 200, 0.1)'
+                        }
+                    },
+                    x: {
+                        grid: {
+                            display: false
+                        }
+                    }
+                },
+                plugins: {
+                    legend: {
+                        display: false
+                    }
+                }
+            }
+        });
+    }
+</script>
+{% endblock %}
+

@@ -1,0 +1,152 @@
+
+{% extends 'layout.html' %}
+
+{% block title %}{{ _('Home') }} - {{ _('Visitor Counter') }}{% endblock %}
+
+{% block content %}
+
+<style>
+:root {
+  --bg: #ffffff;
+  --text: #1e1e1e;
+  --code-bg: #f5f5f5;
+  --accent: #1f78ff;
+}
+.dark {
+  --bg: #121212;
+  --text: #eeeeee;
+  --code-bg: #1e1e1e;
+  --accent: #4dabf7;
+}
+body {
+  background-color: var(--bg);
+  color: var(--text);
+  font-family: 'Fira Code', monospace;
+  line-height: 1.6;
+}
+.container {
+  max-width: 960px;
+  margin: auto;
+  padding: 2rem 1rem;
+}
+h1, h2, h3 {
+  color: var(--accent);
+}
+pre {
+  background: var(--code-bg);
+  padding: 1rem;
+  overflow-x: auto;
+  border-radius: 6px;
+  font-size: 0.95rem;
+}
+a {
+  color: var(--accent);
+}
+button, .btn {
+  background: var(--accent);
+  color: white;
+  padding: 0.5rem 1rem;
+  border: none;
+  border-radius: 5px;
+  text-decoration: none;
+  cursor: pointer;
+}
+.card {
+  background: var(--code-bg);
+  padding: 1rem;
+  border-radius: 6px;
+  margin-bottom: 1rem;
+  border: 1px solid #ccc;
+}
+</style>
+
+<section class="hero">
+    <div class="hero-content">
+        <h1>{{ _('Track Your Website Visitors') }}</h1>
+        <p>{{ _('A lightweight, easy-to-use visitor counter for your website with a beautiful dashboard and API.') }}</p>
+        <div class="hero-buttons">
+            <a href="{{ url_for('api_docs') }}" class="btn btn-primary">{{ _('Get Started') }}</a>
+            <a href="{{ url_for('login') }}" class="btn btn-secondary">{{ _('View Dashboard') }}</a>
+        </div>
+    </div>
+    <div class="hero-image">
+        <img src="https://via.placeholder.com/600x400?text=Visitor+Counter" alt="{{ _('Visitor Counter Dashboard Preview') }}">
+    </div>
+</section>
+
+<section class="features">
+    <h2>{{ _('Features') }}</h2>
+    <div class="feature-grid">
+        <div class="feature-card">
+            <div class="feature-icon">
+                <i class="fas fa-chart-line"></i>
+            </div>
+            <h3>{{ _('Real-time Tracking') }}</h3>
+            <p>{{ _('Track visitors in real-time with accurate counting and duplicate prevention.') }}</p>
+        </div>
+        <div class="feature-card">
+            <div class="feature-icon">
+                <i class="fas fa-mobile-alt"></i>
+            </div>
+            <h3>{{ _('Responsive Dashboard') }}</h3>
+            <p>{{ _('View your visitor statistics on any device with our responsive dashboard.') }}</p>
+        </div>
+        <div class="feature-card">
+            <div class="feature-icon">
+                <i class="fas fa-code"></i>
+            </div>
+            <h3>{{ _('Easy Integration') }}</h3>
+            <p>{{ _('Simple API makes it easy to integrate with any website or application.') }}</p>
+        </div>
+        <div class="feature-card">
+            <div class="feature-icon">
+                <i class="fas fa-globe"></i>
+            </div>
+            <h3>{{ _('Multiple Websites') }}</h3>
+            <p>{{ _('Track visitors across multiple domains with a single account.') }}</p>
+        </div>
+        <div class="feature-card">
+            <div class="feature-icon">
+                <i class="fas fa-language"></i>
+            </div>
+            <h3>{{ _('Multilingual Support') }}</h3>
+            <p>{{ _('Available in English, Korean, and Japanese.') }}</p>
+        </div>
+        <div class="feature-card">
+            <div class="feature-icon">
+                <i class="fas fa-moon"></i>
+            </div>
+            <h3>{{ _('Dark/Light Theme') }}</h3>
+            <p>{{ _('Switch between dark and light themes for comfortable viewing.') }}</p>
+        </div>
+    </div>
+</section>
+
+<section class="how-it-works">
+    <h2>{{ _('How It Works') }}</h2>
+    <div class="steps">
+        <div class="step">
+            <div class="step-number">1</div>
+            <h3>{{ _('Add the Script') }}</h3>
+            <p>{{ _('Add our tracking script to your website.') }}</p>
+        </div>
+        <div class="step">
+            <div class="step-number">2</div>
+            <h3>{{ _('Track Visitors') }}</h3>
+            <p>{{ _('We automatically track unique visitors to your site.') }}</p>
+        </div>
+        <div class="step">
+            <div class="step-number">3</div>
+            <h3>{{ _('View Dashboard') }}</h3>
+            <p>{{ _('Access your dashboard to see visitor statistics.') }}</p>
+        </div>
+    </div>
+</section>
+
+<section class="cta">
+    <h2>{{ _('Ready to Get Started?') }}</h2>
+    <p>{{ _('Start tracking your website visitors today.') }}</p>
+    <a href="{{ url_for('api_docs') }}" class="btn btn-primary">{{ _('Get Started Now') }}</a>
+</section>
+{% endblock %}
+

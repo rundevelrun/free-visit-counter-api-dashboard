@@ -1,0 +1,307 @@
+# English translations for PROJECT.
+# Copyright (C) 2023 ORGANIZATION
+# This file is distributed under the same license as the PROJECT project.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2023.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: PROJECT VERSION\n"
+"Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
+"POT-Creation-Date: 2023-04-15 12:00+0000\n"
+"PO-Revision-Date: 2023-04-15 12:00+0000\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language: en\n"
+"Language-Team: en <LL@li.org>\n"
+"Plural-Forms: nplurals=2; plural=(n != 1)\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.9.1\n"
+
+msgid "Visitor Counter"
+msgstr "Visitor Counter"
+
+msgid "Home"
+msgstr "Home"
+
+msgid "API Docs"
+msgstr "API Docs"
+
+msgid "Dashboard"
+msgstr "Dashboard"
+
+msgid "Track Your Website Visitors"
+msgstr "Track Your Website Visitors"
+
+msgid "A lightweight, easy-to-use visitor counter for your website with a beautiful dashboard and API."
+msgstr "A lightweight, easy-to-use visitor counter for your website with a beautiful dashboard and API."
+
+msgid "Get Started"
+msgstr "Get Started"
+
+msgid "View Dashboard"
+msgstr "View Dashboard"
+
+msgid "Features"
+msgstr "Features"
+
+msgid "Real-time Tracking"
+msgstr "Real-time Tracking"
+
+msgid "Track visitors in real-time with accurate counting and duplicate prevention."
+msgstr "Track visitors in real-time with accurate counting and duplicate prevention."
+
+msgid "Responsive Dashboard"
+msgstr "Responsive Dashboard"
+
+msgid "View your visitor statistics on any device with our responsive dashboard."
+msgstr "View your visitor statistics on any device with our responsive dashboard."
+
+msgid "Easy Integration"
+msgstr "Easy Integration"
+
+msgid "Simple API makes it easy to integrate with any website or application."
+msgstr "Simple API makes it easy to integrate with any website or application."
+
+msgid "Multiple Websites"
+msgstr "Multiple Websites"
+
+msgid "Track visitors across multiple domains with a single account."
+msgstr "Track visitors across multiple domains with a single account."
+
+msgid "Multilingual Support"
+msgstr "Multilingual Support"
+
+msgid "Available in English, Korean, and Japanese."
+msgstr "Available in English, Korean, and Japanese."
+
+msgid "Dark/Light Theme"
+msgstr "Dark/Light Theme"
+
+msgid "Switch between dark and light themes for comfortable viewing."
+msgstr "Switch between dark and light themes for comfortable viewing."
+
+msgid "How It Works"
+msgstr "How It Works"
+
+msgid "Add the Script"
+msgstr "Add the Script"
+
+msgid "Add our tracking script to your website."
+msgstr "Add our tracking script to your website."
+
+msgid "Track Visitors"
+msgstr "Track Visitors"
+
+msgid "We automatically track unique visitors to your site."
+msgstr "We automatically track unique visitors to your site."
+
+msgid "View your dashboard to see visitor statistics."
+msgstr "View your dashboard to see visitor statistics."
+
+msgid "Ready to Get Started?"
+msgstr "Ready to Get Started?"
+
+msgid "Start tracking your website visitors today."
+msgstr "Start tracking your website visitors today."
+
+msgid "Get Started Now"
+msgstr "Get Started Now"
+
+msgid "API Documentation"
+msgstr "API Documentation"
+
+msgid "The Visitor Counter API allows you to track visitors to your website and retrieve visitor statistics."
+msgstr "The Visitor Counter API allows you to track visitors to your website and retrieve visitor statistics."
+
+msgid "Base URL"
+msgstr "Base URL"
+
+msgid "Authentication"
+msgstr "Authentication"
+
+msgid "No authentication is required for basic usage. Your domain is used as an identifier."
+msgstr "No authentication is required for basic usage. Your domain is used as an identifier."
+
+msgid "Endpoints"
+msgstr "Endpoints"
+
+msgid "Record a Visit"
+msgstr "Record a Visit"
+
+msgid "Records a visit to your website."
+msgstr "Records a visit to your website."
+
+msgid "Request Body"
+msgstr "Request Body"
+
+msgid "Response"
+msgstr "Response"
+
+msgid "Example"
+msgstr "Example"
+
+msgid "Get Visit Statistics"
+msgstr "Get Visit Statistics"
+
+msgid "Retrieves visitor statistics for your website."
+msgstr "Retrieves visitor statistics for your website."
+
+msgid "Query Parameters"
+msgstr "Query Parameters"
+
+msgid "Integration"
+msgstr "Integration"
+
+msgid "To integrate the Visitor Counter with your website, add the following script to your HTML:"
+msgstr "To integrate the Visitor Counter with your website, add the following script to your HTML:"
+
+msgid "Error Handling"
+msgstr "Error Handling"
+
+msgid "The API returns standard HTTP status codes:"
+msgstr "The API returns standard HTTP status codes:"
+
+msgid "The request was successful."
+msgstr "The request was successful."
+
+msgid "The request was invalid."
+msgstr "The request was invalid."
+
+msgid "The requested resource was not found."
+msgstr "The requested resource was not found."
+
+msgid "An error occurred on the server."
+msgstr "An error occurred on the server."
+
+msgid "Rate Limiting"
+msgstr "Rate Limiting"
+
+msgid "The API is rate limited to 100 requests per minute per IP address."
+msgstr "The API is rate limited to 100 requests per minute per IP address."
+
+msgid "Login"
+msgstr "Login"
+
+msgid "Access Dashboard"
+msgstr "Access Dashboard"
+
+msgid "Enter your website domain to view your visitor statistics."
+msgstr "Enter your website domain to view your visitor statistics."
+
+msgid "Website Domain"
+msgstr "Website Domain"
+
+msgid "or"
+msgstr "or"
+
+msgid "Coming soon: User accounts for managing multiple websites."
+msgstr "Coming soon: User accounts for managing multiple websites."
+
+msgid "Dashboard for"
+msgstr "Dashboard for"
+
+msgid "Date Range"
+msgstr "Date Range"
+
+msgid "Today"
+msgstr "Today"
+
+msgid "Yesterday"
+msgstr "Yesterday"
+
+msgid "This Week"
+msgstr "This Week"
+
+msgid "This Month"
+msgstr "This Month"
+
+msgid "This Year"
+msgstr "This Year"
+
+msgid "All Time"
+msgstr "All Time"
+
+msgid "Total Visitors"
+msgstr "Total Visitors"
+
+msgid "today"
+msgstr "today"
+
+msgid "Since"
+msgstr "Since"
+
+msgid "vs last week"
+msgstr "vs last week"
+
+msgid "vs last month"
+msgstr "vs last month"
+
+msgid "Visitor Trends"
+msgstr "Visitor Trends"
+
+msgid "Integration Code"
+msgstr "Integration Code"
+
+msgid "Tracking Code"
+msgstr "Tracking Code"
+
+msgid "Display Widget"
+msgstr "Display Widget"
+
+msgid "Copy Code"
+msgstr "Copy Code"
+
+msgid "Copied!"
+msgstr "Copied!"
+
+msgid "visitors"
+msgstr "visitors"
+
+msgid "Visitors"
+msgstr "Visitors"
+
+msgid "Not Found"
+msgstr "Not Found"
+
+msgid "Website Not Found"
+msgstr "Website Not Found"
+
+msgid "We couldn't find any visitor data for the domain you entered."
+msgstr "We couldn't find any visitor data for the domain you entered."
+
+msgid "This could be because:"
+msgstr "This could be because:"
+
+msgid "The domain has not been registered with our service yet."
+msgstr "The domain has not been registered with our service yet."
+
+msgid "You may have mistyped the domain name."
+msgstr "You may have mistyped the domain name."
+
+msgid "The tracking script has not been installed on your website."
+msgstr "The tracking script has not been installed on your website."
+
+msgid "Try Again"
+msgstr "Try Again"
+
+msgid "Error"
+msgstr "Error"
+
+msgid "The page you are looking for does not exist."
+msgstr "The page you are looking for does not exist."
+
+msgid "An internal server error occurred."
+msgstr "An internal server error occurred."
+
+msgid "An error occurred."
+msgstr "An error occurred."
+
+msgid "Go Home"
+msgstr "Go Home"
+
+msgid "Go Back"
+msgstr "Go Back"
+
+msgid "Visitor Counter. All rights reserved."
+msgstr "Visitor Counter. All rights reserved."

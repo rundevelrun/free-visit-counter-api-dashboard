@@ -1,4 +1,4 @@
-# 방문자 카운터
+# Free Visitor Counter (API, Dashboard)
 
 대시보드와 API가 있는 웹사이트용 경량 방문자 카운터입니다.
 

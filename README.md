@@ -1,4 +1,4 @@
-# Visitor Counter
+# Free Visitor Counter (API, Dashboard)
 
 A lightweight visitor counter for websites with a beautiful dashboard and API.
 

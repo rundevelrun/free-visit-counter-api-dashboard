@@ -1,4 +1,5 @@
 # Free Visitor Counter (API, Dashboard)
+> 🇰🇷 [한국어 README 보기](README.ko.md)
 
 A lightweight visitor counter for websites with a beautiful dashboard and API.
 
@@ -7,6 +8,8 @@ A lightweight visitor counter for websites with a beautiful dashboard and API.
   <source srcset="static/img/dashboard.png" media="(prefers-color-scheme: light)">
   <img src="static/img/dashboard.png" alt="Dashboard Preview" width="100%">
 </picture>
+
+<p align="center"><i>🖥️ Live dashboard preview – supports dark/light theme automatically</i></p>
 
 ## 📋 Table of Contents
 

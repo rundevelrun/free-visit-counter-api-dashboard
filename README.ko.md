@@ -1,4 +1,5 @@
 # Free Visitor Counter (API, Dashboard)
+> 🇺🇸 [View README in English](README.md)
 
 대시보드와 API가 있는 웹사이트용 경량 방문자 카운터입니다.
 
@@ -7,6 +8,8 @@
   <source srcset="static/img/dashboard.png" media="(prefers-color-scheme: light)">
   <img src="static/img/dashboard.png" alt="Dashboard Preview" width="100%">
 </picture>
+
+<p align="center"><i>🖥️ Live dashboard preview – supports dark/light theme automatically</i></p>
 
 ## 📋 목차
 

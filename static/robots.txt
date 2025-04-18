@@ -1,6 +1,6 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://visitor.6developer.com/sitemap.xml
+Sitemap: https://visitor.6developer.com/static/sitemap.xml
 
 Disallow: /admin/

@@ -55,14 +55,14 @@ from models import Site, VisitLog
 def utility_processor():
     def translate(text):
         return gettext(text)
-    
+
     def now(tz='utc', fmt='%Y'):
         from datetime import datetime
         import pytz
-        
+
         timezone = pytz.timezone(tz)
         return datetime.now(timezone).strftime(fmt)
-    
+
     return dict(_=translate, now=now)
 
 # Routes
@@ -83,35 +83,35 @@ def dashboard():
     domain = request.args.get('domain')
     if not domain:
         return redirect(url_for('login'))
-    
+
     # Get site data
     site = Site.query.filter_by(domain=domain).first()
     if not site:
         return redirect(url_for('not_found'))
-    
+
     # Get current date and calculate date ranges
     now = datetime.datetime.now()
     today = now.date()
     yesterday = today - datetime.timedelta(days=1)
-    
+
     # Current week
     week_start = today - datetime.timedelta(days=today.weekday())
     week_end = week_start + datetime.timedelta(days=6)
-    
+
     # Previous week
     prev_week_start = week_start - datetime.timedelta(days=7)
     prev_week_end = week_start - datetime.timedelta(days=1)
-    
+
     # Current month
     month_start = today.replace(day=1)
     next_month = today.replace(day=28) + datetime.timedelta(days=4)
     month_end = next_month.replace(day=1) - datetime.timedelta(days=1)
-    
+
     # Previous month
     last_month = month_start - datetime.timedelta(days=1)
     prev_month_start = last_month.replace(day=1)
     prev_month_end = month_start - datetime.timedelta(days=1)
-    
+
     # Query for today's visits
     today_visits = db.session.query(
         func.count(VisitLog.id)
@@ -119,7 +119,7 @@ def dashboard():
         VisitLog.site_id == site.id,
         func.date(VisitLog.timestamp) == today
     ).scalar() or 0
-    
+
     # Query for yesterday's visits
     yesterday_visits = db.session.query(
         func.count(VisitLog.id)
@@ -127,13 +127,13 @@ def dashboard():
         VisitLog.site_id == site.id,
         func.date(VisitLog.timestamp) == yesterday
     ).scalar() or 0
-    
+
     # Calculate today's change percentage
     if yesterday_visits > 0:
         today_change = int(((today_visits - yesterday_visits) / yesterday_visits) * 100)
     else:
         today_change = 100 if today_visits > 0 else 0
-    
+
     # Query for current week's visits
     week_visits = db.session.query(
         func.date(VisitLog.timestamp).label('date'),
@@ -145,16 +145,16 @@ def dashboard():
     ).group_by(
         func.date(VisitLog.timestamp)
     ).all()
-    
+
     # Create a dictionary with dates and counts for the week
     week_data = {(week_start + datetime.timedelta(days=i)).strftime('%a'): 0 for i in range(7)}
     for date, count in week_visits:
         day_name = date.strftime('%a')
         week_data[day_name] = count
-    
+
     # Calculate week total
     week_total = sum(week_data.values())
-    
+
     # Query for previous week's visits
     prev_week_total = db.session.query(
         func.count(VisitLog.id)
@@ -163,13 +163,13 @@ def dashboard():
         func.date(VisitLog.timestamp) >= prev_week_start,
         func.date(VisitLog.timestamp) <= prev_week_end
     ).scalar() or 0
-    
+
     # Calculate week change percentage
     if prev_week_total > 0:
         week_change = int(((week_total - prev_week_total) / prev_week_total) * 100)
     else:
         week_change = 100 if week_total > 0 else 0
-    
+
     # Query for current month's visits
     month_visits = db.session.query(
         func.date(VisitLog.timestamp).label('date'),
@@ -181,17 +181,17 @@ def dashboard():
     ).group_by(
         func.date(VisitLog.timestamp)
     ).all()
-    
+
     # Create a dictionary with dates and counts for the month
     days_in_month = (month_end - month_start).days + 1
     month_data = {str(i+1): 0 for i in range(days_in_month)}
     for date, count in month_visits:
         day = str(date.day)
         month_data[day] = count
-    
+
     # Calculate month total
     month_total = sum(month_data.values())
-    
+
     # Query for previous month's visits
     prev_month_total = db.session.query(
         func.count(VisitLog.id)
@@ -200,14 +200,14 @@ def dashboard():
         func.date(VisitLog.timestamp) >= prev_month_start,
         func.date(VisitLog.timestamp) <= prev_month_end
     ).scalar() or 0
-    
+
     # Calculate month change percentage
     if prev_month_total > 0:
         month_change = int(((month_total - prev_month_total) / prev_month_total) * 100)
     else:
         month_change = 100 if month_total > 0 else 0
-    
-    
+
+
     # Calculate today's hourly visits (0~23)
     today_data = [0] * 24
     hourly_visits = db.session.query(
@@ -246,19 +246,19 @@ def dashboard():
 
     for year, count in yearly_visits:
         all_data[int(year)] = count
-    return render_template('dashboard.html', 
-                          site=site,
-                          week_data=week_data,
-                          month_data=month_data,
-                          week_total=week_total,
-                          month_total=month_total,
-                          today_change=today_change,
-                          week_change=week_change,
-                          month_change=month_change,
-                          today_data=today_data,
-                          year_data=year_data,
-                          all_data=all_data
-    )
+    return render_template('dashboard.html',
+                           site=site,
+                           week_data=week_data,
+                           month_data=month_data,
+                           week_total=week_total,
+                           month_total=month_total,
+                           today_change=today_change,
+                           week_change=week_change,
+                           month_change=month_change,
+                           today_data=today_data,
+                           year_data=year_data,
+                           all_data=all_data
+                           )
 
 @app.route('/not-found')
 def not_found():
@@ -277,25 +277,25 @@ def server_error(e):
 def record_visit():
     try:
         data = request.get_json()
-        
+
         if not data or 'domain' not in data:
             return jsonify({'error': 'Invalid request data'}), 400
-        
+
         domain = data.get('domain')
         timezone = data.get('timezone', 'UTC')
-        
+
         # Get or create site
         site = Site.query.filter_by(domain=domain).first()
         if not site:
             site = Site(domain=domain)
             db.session.add(site)
             db.session.commit()
-        
+
         # Generate visitor ID based on IP and user agent
         visitor_id = hashlib.md5(
             f"{request.remote_addr}:{request.headers.get('User-Agent')}".encode()
         ).hexdigest()
-        
+
         # Check if this visitor has been counted recently
         visitor_key = f"visitor:{site.id}:{visitor_id}"
         if not redis_client.exists(visitor_key):
@@ -303,19 +303,19 @@ def record_visit():
             visit_log = VisitLog(site_id=site.id, timezone=timezone)
             db.session.add(visit_log)
             db.session.commit()
-            
+
             # Set TTL for 20 minutes to prevent duplicate counting
             redis_client.setex(visitor_key, 1200, 1)
-            
+
             # Update site counts
             site.total_count += 1
-            
+
             # Calculate today's date in visitor's timezone
             try:
                 tz = pytz.timezone(timezone)
                 visitor_now = datetime.datetime.now(tz)
                 visitor_today = visitor_now.date()
-                
+
                 # If the site's today_date is different from visitor's today,
                 # reset the today_count
                 if not site.today_date or site.today_date != visitor_today:
@@ -323,19 +323,19 @@ def record_visit():
                     site.today_count = 1
                 else:
                     site.today_count += 1
-                    
+
                 db.session.commit()
             except pytz.exceptions.UnknownTimeZoneError:
                 # Fallback to UTC if timezone is invalid
                 site.today_count += 1
                 db.session.commit()
-        
+
         return jsonify({
             "dashboardUrl": f"https://visitor.6developer.com/dashboard?domain={site.domain}",
             "totalCount": site.total_count,
             "todayCount": site.today_count
         })
-    
+
     except Exception as e:
         db.session.rollback()
         return jsonify({'error': str(e)}), 500
@@ -361,13 +361,23 @@ def get_visit_stats():
             "todayCount": 0
         })
 
+    # 오늘 날짜 기준 방문 로그 집계
+    from pytz import timezone
+    from models import VisitLog
+
+    tz = timezone(site.timezone or 'UTC')
+    now = datetime.now(tz)
+    start_of_day = now.replace(hour=0, minute=0, second=0, microsecond=0)
+    end_of_day = now.replace(hour=23, minute=59, second=59, microsecond=999999)
+
+    today_count = VisitLog.query.filter(
+        VisitLog.site_id == site.id,
+        VisitLog.created_at >= start_of_day,
+        VisitLog.created_at <= end_of_day
+    ).count()
+
     return jsonify({
         "dashboardUrl": f"https://visitor.6developer.com/dashboard?domain={site.domain}",
         "totalCount": site.total_count,
-        "todayCount": site.today_count
+        "todayCount": today_count
     })
-
-
-if __name__ == '__main__':
-    app.run(debug=True)
-

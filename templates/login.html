@@ -58,27 +58,21 @@ button, .btn {
   border: 1px solid #ccc;
 }
 </style>
-
 <div class="auth-container">
-    <div class="auth-form">
-        <h1>{{ _('Access Dashboard') }}</h1>
-        <p>{{ _('Enter your website domain to view your visitor statistics.') }}</p>
-        
-        <form action="{{ url_for('dashboard') }}" method="get">
-            <div class="form-group">
-                <label for="domain">{{ _('Website Domain') }}</label>
-                <input type="text" id="domain" name="domain" placeholder="example.com" required>
-            </div>
-            
-            <button type="submit" class="btn btn-primary btn-block">{{ _('View Dashboard') }}</button>
-        </form>
-        
-        <div class="auth-separator">
-            <span>{{ _('or') }}</span>
-        </div>
-        
-        <p class="text-center">{{ _('Coming soon: User accounts for managing multiple websites.') }}</p>
-    </div>
+<div class="auth-form">
+<h1>{{ _('Access Dashboard') }}</h1>
+<p>{{ _('Enter your website domain to view your visitor statistics.') }}</p>
+<form action="{{ url_for('dashboard') }}" method="get">
+<div class="form-group">
+<label for="domain">{{ _('Website Domain') }}</label>
+<input id="domain" name="domain" placeholder="example.com" required="" type="text"/>
+</div>
+<button class="btn btn-primary btn-block" type="submit">{{ _('View Dashboard') }}</button>
+</form>
+<div class="auth-separator">
+<span>{{ _('or') }}</span>
+</div>
+<p class="text-center">{{ _('Coming soon: User accounts for managing multiple websites.') }}</p>
+</div>
 </div>
 {% endblock %}
-

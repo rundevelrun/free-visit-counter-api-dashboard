@@ -3,3 +3,4 @@
 .env
 tmp
 stderr.log
+.idea

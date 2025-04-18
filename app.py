@@ -78,6 +78,10 @@ def api_docs():
 def login():
     return render_template('login.html')
 
+@app.route('/installation')
+def installation():
+    return render_template('installation.html')
+
 @app.route('/dashboard')
 def dashboard():
     domain = request.args.get('domain')
@@ -207,7 +211,6 @@ def dashboard():
     else:
         month_change = 100 if month_total > 0 else 0
 
-
     # Calculate today's hourly visits (0~23)
     today_data = [0] * 24
     hourly_visits = db.session.query(
@@ -246,18 +249,19 @@ def dashboard():
 
     for year, count in yearly_visits:
         all_data[int(year)] = count
+        
     return render_template('dashboard.html',
                            site=site,
                            week_data=week_data,
                            month_data=month_data,
+                           year_data=year_data,
+                           all_data=all_data,
+                           today_data=today_data,
                            week_total=week_total,
                            month_total=month_total,
                            today_change=today_change,
                            week_change=week_change,
-                           month_change=month_change,
-                           today_data=today_data,
-                           year_data=year_data,
-                           all_data=all_data
+                           month_change=month_change
                            )
 
 @app.route('/not-found')
@@ -361,20 +365,21 @@ def get_visit_stats():
             "todayCount": 0
         })
 
-    # 오늘 날짜 기준 방문 로그 집계
-    from pytz import timezone
-    from models import VisitLog
+    # Get today's visit count based on timezone
+    try:
+        from datetime import datetime
+        tz = pytz.timezone(site.timezone or 'UTC')
+        now = datetime.now(tz)
+        start_of_day = now.replace(hour=0, minute=0, second=0, microsecond=0)
+        end_of_day = now.replace(hour=23, minute=59, second=59, microsecond=999999)
 
-    tz = timezone(site.timezone or 'UTC')
-    now = datetime.now(tz)
-    start_of_day = now.replace(hour=0, minute=0, second=0, microsecond=0)
-    end_of_day = now.replace(hour=23, minute=59, second=59, microsecond=999999)
-
-    today_count = VisitLog.query.filter(
-        VisitLog.site_id == site.id,
-        VisitLog.created_at >= start_of_day,
-        VisitLog.created_at <= end_of_day
-    ).count()
+        today_count = VisitLog.query.filter(
+            VisitLog.site_id == site.id,
+            VisitLog.timestamp >= start_of_day,
+            VisitLog.timestamp <= end_of_day
+        ).count()
+    except Exception:
+        today_count = site.today_count
 
     return jsonify({
         "dashboardUrl": f"https://visitor.6developer.com/dashboard?domain={site.domain}",

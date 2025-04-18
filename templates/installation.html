@@ -1,0 +1,280 @@
+{% extends 'layout.html' %}
+
+{% block title %}{{ _('Installation Guide') }} - {{ _('Visitor Counter') }}{% endblock %}
+
+{% block content %}
+<div class="installation-guide">
+<h1>{{ _('Installation Guide') }}</h1>
+<section class="installation-section">
+<h2>{{ _('Quick Start') }}</h2>
+<p>{{ _('Follow these simple steps to add the visitor counter to your website:') }}</p>
+<div class="step-card">
+<div class="step-number">1</div>
+<div class="step-content">
+<h3>{{ _('Add the Script to Your Website') }}</h3>
+<p>{{ _('Copy and paste the following script into your HTML, just before the closing  tag:') }}</p>
+<div class="code-block">
+<pre><code><script&gt; 'application="" 'content-type':="" 'post',="" (function()="" .then(response="" body:="" const="" domain="encodeURIComponent(window.location.hostname);" domain,="" fetch('https:="" headers:="" json'="" json.stringify({="" method:="" timezone="" visit',="" visitor.6developer.com="" {="" })="" },=""> response.json())
+  .then(data =&gt; {
+    console.log('Visitor count:', data);
+    // You can display the count on your page
+    if (document.getElementById('visitor-count')) {
+      document.getElementById('visitor-count').textContent = data.totalCount;
+    }
+  })
+  .catch(error =&gt; console.error('Error:', error));
+})();
+</script&gt;></code></pre>
+<button class="copy-button" onclick="copyCode(this)">{{ _('Copy Code') }}</button>
+</div>
+</div>
+</div>
+<div class="step-card">
+<div class="step-number">2</div>
+<div class="step-content">
+<h3>{{ _('Display the Counter (Optional)') }}</h3>
+<p>{{ _('If you want to display the visitor count on your page, add this HTML where you want the counter to appear:') }}</p>
+<div class="code-block">
+<pre><code>&lt;div&gt;
+  {{ _('Visitors:') }} &lt;span id="visitor-count"&gt;0&lt;/span&gt;
+&lt;/div&gt;</code></pre>
+<button class="copy-button" onclick="copyCode(this)">{{ _('Copy Code') }}</button>
+</div>
+</div>
+</div>
+<div class="step-card">
+<div class="step-number">3</div>
+<div class="step-content">
+<h3>{{ _('Access Your Dashboard') }}</h3>
+<p>{{ _('Visit your dashboard to see detailed visitor statistics:') }}</p>
+<a class="btn btn-primary" href="{{ url_for('login') }}">{{ _('Go to Dashboard') }}</a>
+</div>
+</div>
+</section>
+<section class="installation-section">
+<h2>{{ _('Advanced Installation') }}</h2>
+<div class="advanced-option">
+<h3>{{ _('Using NPM Package') }}</h3>
+<p>{{ _('Install our official NPM package for easier integration with JavaScript frameworks:') }}</p>
+<div class="code-block">
+<pre><code>npm install @rundevelrun/free-visitor-counter</code></pre>
+<button class="copy-button" onclick="copyCode(this)">{{ _('Copy Code') }}</button>
+</div>
+<p>{{ _('Then import and use it in your code:') }}</p>
+<div class="code-block">
+<pre><code>// React example
+import { VisitorCounter } from '@rundevelrun/free-visitor-counter';
+
+function App() {
+  return (
+    <div>
+      <h1>My Website</h1>
+      <visitorcounter></visitorcounter>
+    </div>
+  );
+}
+
+// JavaScript example
+import { trackVisit, displayCounter } from '@rundevelrun/free-visitor-counter';
+
+// Track visit
+trackVisit().then(data =&gt; {
+  console.log('Visitor count:', data);
+});
+
+// Display counter in element with id "visitor-counter"
+displayCounter('visitor-counter');</code></pre>
+<button class="copy-button" onclick="copyCode(this)">{{ _('Copy Code') }}</button>
+</div>
+<p>{{ _('For more information, visit the') }} <a href="https://github.com/rundevelrun/free-visitor-counter" target="_blank">GitHub repository</a>.</p>
+</div>
+<div class="advanced-option">
+<h3>{{ _('Custom Implementation') }}</h3>
+<p>{{ _('For custom implementations, you can use our API directly:') }}</p>
+<div class="code-block">
+<pre><code>// Example: Custom implementation with fetch API
+const recordVisit = async () =&gt; {
+  const domain = window.location.hostname;
+  const timezone = Intl.DateTimeFormat().resolvedOptions().timeZone;
+  
+  try {
+    const response = await fetch('https://visitor.6developer.com/visit', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ domain, timezone })
+    });
+    
+    const data = await response.json();
+    console.log('Visit recorded:', data);
+    return data;
+  } catch (error) {
+    console.error('Failed to record visit:', error);
+    return null;
+  }
+};
+
+// Call the function
+recordVisit();</code></pre>
+<button class="copy-button" onclick="copyCode(this)">{{ _('Copy Code') }}</button>
+</div>
+</div>
+</section>
+<section class="installation-section">
+<h2>{{ _('Troubleshooting') }}</h2>
+<div class="faq-item">
+<h3>{{ _('The counter is not updating') }}</h3>
+<p>{{ _('Make sure your domain is correctly detected. Check the browser console for any errors.') }}</p>
+</div>
+<div class="faq-item">
+<h3>{{ _('CORS errors in console') }}</h3>
+<p>{{ _('Our API allows cross-origin requests. If you\'re seeing CORS errors, it might be due to network restrictions or browser extensions.') }}</p>
+</div>
+<div class="faq-item">
+<h3>{{ _('Need more help?') }}</h3>
+<p>{{ _('Contact us at') }} <a href="mailto:support@visitor.6developer.com">support@visitor.6developer.com</a></p>
+</div>
+</section>
+</div>
+<script>
+function copyCode(button) {
+    const codeBlock = button.previousElementSibling.textContent;
+    navigator.clipboard.writeText(codeBlock)
+        .then(() => {
+            const originalText = button.textContent;
+            button.textContent = '{{ _('Copied!') }}';
+            setTimeout(() => {
+                button.textContent = originalText;
+            }, 2000);
+        })
+        .catch(err => {
+            console.error('Failed to copy: ', err);
+        });
+}
+</script>
+<style>
+.installation-guide {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.installation-guide h1 {
+    color: var(--primary-color);
+    margin-bottom: 2rem;
+}
+
+.installation-section {
+    margin-bottom: 3rem;
+}
+
+.installation-section h2 {
+    color: var(--primary-color);
+    margin-bottom: 1rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 1px solid var(--border-color);
+}
+
+.step-card {
+    display: flex;
+    background-color: var(--card-bg);
+    border-radius: 8px;
+    padding: 1.5rem;
+    box-shadow: 0 2px 10px var(--shadow-color);
+    margin-bottom: 1.5rem;
+}
+
+.step-number {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 3rem;
+    height: 3rem;
+    background-color: var(--primary-color);
+    color: white;
+    border-radius: 50%;
+    font-size: 1.5rem;
+    font-weight: bold;
+    margin-right: 1.5rem;
+    flex-shrink: 0;
+}
+
+.step-content {
+    flex: 1;
+}
+
+.step-content h3 {
+    margin-bottom: 0.5rem;
+    color: var(--primary-color);
+}
+
+.code-block {
+    background-color: var(--code-bg);
+    color: var(--code-color);
+    padding: 1rem;
+    border-radius: 4px;
+    overflow-x: auto;
+    margin: 1rem 0;
+    position: relative;
+}
+
+.code-block pre {
+    margin: 0;
+    font-family: "Fira Code", monospace;
+    white-space: pre-wrap;
+}
+
+.copy-button {
+    position: absolute;
+    top: 0.5rem;
+    right: 0.5rem;
+    padding: 0.25rem 0.5rem;
+    background-color: var(--secondary-color);
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-family: "Fira Code", monospace;
+    font-size: 0.8rem;
+}
+
+.copy-button:hover {
+    background-color: var(--primary-color);
+}
+
+.advanced-option {
+    background-color: var(--card-bg);
+    border-radius: 8px;
+    padding: 1.5rem;
+    box-shadow: 0 2px 10px var(--shadow-color);
+    margin-bottom: 1.5rem;
+}
+
+.advanced-option h3 {
+    color: var(--primary-color);
+    margin-bottom: 0.5rem;
+}
+
+.faq-item {
+    background-color: var(--card-bg);
+    border-radius: 8px;
+    padding: 1.5rem;
+    box-shadow: 0 2px 10px var(--shadow-color);
+    margin-bottom: 1.5rem;
+}
+
+.faq-item h3 {
+    color: var(--primary-color);
+    margin-bottom: 0.5rem;
+}
+
+@media (max-width: 768px) {
+    .step-card {
+        flex-direction: column;
+    }
+    
+    .step-number {
+        margin-right: 0;
+        margin-bottom: 1rem;
+    }
+}
+</style>
+{% endblock %}

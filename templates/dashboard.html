@@ -4,64 +4,74 @@
 
 {% block content %}
     <div class="dashboard-container">
-<header class="dashboard-header"><div class="navbar"><div class="navbar-logo">RUN:DEVEL:RUN =&gt; visitorCounter()</div><nav class="navbar-menu"><a class="nav-link" href="/">Home</a><a class="nav-link" href="/installation">Installation</a><a class="nav-link" href="/api-docs">Docs</a><a class="nav-link" href="/dashboard">Dashboard</a></nav><button class="theme-toggle" onclick="toggleTheme()">Toggle Theme</button></div></header>
-<div class="stats-grid">
-<div class="stat-card">
-<div class="stat-icon">
-<i class="fas fa-users"></i>
-</div>
-<div class="stat-content">
-<h3>{{ _('Total Visitors') }}</h3>
-<p class="stat-value">{{ site.total_count }}</p>
-</div>
-</div>
-<div class="stat-card">
-<div class="stat-icon">
-<i class="fas fa-calendar-day"></i>
-</div>
-<div class="stat-content">
-<h3>{{ _('Today') }}</h3>
-<p class="stat-value">{{ site.today_count }}</p>
-<p class="stat-change {{ 'positive' if today_change &gt;= 0 else 'negative' }}">
-<i class="fas {{ 'fa-arrow-up' if today_change &gt;= 0 else 'fa-arrow-down' }}"></i>
-                        {{ '+' if today_change &gt;= 0 else '' }}{{ today_change }}% {{ _('vs yesterday') }}
+        <div class="dashboard-header">
+            <h1>{{ site.domain }} {{ _('Dashboard') }}</h1>
+            <div class="chart-controls">
+                <button class="btn btn-secondary" onclick="changeChartView('week')">{{ _('Week') }}</button>
+                <button class="btn btn-secondary" onclick="changeChartView('month')">{{ _('Month') }}</button>
+                <button class="btn btn-secondary" onclick="changeChartView('year')">{{ _('Year') }}</button>
+            </div>
+        </div>
+
+        <div class="stats-grid">
+            <div class="stat-card">
+                <div class="stat-icon">
+                    <i class="fas fa-users"></i>
+                </div>
+                <div class="stat-content">
+                    <h3>{{ _('Total Visitors') }}</h3>
+                    <p class="stat-value">{{ site.total_count }}</p>
+                </div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-icon">
+                    <i class="fas fa-calendar-day"></i>
+                </div>
+                <div class="stat-content">
+                    <h3>{{ _('Today') }}</h3>
+                    <p class="stat-value">{{ site.today_count }}</p>
+                    <p class="stat-change {{ 'positive' if today_change >= 0 else 'negative' }}">
+                        <i class="fas {{ 'fa-arrow-up' if today_change >= 0 else 'fa-arrow-down' }}"></i>
+                        {{ '+' if today_change >= 0 else '' }}{{ today_change }}% {{ _('vs yesterday') }}
                     </p>
-</div>
-</div>
-<div class="stat-card">
-<div class="stat-icon">
-<i class="fas fa-calendar-week"></i>
-</div>
-<div class="stat-content">
-<h3>{{ _('This Week') }}</h3>
-<p class="stat-value" id="week-count">{{ week_total }}</p>
-<p class="stat-change {{ 'positive' if week_change &gt;= 0 else 'negative' }}">
-<i class="fas {{ 'fa-arrow-up' if week_change &gt;= 0 else 'fa-arrow-down' }}"></i>
-<span id="week-change">{{ '+' if week_change &gt;= 0 else '' }}{{ week_change }}</span>% {{ _('vs last week') }}
+                </div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-icon">
+                    <i class="fas fa-calendar-week"></i>
+                </div>
+                <div class="stat-content">
+                    <h3>{{ _('This Week') }}</h3>
+                    <p class="stat-value" id="week-count">{{ week_total }}</p>
+                    <p class="stat-change {{ 'positive' if week_change >= 0 else 'negative' }}">
+                        <i class="fas {{ 'fa-arrow-up' if week_change >= 0 else 'fa-arrow-down' }}"></i>
+                        <span id="week-change">{{ '+' if week_change >= 0 else '' }}{{ week_change }}</span>% {{ _('vs last week') }}
                     </p>
-</div>
-</div>
-<div class="stat-card">
-<div class="stat-icon">
-<i class="fas fa-calendar-alt"></i>
-</div>
-<div class="stat-content">
-<h3>{{ _('This Month') }}</h3>
-<p class="stat-value" id="month-count">{{ month_total }}</p>
-<p class="stat-change {{ 'positive' if month_change &gt;= 0 else 'negative' }}">
-<i class="fas {{ 'fa-arrow-up' if month_change &gt;= 0 else 'fa-arrow-down' }}"></i>
-<span id="month-change">{{ '+' if month_change &gt;= 0 else '' }}{{ month_change }}</span>% {{ _('vs last month') }}
+                </div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-icon">
+                    <i class="fas fa-calendar-alt"></i>
+                </div>
+                <div class="stat-content">
+                    <h3>{{ _('This Month') }}</h3>
+                    <p class="stat-value" id="month-count">{{ month_total }}</p>
+                    <p class="stat-change {{ 'positive' if month_change >= 0 else 'negative' }}">
+                        <i class="fas {{ 'fa-arrow-up' if month_change >= 0 else 'fa-arrow-down' }}"></i>
+                        <span id="month-change">{{ '+' if month_change >= 0 else '' }}{{ month_change }}</span>% {{ _('vs last month') }}
                     </p>
-</div>
-</div>
-</div>
-<div class="chart-container">
-<h2>{{ _('Visitor Trends') }}</h2>
-<canvas id="visitors-chart"></canvas>
-</div>
-</div>
-<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-<script>
+                </div>
+            </div>
+        </div>
+
+        <div class="chart-container">
+            <h2>{{ _('Visitor Trends') }}</h2>
+            <canvas id="visitors-chart"></canvas>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script>
         // Initialize chart with real data
         document.addEventListener('DOMContentLoaded', function() {
             // Initialize chart with week data by default
@@ -74,7 +84,7 @@
 
         function initChart(range) {
             const ctx = document.getElementById('visitors-chart').getContext('2d');
-            
+
             // Destroy existing chart if it exists
             if (window.visitorsChart) {
                 window.visitorsChart.destroy();
@@ -83,10 +93,18 @@
             let labels, data, title;
 
             if (range === 'week') {
-                // Week data
+                // Week data - ensure Sunday to Saturday order
                 const weekData = {{ week_data|tojson }};
-                labels = Object.keys(weekData);
-                data = Object.values(weekData);
+                // Define the days in correct order (Sunday to Saturday)
+                const orderedDays = ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'];
+
+                // Create ordered data
+                labels = orderedDays;
+                data = orderedDays.map(day => {
+                    // If the day exists in weekData, use its value, otherwise 0
+                    return weekData[day] || 0;
+                });
+
                 title = '{{ _("Weekly Visitors") }}';
             } else if (range === 'month') {
                 // Month data
@@ -117,6 +135,11 @@
                 return;
             }
 
+            // Get theme colors
+            const isDark = document.documentElement.classList.contains('dark');
+            const gridColor = isDark ? 'rgba(255, 255, 255, 0.1)' : 'rgba(0, 0, 0, 0.1)';
+            const textColor = isDark ? '#c9d1d9' : '#24292f';
+
             // Create chart
             window.visitorsChart = new Chart(ctx, {
                 type: 'line',
@@ -125,12 +148,12 @@
                     datasets: [{
                         label: title,
                         data: data,
-                        backgroundColor: 'rgba(58, 134, 255, 0.2)',
-                        borderColor: 'rgba(58, 134, 255, 1)',
+                        backgroundColor: isDark ? 'rgba(88, 166, 255, 0.2)' : 'rgba(9, 105, 218, 0.2)',
+                        borderColor: isDark ? 'rgba(88, 166, 255, 1)' : 'rgba(9, 105, 218, 1)',
                         borderWidth: 2,
                         tension: 0.3,
                         fill: true,
-                        pointBackgroundColor: 'rgba(58, 134, 255, 1)',
+                        pointBackgroundColor: isDark ? 'rgba(88, 166, 255, 1)' : 'rgba(9, 105, 218, 1)',
                         pointRadius: 4
                     }]
                 },
@@ -141,22 +164,29 @@
                         y: {
                             beginAtZero: true,
                             grid: {
-                                color: 'rgba(200, 200, 200, 0.1)'
+                                color: gridColor
                             },
                             ticks: {
-                                precision: 0
+                                precision: 0,
+                                color: textColor
                             }
                         },
                         x: {
                             grid: {
                                 display: false
+                            },
+                            ticks: {
+                                color: textColor
                             }
                         }
                     },
                     plugins: {
                         legend: {
                             display: true,
-                            position: 'top'
+                            position: 'top',
+                            labels: {
+                                color: textColor
+                            }
                         },
                         tooltip: {
                             mode: 'index',
@@ -166,5 +196,25 @@
                 }
             });
         }
+
+        // Update chart when theme changes
+        document.addEventListener('DOMContentLoaded', function() {
+            // Watch for theme changes
+            const observer = new MutationObserver(function(mutations) {
+                mutations.forEach(function(mutation) {
+                    if (mutation.attributeName === 'class') {
+                        // Reinitialize the current chart
+                        if (window.visitorsChart) {
+                            const currentType = window.visitorsChart.config.data.datasets[0].label.includes('Week') ? 'week' :
+                                window.visitorsChart.config.data.datasets[0].label.includes('Month') ? 'month' :
+                                    window.visitorsChart.config.data.datasets[0].label.includes('Year') ? 'year' : 'all';
+                            initChart(currentType);
+                        }
+                    }
+                });
+            });
+
+            observer.observe(document.documentElement, { attributes: true });
+        });
     </script>
 {% endblock %}

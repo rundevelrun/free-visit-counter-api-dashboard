@@ -3,79 +3,24 @@
 {% block title %}{{ _('Error') }} - {{ _('Visitor Counter') }}{% endblock %}
 
 {% block content %}
+    <div class="error-container">
+        <div class="error-content">
+            <div class="error-icon">
+                <i class="fas fa-exclamation-triangle"></i>
+            </div>
+            <h1>{{ _('Error') }} {{ error }}</h1>
+            {% if error == 404 %}
+                <p>{{ _('The page you are looking for does not exist.') }}</p>
+            {% elif error == 500 %}
+                <p>{{ _('An internal server error occurred.') }}</p>
+            {% else %}
+                <p>{{ _('An error occurred.') }}</p>
+            {% endif %}
 
-<style>
-:root {
-  --bg: #ffffff;
-  --text: #1e1e1e;
-  --code-bg: #f5f5f5;
-  --accent: #1f78ff;
-}
-.dark {
-  --bg: #121212;
-  --text: #eeeeee;
-  --code-bg: #1e1e1e;
-  --accent: #4dabf7;
-}
-body {
-  background-color: var(--bg);
-  color: var(--text);
-  font-family: 'Fira Code', monospace;
-  line-height: 1.6;
-}
-.container {
-  max-width: 960px;
-  margin: auto;
-  padding: 2rem 1rem;
-}
-h1, h2, h3 {
-  color: var(--accent);
-}
-pre {
-  background: var(--code-bg);
-  padding: 1rem;
-  overflow-x: auto;
-  border-radius: 6px;
-  font-size: 0.95rem;
-}
-a {
-  color: var(--accent);
-}
-button, .btn {
-  background: var(--accent);
-  color: white;
-  padding: 0.5rem 1rem;
-  border: none;
-  border-radius: 5px;
-  text-decoration: none;
-  cursor: pointer;
-}
-.card {
-  background: var(--code-bg);
-  padding: 1rem;
-  border-radius: 6px;
-  margin-bottom: 1rem;
-  border: 1px solid #ccc;
-}
-</style>
-<div class="error-container">
-<div class="error-content">
-<div class="error-icon">
-<i class="fas fa-exclamation-triangle"></i>
-</div>
-<h1>{{ _('Error') }} {{ error }}</h1>
-        {% if error == 404 %}
-            <p>{{ _('The page you are looking for does not exist.') }}</p>
-        {% elif error == 500 %}
-            <p>{{ _('An internal server error occurred.') }}</p>
-        {% else %}
-            <p>{{ _('An error occurred.') }}</p>
-        {% endif %}
-        
-        <div class="error-actions">
-<a class="btn btn-primary" href="{{ url_for('index') }}">{{ _('Go Home') }}</a>
-<a class="btn btn-secondary" href="javascript:history.back()">{{ _('Go Back') }}</a>
-</div>
-</div>
-</div>
+            <div class="error-actions">
+                <a class="btn btn-primary" href="{{ url_for('index') }}">{{ _('Go Home') }}</a>
+                <a class="btn btn-secondary" href="javascript:history.back()">{{ _('Go Back') }}</a>
+            </div>
+        </div>
+    </div>
 {% endblock %}

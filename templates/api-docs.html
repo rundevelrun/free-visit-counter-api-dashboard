@@ -4,48 +4,48 @@
 
 {% block content %}
 <div class="api-docs">
-<h1>{{ _('API Documentation') }}</h1>
-<section class="api-section">
-<h2>{{ _('Introduction') }}</h2>
-<p>{{ _('The Visitor Counter API allows you to track visitors to your website and retrieve visitor statistics.') }}</p>
-</section>
-<section class="api-section">
-<h2>{{ _('Base URL') }}</h2>
-<div class="code-block">
-<code>https://visitor.6developer.com</code>
-</div>
-</section>
-<section class="api-section">
-<h2>{{ _('Authentication') }}</h2>
-<p>{{ _('No authentication is required for basic usage. Your domain is used as an identifier.') }}</p>
-</section>
-<section class="api-section">
-<h2>{{ _('Endpoints') }}</h2>
-<div class="endpoint">
-<h3>{{ _('Record a Visit') }}</h3>
-<div class="endpoint-details">
-<div class="method post">POST</div>
-<div class="path">/visit</div>
-</div>
-<p>{{ _('Records a visit to your website.') }}</p>
-<h4>{{ _('Request Body') }}</h4>
-<div class="code-block">
-<pre>{
+    <h1>{{ _('API Documentation') }}</h1>
+    <section class="api-section">
+        <h2>{{ _('Introduction') }}</h2>
+        <p>{{ _('The Visitor Counter API allows you to track visitors to your website and retrieve visitor statistics.') }}</p>
+    </section>
+    <section class="api-section">
+        <h2>{{ _('Base URL') }}</h2>
+        <div class="code-block">
+            <code>https://visitor.6developer.com</code>
+        </div>
+    </section>
+    <section class="api-section">
+        <h2>{{ _('Authentication') }}</h2>
+        <p>{{ _('No authentication is required for basic usage. Your domain is used as an identifier.') }}</p>
+    </section>
+    <section class="api-section">
+        <h2>{{ _('Endpoints') }}</h2>
+        <div class="endpoint">
+            <h3>{{ _('Record a Visit') }}</h3>
+            <div class="endpoint-details">
+                <div class="method post">POST</div>
+                <div class="path">/visit</div>
+            </div>
+            <p>{{ _('Records a visit to your website.') }}</p>
+            <h4>{{ _('Request Body') }}</h4>
+            <div class="code-block">
+                <pre>{
   "domain": "example.com",
   "timezone": "America/New_York" // Optional, defaults to UTC
 }</pre>
-</div>
-<h4>{{ _('Response') }}</h4>
-<div class="code-block">
-<pre>{
+            </div>
+            <h4>{{ _('Response') }}</h4>
+            <div class="code-block">
+                <pre>{
   "dashboardUrl": "https://visitor.6developer.com/dashboard?domain=example.com",
   "totalCount": 42,
   "todayCount": 5
 }</pre>
-</div>
-<h4>{{ _('Example') }}</h4>
-<div class="code-block">
-<pre>fetch('https://visitor.6developer.com/visit', {
+            </div>
+            <h4>{{ _('Example') }}</h4>
+            <div class="code-block">
+                <pre>fetch('https://visitor.6developer.com/visit', {
   method: 'POST',
   headers: { 'Content-Type': 'application/json' },
   body: JSON.stringify({
@@ -53,201 +53,115 @@
     timezone: Intl.DateTimeFormat().resolvedOptions().timeZone
   })
 })
-.then(response =&gt; response.json())
-.then(data =&gt; console.log(data));</pre>
-</div>
-</div>
-<div class="endpoint">
-<h3>{{ _('Get Visit Statistics') }}</h3>
-<div class="endpoint-details">
-<div class="method get">GET</div>
-<div class="path">/visit?domain=example.com</div>
-</div>
-<p>{{ _('Retrieves visitor statistics for your website.') }}</p>
-<h4>{{ _('Query Parameters') }}</h4>
-<div class="code-block">
-<pre>domain: "example.com" // Required</pre>
-</div>
-<h4>{{ _('Response') }}</h4>
-<div class="code-block">
-<pre>{
+.then(response => response.json())
+.then(data => console.log(data));</pre>
+            </div>
+        </div>
+        <div class="endpoint">
+            <h3>{{ _('Get Visit Statistics') }}</h3>
+            <div class="endpoint-details">
+                <div class="method get">GET</div>
+                <div class="path">/visit?domain=example.com</div>
+            </div>
+            <p>{{ _('Retrieves visitor statistics for your website.') }}</p>
+            <h4>{{ _('Query Parameters') }}</h4>
+            <div class="code-block">
+                <pre>domain: "example.com" // Required</pre>
+            </div>
+            <h4>{{ _('Response') }}</h4>
+            <div class="code-block">
+                <pre>{
   "dashboardUrl": "https://visitor.6developer.com/dashboard?domain=example.com",
   "totalCount": 42,
   "todayCount": 5
 }</pre>
-</div>
-<h4>{{ _('Example') }}</h4>
-<div class="code-block">
-<pre>fetch('https://visitor.6developer.com/visit?domain=example.com')
-  .then(response =&gt; response.json())
-  .then(data =&gt; console.log(data));</pre>
-</div>
-</div>
-</section>
-<section class="api-section">
-<h2>{{ _('Integration') }}</h2>
-<p>{{ _('To integrate the Visitor Counter with your website, add the following script to your HTML:') }}</p>
-<div class="code-block">
-<pre><script&gt; 'application="" 'content-type':="" 'post',="" (function()="" .then(response="" body:="" const="" domain="encodeURIComponent(window.location.hostname);" domain,="" fetch('https:="" headers:="" json'="" json.stringify({="" method:="" timezone="" visit',="" visitor.6developer.com="" {="" })="" },=""> response.json())
-  .then(data =&gt; {
+            </div>
+            <h4>{{ _('Example') }}</h4>
+            <div class="code-block">
+                <pre>fetch('https://visitor.6developer.com/visit?domain=example.com')
+  .then(response => response.json())
+  .then(data => console.log(data));</pre>
+            </div>
+        </div>
+    </section>
+    <section class="api-section">
+        <h2>{{ _('Integration') }}</h2>
+        <p>{{ _('To integrate the Visitor Counter with your website, add the following script to your HTML:') }}</p>
+        <div class="code-block">
+            <pre>&lt;script>
+(function() {
+  const domain = encodeURIComponent(window.location.hostname);
+  const timezone = Intl.DateTimeFormat().resolvedOptions().timeZone;
+  
+  fetch('https://visitor.6developer.com/visit', {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify({ domain, timezone })
+  })
+  .then(response => response.json())
+  .then(data => {
     console.log('Visitor count:', data);
     // You can display the count on your page
     if (document.getElementById('visitor-count')) {
       document.getElementById('visitor-count').textContent = data.totalCount;
     }
   })
-  .catch(error =&gt; console.error('Error:', error));
+  .catch(error => console.error('Error:', error));
 })();
-
-        </script&gt;></pre></div>
-<p>{{ _('For more detailed installation instructions, see our') }} <a href="{{ url_for('installation') }}">{{ _('Installation Guide') }}</a>.</p>
-</section>
-<section class="api-section">
-<h2>{{ _('Error Handling') }}</h2>
-<p>{{ _('The API returns standard HTTP status codes:') }}</p>
-<ul>
-<li><strong>200 OK</strong> - {{ _('The request was successful.') }}</li>
-<li><strong>400 Bad Request</strong> - {{ _('The request was invalid.') }}</li>
-<li><strong>404 Not Found</strong> - {{ _('The requested resource was not found.') }}</li>
-<li><strong>500 Internal Server Error</strong> - {{ _('An error occurred on the server.') }}</li>
-</ul>
-<h4>{{ _('Error Response Format') }}</h4>
-<div class="code-block">
-<pre>{
+&lt;/script></pre>
+            <button class="copy-button" onclick="copyCode(this)">{{ _('Copy Code') }}</button>
+        </div>
+        <p>{{ _('For more detailed installation instructions, see our') }} <a href="{{ url_for('installation') }}">{{ _('Installation Guide') }}</a>.</p>
+    </section>
+    <section class="api-section">
+        <h2>{{ _('Error Handling') }}</h2>
+        <p>{{ _('The API returns standard HTTP status codes:') }}</p>
+        <ul>
+            <li><strong>200 OK</strong> - {{ _('The request was successful.') }}</li>
+            <li><strong>400 Bad Request</strong> - {{ _('The request was invalid.') }}</li>
+            <li><strong>404 Not Found</strong> - {{ _('The requested resource was not found.') }}</li>
+            <li><strong>500 Internal Server Error</strong> - {{ _('An error occurred on the server.') }}</li>
+        </ul>
+        <h4>{{ _('Error Response Format') }}</h4>
+        <div class="code-block">
+            <pre>{
   "error": "Error message description"
 }</pre>
+        </div>
+    </section>
+    <section class="api-section">
+        <h2>{{ _('Rate Limiting') }}</h2>
+        <p>{{ _('The API is rate limited to 100 requests per minute per IP address.') }}</p>
+        <p>{{ _('If you exceed this limit, you will receive a 429 Too Many Requests response.') }}</p>
+    </section>
+    <section class="api-section">
+        <h2>{{ _('CORS Policy') }}</h2>
+        <p>{{ _('Our API allows cross-origin requests from any domain.') }}</p>
+    </section>
+    <section class="api-section cta">
+        <h2>{{ _('Ready to Get Started?') }}</h2>
+        <p>{{ _('Start tracking your website visitors today.') }}</p>
+        <div class="cta-buttons">
+            <a class="btn btn-primary" href="{{ url_for('installation') }}">{{ _('Installation Guide') }}</a>
+            <a class="btn btn-secondary" href="{{ url_for('login') }}">{{ _('View Dashboard') }}</a>
+        </div>
+    </section>
 </div>
-</section>
-<section class="api-section">
-<h2>{{ _('Rate Limiting') }}</h2>
-<p>{{ _('The API is rate limited to 100 requests per minute per IP address.') }}</p>
-<p>{{ _('If you exceed this limit, you will receive a 429 Too Many Requests response.') }}</p>
-</section>
-<section class="api-section">
-<h2>{{ _('CORS Policy') }}</h2>
-<p>{{ _('Our API allows cross-origin requests from any domain.') }}</p>
-</section>
-<section class="api-section cta">
-<h2>{{ _('Ready to Get Started?') }}</h2>
-<p>{{ _('Start tracking your website visitors today.') }}</p>
-<div class="cta-buttons">
-<a class="btn btn-primary" href="{{ url_for('installation') }}">{{ _('Installation Guide') }}</a>
-<a class="btn btn-secondary" href="{{ url_for('login') }}">{{ _('View Dashboard') }}</a>
-</div>
-</section>
-</div>
-<style>
-.api-docs {
-    max-width: 800px;
-    margin: 0 auto;
-}
 
-.api-docs h1 {
-    color: var(--primary-color);
-    margin-bottom: 2rem;
+<script>
+function copyCode(button) {
+    const codeBlock = button.previousElementSibling.textContent;
+    navigator.clipboard.writeText(codeBlock)
+        .then(() => {
+            const originalText = button.textContent;
+            button.textContent = '{{ _('Copied!') }}';
+            setTimeout(() => {
+                button.textContent = originalText;
+            }, 2000);
+        })
+        .catch(err => {
+            console.error('Failed to copy: ', err);
+        });
 }
-
-.api-section {
-    margin-bottom: 3rem;
-}
-
-.api-section h2 {
-    color: var(--primary-color);
-    margin-bottom: 1rem;
-    padding-bottom: 0.5rem;
-    border-bottom: 1px solid var(--border-color);
-}
-
-.endpoint {
-    margin-bottom: 2rem;
-    padding: 1.5rem;
-    background-color: var(--card-bg);
-    border-radius: 8px;
-    box-shadow: 0 2px 10px var(--shadow-color);
-}
-
-.endpoint h3 {
-    color: var(--primary-color);
-    margin-bottom: 0.5rem;
-}
-
-.endpoint h4 {
-    margin-top: 1.5rem;
-    margin-bottom: 0.5rem;
-    color: var(--secondary-color);
-}
-
-.endpoint-details {
-    display: flex;
-    align-items: center;
-    margin-bottom: 1rem;
-}
-
-.method {
-    padding: 0.25rem 0.5rem;
-    border-radius: 4px;
-    font-weight: bold;
-    margin-right: 0.5rem;
-    font-family: "Fira Code", monospace;
-}
-
-.post {
-    background-color: var(--success-color);
-    color: white;
-}
-
-.get {
-    background-color: var(--info-color);
-    color: white;
-}
-
-.path {
-    font-family: "Fira Code", monospace;
-    background-color: var(--code-bg);
-    color: var(--code-color);
-    padding: 0.25rem 0.5rem;
-    border-radius: 4px;
-}
-
-.code-block {
-    background-color: var(--code-bg);
-    color: var(--code-color);
-    padding: 1rem;
-    border-radius: 4px;
-    overflow-x: auto;
-    margin: 1rem 0;
-}
-
-.code-block pre {
-    margin: 0;
-    font-family: "Fira Code", monospace;
-}
-
-.cta {
-    text-align: center;
-    background-color: var(--card-bg);
-    padding: 2rem;
-    border-radius: 8px;
-    box-shadow: 0 2px 10px var(--shadow-color);
-}
-
-.cta-buttons {
-    display: flex;
-    justify-content: center;
-    gap: 1rem;
-    margin-top: 1.5rem;
-}
-
-@media (max-width: 768px) {
-    .cta-buttons {
-        flex-direction: column;
-        align-items: center;
-    }
-    
-    .cta-buttons .btn {
-        width: 100%;
-        margin-bottom: 0.5rem;
-    }
-}
-</style>
+</script>
 {% endblock %}

@@ -676,7 +676,7 @@ msgstr "대시보드 접근하기"
 
 #: templates/login.html:10
 msgid "Enter your website domain to view your visitor statistics. No registration or payment required - completely free."
-msgstr "방문자 통계를 보려면 웹사이트 도메인을 입력하세요. 등록이나 결제가 필요 없습니다 - 완전히 무료입니다."
+msgstr "방문자 통계를 보려면 웹사이트 도메인을 입력하세요. 완전히 무료입니다."
 
 #: templates/login.html:13
 msgid "Website Domain"

@@ -355,16 +355,16 @@ msgid "Go Back"
 msgstr "戻る"
 
 #: templates/index.html:3
-msgid "Visitor Counter - 100% Free Website Analytics Tool"
-msgstr "訪問者カウンター - 100%無料ウェブサイト分析ツール"
+msgid "Visitor Counter - 100%% Free Website Analytics Tool"
+msgstr "訪問者カウンター - 100%%無料ウェブサイト分析ツール"
 
 #: templates/index.html:4
 msgid "A completely free, lightweight visitor counter for your website with a beautiful dashboard and API. No hidden costs, no premium features."
 msgstr "美しいダッシュボードとAPIを備えた、完全に無料の軽量な訪問者カウンター。隠れたコストやプレミアム機能はありません。"
 
 #: templates/index.html:9
-msgid "100% Free Website Visitor Counter"
-msgstr "100%無料ウェブサイト訪問者カウンター"
+msgid "100%% Free Website Visitor Counter"
+msgstr "100%%無料ウェブサイト訪問者カウンター"
 
 #: templates/index.html:10
 msgid "A lightweight visitor counter for your website with a beautiful dashboard and API. No hidden costs, no premium features, just completely free."
@@ -471,8 +471,8 @@ msgid "Frequently Asked Questions"
 msgstr "よくある質問"
 
 #: templates/index.html:99
-msgid "Is this visitor counter really 100% free?"
-msgstr "この訪問者カウンターは本当に100%無料ですか？"
+msgid "Is this visitor counter really 100%% free?"
+msgstr "この訪問者カウンターは本当に100%%無料ですか？"
 
 #: templates/index.html:100
 msgid "Yes, our visitor counter is completely free. There are no hidden costs, premium features, or paid tiers. Everything is available at no cost."
@@ -519,8 +519,8 @@ msgid "Complete installation guide for our visitor counter. Easy setup instructi
 msgstr "訪問者カウンターの完全なインストールガイド。数分で任意のウェブサイトに訪問者カウンターを追加するための簡単なセットアップ手順。"
 
 #: templates/installation.html:8
-msgid "Visitor Counter Installation Guide - 100% Free Forever"
-msgstr "訪問者カウンターインストールガイド - 永久に100%無料"
+msgid "Visitor Counter Installation Guide - 100%% Free Forever"
+msgstr "訪問者カウンターインストールガイド - 永久に100%%無料"
 
 #: templates/installation.html:10
 msgid "Quick Start"
@@ -695,8 +695,8 @@ msgid "Benefits of Our Visitor Counter Dashboard"
 msgstr "私たちの訪問者カウンターダッシュボードの利点"
 
 #: templates/login.html:25
-msgid "100% Free: No hidden costs or premium features"
-msgstr "100%無料：隠れたコストやプレミアム機能なし"
+msgid "100%% Free: No hidden costs or premium features"
+msgstr "100%%無料：隠れたコストやプレミアム機能なし"
 
 #: templates/login.html:26
 msgid "Real-time Statistics: See visitor data as it happens"
@@ -751,8 +751,8 @@ msgid "View API Docs"
 msgstr "APIドキュメントを表示"
 
 #: templates/layout.html:3
-msgid "Visitor Counter - 100% Free Website Analytics"
-msgstr "訪問者カウンター - 100%無料ウェブサイト分析"
+msgid "Visitor Counter - 100%% Free Website Analytics"
+msgstr "訪問者カウンター - 100%%無料ウェブサイト分析"
 
 #: templates/layout.html:4
 msgid "A completely free visitor counter for websites with a beautiful dashboard and API. No hidden costs, no premium features."
@@ -811,5 +811,5 @@ msgid "All rights reserved."
 msgstr "全著作権所有。"
 
 #: templates/layout.html:313
-msgid "Visitor Counter - 100% Free Website Analytics"
-msgstr "訪問者カウンター - 100%無料ウェブサイト分析"
+msgid "Visitor Counter - 100%% Free Website Analytics"
+msgstr "訪問者カウンター - 100%%無料ウェブサイト分析"

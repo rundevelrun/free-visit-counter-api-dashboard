@@ -355,16 +355,16 @@ msgid "Go Back"
 msgstr "뒤로 가기"
 
 #: templates/index.html:3
-msgid "Visitor Counter - 100% Free Website Analytics Tool"
-msgstr "방문자 카운터 - 100% 무료 웹사이트 분석 도구"
+msgid "Visitor Counter - 100%% Free Website Analytics Tool"
+msgstr "방문자 카운터 - 100%% 무료 웹사이트 분석 도구"
 
 #: templates/index.html:4
 msgid "A completely free, lightweight visitor counter for your website with a beautiful dashboard and API. No hidden costs, no premium features."
 msgstr "아름다운 대시보드와 API가 있는 완전히 무료인 가벼운 웹사이트 방문자 카운터입니다. 숨겨진 비용이나 프리미엄 기능이 없습니다."
 
 #: templates/index.html:9
-msgid "100% Free Website Visitor Counter"
-msgstr "100% 무료 웹사이트 방문자 카운터"
+msgid "100%% Free Website Visitor Counter"
+msgstr "100%% 무료 웹사이트 방문자 카운터"
 
 #: templates/index.html:10
 msgid "A lightweight visitor counter for your website with a beautiful dashboard and API. No hidden costs, no premium features, just completely free."
@@ -471,8 +471,8 @@ msgid "Frequently Asked Questions"
 msgstr "자주 묻는 질문"
 
 #: templates/index.html:99
-msgid "Is this visitor counter really 100% free?"
-msgstr "이 방문자 카운터는 정말로 100% 무료인가요?"
+msgid "Is this visitor counter really 100%% free?"
+msgstr "이 방문자 카운터는 정말로 100%% 무료인가요?"
 
 #: templates/index.html:100
 msgid "Yes, our visitor counter is completely free. There are no hidden costs, premium features, or paid tiers. Everything is available at no cost."
@@ -519,8 +519,8 @@ msgid "Complete installation guide for our visitor counter. Easy setup instructi
 msgstr "방문자 카운터에 대한 완전한 설치 가이드입니다. 몇 분 안에 어떤 웹사이트에도 방문자 카운터를 추가하는 쉬운 설정 지침입니다."
 
 #: templates/installation.html:8
-msgid "Visitor Counter Installation Guide - 100% Free Forever"
-msgstr "방문자 카운터 설치 가이드 - 영원히 100% 무료"
+msgid "Visitor Counter Installation Guide - 100%% Free Forever"
+msgstr "방문자 카운터 설치 가이드 - 영원히 100%% 무료"
 
 #: templates/installation.html:10
 msgid "Quick Start"
@@ -695,8 +695,8 @@ msgid "Benefits of Our Visitor Counter Dashboard"
 msgstr "저희 방문자 카운터 대시보드의 장점"
 
 #: templates/login.html:25
-msgid "100% Free: No hidden costs or premium features"
-msgstr "100% 무료: 숨겨진 비용이나 프리미엄 기능 없음"
+msgid "100%% Free: No hidden costs or premium features"
+msgstr "100%% 무료: 숨겨진 비용이나 프리미엄 기능 없음"
 
 #: templates/login.html:26
 msgid "Real-time Statistics: See visitor data as it happens"
@@ -751,8 +751,8 @@ msgid "View API Docs"
 msgstr "API 문서 보기"
 
 #: templates/layout.html:3
-msgid "Visitor Counter - 100% Free Website Analytics"
-msgstr "방문자 카운터 - 100% 무료 웹사이트 분석"
+msgid "Visitor Counter - 100%% Free Website Analytics"
+msgstr "방문자 카운터 - 100%% 무료 웹사이트 분석"
 
 #: templates/layout.html:4
 msgid "A completely free visitor counter for websites with a beautiful dashboard and API. No hidden costs, no premium features."
@@ -811,5 +811,5 @@ msgid "All rights reserved."
 msgstr "모든 권리 보유."
 
 #: templates/layout.html:313
-msgid "Visitor Counter - 100% Free Website Analytics"
-msgstr "방문자 카운터 - 100% 무료 웹사이트 분석"
+msgid "Visitor Counter - 100%% Free Website Analytics"
+msgstr "방문자 카운터 - 100%% 무료 웹사이트 분석"

@@ -368,7 +368,7 @@ msgstr "100% 무료 웹사이트 방문자 카운터"
 
 #: templates/index.html:10
 msgid "A lightweight visitor counter for your website with a beautiful dashboard and API. No hidden costs, no premium features, just completely free."
-msgstr "아름다운 대시보드와 API가 있는 가벼운 웹사이트 방문자 카운터입니다. 숨겨진 비용이나 프리미엄 기능이 없으며, 완전히 무료입니다."
+msgstr "API와 대시보드를 제공하는 웹사이트용 방문자 카운터입니다. 숨겨진 비용이나 프리미엄 기능이 없으며, 완전히 무료입니다."
 
 #: templates/index.html:12
 msgid "Get Started"
@@ -776,7 +776,7 @@ msgstr "대시보드"
 
 #: templates/layout.html:280
 msgid "A lightweight visitor counter for websites with a beautiful dashboard and API. No hidden costs."
-msgstr "아름다운 대시보드와 API가 있는 가벼운 웹사이트 방문자 카운터입니다. 숨겨진 비용이 없습니다."
+msgstr "API와 대시보드를 제공하는 웹사이트용 방문자 카운터입니다."
 
 #: templates/layout.html:285
 msgid "Product"

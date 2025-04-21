@@ -38,7 +38,7 @@
 
 ### 1. 웹사이트에 이 스크립트 추가
 
-\`\`\`html
+```html
 <script>
 (function() {
   const domain = encodeURIComponent(window.location.hostname);
@@ -89,7 +89,7 @@
   .catch(error => console.error('오류:', error));
 })();
 </script>
-\`\`\`
+```
 
 ### 2. 대시보드 보기
 
@@ -99,15 +99,15 @@
 
 JavaScript 프레임워크와 쉽게 통합할 수 있는 공식 NPM 패키지를 사용하세요:
 
-\`\`\`bash
+```bash
 npm install @rundevelrun/free-visitor-counter
 # 또는
 yarn add @rundevelrun/free-visitor-counter
-\`\`\`
+```
 
 ### React에서 사용하기
 
-\`\`\`jsx
+```jsx
 import { VisitorCounter } from '@rundevelrun/free-visitor-counter';
 
 function App() {
@@ -118,11 +118,11 @@ function App() {
     </div>
   );
 }
-\`\`\`
+```
 
 ### JavaScript에서 사용하기
 
-\`\`\`javascript
+```javascript
 import { trackVisit, displayCounter } from '@rundevelrun/free-visitor-counter';
 
 // 방문 추적
@@ -132,7 +132,7 @@ trackVisit().then(data => {
 
 // "visitor-counter" ID를 가진 요소에 카운터 표시
 displayCounter('visitor-counter');
-\`\`\`
+```
 
 자세한 정보는 [NPM 패키지 저장소](https://github.com/rundevelrun/free-visitor-counter)를 참조하세요.
 
@@ -140,19 +140,19 @@ displayCounter('visitor-counter');
 
 ### 기본 URL
 
-\`\`\`
+```
 https://visitor.6developer.com
-\`\`\`
+```
 
 ### 방문 기록하기
 
-\`\`\`
+```
 POST /visit
-\`\`\`
+```
 
 **요청 본문:**
 
-\`\`\`json
+```json
 {
   "domain": "example.com",
   "timezone": "Asia/Seoul", // 선택 사항, 기본값은 UTC
@@ -161,33 +161,33 @@ POST /visit
   "referrer": "https://google.com", // 선택 사항, 리퍼러 URL
   "search_query": "내 검색어" // 선택 사항, 검색 엔진에서 온 경우 검색어
 }
-\`\`\`
+```
 
 **응답:**
 
-\`\`\`json
+```json
 {
   "dashboardUrl": "https://visitor.6developer.com/dashboard?domain=example.com",
   "totalCount": 42,
   "todayCount": 5
 }
-\`\`\`
+```
 
 ### 방문 통계 가져오기
 
-\`\`\`
+```
 GET /visit?domain=example.com
-\`\`\`
+```
 
 **응답:**
 
-\`\`\`json
+```json
 {
   "dashboardUrl": "https://visitor.6developer.com/dashboard?domain=example.com",
   "totalCount": 42,
   "todayCount": 5
 }
-\`\`\`
+```
 
 자세한 내용은 [API 문서](https://visitor.6developer.com/api-docs)를 참조하세요.
 

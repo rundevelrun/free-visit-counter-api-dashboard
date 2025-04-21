@@ -32,7 +32,11 @@
             <div class="code-block">
                 <pre>{
   "domain": "example.com",
-  "timezone": "America/New_York" // Optional, defaults to UTC
+  "timezone": "America/New_York", // Optional, defaults to UTC
+  "page_path": "/blog/my-article", // Optional, the path of the current page
+  "page_title": "My Article Title", // Optional, the title of the current page
+  "referrer": "https://google.com", // Optional, the referrer URL
+  "search_query": "my search query" // Optional, the search query if coming from a search engine
 }</pre>
             </div>
             <h4>{{ _('Response') }}</h4>
@@ -50,7 +54,10 @@
   headers: { 'Content-Type': 'application/json' },
   body: JSON.stringify({
     domain: 'example.com',
-    timezone: Intl.DateTimeFormat().resolvedOptions().timeZone
+    timezone: Intl.DateTimeFormat().resolvedOptions().timeZone,
+    page_path: window.location.pathname,
+    page_title: document.title,
+    referrer: document.referrer
   })
 })
 .then(response => response.json())

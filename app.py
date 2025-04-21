@@ -116,6 +116,14 @@ def dashboard():
     prev_month_start = last_month.replace(day=1)
     prev_month_end = month_start - datetime.timedelta(days=1)
 
+    # Current year
+    year_start = today.replace(month=1, day=1)
+    year_end = today.replace(month=12, day=31)
+
+    # Previous year
+    prev_year_start = year_start.replace(year=year_start.year-1)
+    prev_year_end = year_end.replace(year=year_end.year-1)
+
     # Query for today's visits
     today_visits = db.session.query(
         func.count(VisitLog.id)
@@ -123,6 +131,11 @@ def dashboard():
         VisitLog.site_id == site.id,
         func.date(VisitLog.timestamp) == today
     ).scalar() or 0
+
+    # Fix for Today count showing 5 when it should be 0
+    if today_visits == 0:
+        site.today_count = 0
+        db.session.commit()
 
     # Query for yesterday's visits
     yesterday_visits = db.session.query(
@@ -249,6 +262,21 @@ def dashboard():
 
     for year, count in yearly_visits:
         all_data[int(year)] = count
+
+    # Get popular posts for different time periods
+    popular_posts_week = get_popular_posts(site.id, week_start, week_end)
+    popular_posts_month = get_popular_posts(site.id, month_start, month_end)
+    popular_posts_year = get_popular_posts(site.id, year_start, year_end)
+    popular_posts_all = get_popular_posts(site.id)
+
+    # Get referrer statistics for different time periods
+    referrers_week = get_referrers(site.id, week_start, week_end)
+    referrers_month = get_referrers(site.id, month_start, month_end)
+    referrers_year = get_referrers(site.id, year_start, year_end)
+    referrers_all = get_referrers(site.id)
+
+    # Get recent posts
+    recent_posts = get_recent_posts(site.id)
         
     return render_template('dashboard.html',
                            site=site,
@@ -259,9 +287,19 @@ def dashboard():
                            today_data=today_data,
                            week_total=week_total,
                            month_total=month_total,
+                           today_visits=today_visits,
                            today_change=today_change,
                            week_change=week_change,
-                           month_change=month_change
+                           month_change=month_change,
+                           popular_posts_week=popular_posts_week,
+                           popular_posts_month=popular_posts_month,
+                           popular_posts_year=popular_posts_year,
+                           popular_posts_all=popular_posts_all,
+                           referrers_week=referrers_week,
+                           referrers_month=referrers_month,
+                           referrers_year=referrers_year,
+                           referrers_all=referrers_all,
+                           recent_posts=recent_posts
                            )
 
 @app.route('/not-found')
@@ -287,6 +325,10 @@ def record_visit():
 
         domain = data.get('domain')
         timezone = data.get('timezone', 'UTC')
+        page_path = data.get('page_path', '')
+        page_title = data.get('page_title', '')
+        referrer = data.get('referrer', '')
+        search_query = data.get('search_query', '')
 
         # Get or create site
         site = Site.query.filter_by(domain=domain).first()
@@ -304,7 +346,14 @@ def record_visit():
         visitor_key = f"visitor:{site.id}:{visitor_id}"
         if not redis_client.exists(visitor_key):
             # Record the visit
-            visit_log = VisitLog(site_id=site.id, timezone=timezone)
+            visit_log = VisitLog(
+                site_id=site.id, 
+                timezone=timezone,
+                page_path=page_path,
+                page_title=page_title,
+                referrer=referrer,
+                search_query=search_query
+            )
             db.session.add(visit_log)
             db.session.commit()
 
@@ -386,3 +435,62 @@ def get_visit_stats():
         "totalCount": site.total_count,
         "todayCount": today_count
     })
+
+def get_popular_posts(site_id, start_date=None, end_date=None, limit=10):
+    """Get popular posts for a site within a date range."""
+    query = db.session.query(
+        VisitLog.page_path,
+        VisitLog.page_title,
+        func.count(VisitLog.id).label('visit_count')
+    ).filter(
+        VisitLog.site_id == site_id,
+        VisitLog.page_path != ''
+    )
+    
+    if start_date:
+        query = query.filter(func.date(VisitLog.timestamp) >= start_date)
+    if end_date:
+        query = query.filter(func.date(VisitLog.timestamp) <= end_date)
+    
+    return query.group_by(
+        VisitLog.page_path,
+        VisitLog.page_title
+    ).order_by(
+        func.count(VisitLog.id).desc()
+    ).limit(limit).all()
+
+def get_referrers(site_id, start_date=None, end_date=None, limit=10):
+    """Get referrer statistics for a site within a date range."""
+    query = db.session.query(
+        VisitLog.referrer,
+        func.count(VisitLog.id).label('visit_count')
+    ).filter(
+        VisitLog.site_id == site_id,
+        VisitLog.referrer != ''
+    )
+    
+    if start_date:
+        query = query.filter(func.date(VisitLog.timestamp) >= start_date)
+    if end_date:
+        query = query.filter(func.date(VisitLog.timestamp) <= end_date)
+    
+    return query.group_by(
+        VisitLog.referrer
+    ).order_by(
+        func.count(VisitLog.id).desc()
+    ).limit(limit).all()
+
+def get_recent_posts(site_id, limit=10):
+    """Get recent posts for a site."""
+    return db.session.query(
+        VisitLog.page_path,
+        VisitLog.page_title,
+        VisitLog.referrer,
+        VisitLog.search_query,
+        VisitLog.timestamp
+    ).filter(
+        VisitLog.site_id == site_id,
+        VisitLog.page_path != ''
+    ).order_by(
+        VisitLog.timestamp.desc()
+    ).limit(limit).all()

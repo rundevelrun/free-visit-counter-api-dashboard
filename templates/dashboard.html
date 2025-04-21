@@ -7,9 +7,10 @@
         <div class="dashboard-header">
             <h1>{{ site.domain }} {{ _('Dashboard') }}</h1>
             <div class="chart-controls">
-                <button class="btn btn-secondary" onclick="changeChartView('week')">{{ _('Week') }}</button>
-                <button class="btn btn-secondary" onclick="changeChartView('month')">{{ _('Month') }}</button>
-                <button class="btn btn-secondary" onclick="changeChartView('year')">{{ _('Year') }}</button>
+                <button class="btn btn-secondary" onclick="changeView('week')">{{ _('Week') }}</button>
+                <button class="btn btn-secondary" onclick="changeView('month')">{{ _('Month') }}</button>
+                <button class="btn btn-secondary" onclick="changeView('year')">{{ _('Year') }}</button>
+                <button class="btn btn-secondary" onclick="changeView('all')">{{ _('All') }}</button>
             </div>
         </div>
 
@@ -29,7 +30,7 @@
                 </div>
                 <div class="stat-content">
                     <h3>{{ _('Today') }}</h3>
-                    <p class="stat-value">{{ site.today_count }}</p>
+                    <p class="stat-value">{{ today_visits }}</p>
                     <p class="stat-change {{ 'positive' if today_change >= 0 else 'negative' }}">
                         <i class="fas {{ 'fa-arrow-up' if today_change >= 0 else 'fa-arrow-down' }}"></i>
                         {{ '+' if today_change >= 0 else '' }}{{ today_change }}% {{ _('vs yesterday') }}
@@ -64,9 +65,162 @@
             </div>
         </div>
 
+        <!-- Recent Posts Section -->
+        <div class="section-container">
+            <h2>{{ _('Recent Posts') }}</h2>
+            <div class="table-container">
+                <table class="data-table">
+                    <thead>
+                        <tr>
+                            <th>{{ _('Title') }}</th>
+                            <th>{{ _('URL Path') }}</th>
+                            <th>{{ _('Referrer') }}</th>
+                            <th>{{ _('Search Query') }}</th>
+                            <th>{{ _('Time') }}</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {% for post in recent_posts %}
+                        <tr>
+                            <td>{{ post.page_title or _('No Title') }}</td>
+                            <td>{{ post.page_path }}</td>
+                            <td>{{ post.referrer or _('Direct') }}</td>
+                            <td>{{ post.search_query or '-' }}</td>
+                            <td>{{ post.timestamp.strftime('%Y-%m-%d %H:%M') }}</td>
+                        </tr>
+                        {% else %}
+                        <tr>
+                            <td colspan="5" class="text-center">{{ _('No recent posts') }}</td>
+                        </tr>
+                        {% endfor %}
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
         <div class="chart-container">
             <h2>{{ _('Visitor Trends') }}</h2>
             <canvas id="visitors-chart"></canvas>
+        </div>
+
+        <!-- Popular Posts Section -->
+        <div class="section-container">
+            <h2>{{ _('Popular Posts') }}</h2>
+            <div class="table-container view-week">
+                <table class="data-table">
+                    <thead>
+                        <tr>
+                            <th>{{ _('Title') }}</th>
+                            <th>{{ _('URL Path') }}</th>
+                            <th>{{ _('Visits') }}</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {% for post in popular_posts_week %}
+                        <tr>
+                            <td>{{ post.page_title or _('No Title') }}</td>
+                            <td>{{ post.page_path }}</td>
+                            <td>{{ post.visit_count }}</td>
+                        </tr>
+                        {% else %}
+                        <tr>
+                            <td colspan="3" class="text-center">{{ _('No popular posts this week') }}</td>
+                        </tr>
+                        {% endfor %}
+                    </tbody>
+                </table>
+            </div>
+            <div class="table-container view-month" style="display: none;">
+                <table class="data-table">
+                    <thead>
+                        <tr>
+                            <th>{{ _('Title') }}</th>
+                            <th>{{ _('URL Path') }}</th>
+                            <th>{{ _('Visits') }}</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {% for post in popular_posts_month %}
+                        <tr>
+                            <td>{{ post.page_title or _('No Title') }}</td>
+                            <td>{{ post.page_path }}</td>
+                            <td>{{ post.visit_count }}</td>
+                        </tr>
+                        {% else %}
+                        <tr>
+                            <td colspan="3" class="text-center">{{ _('No popular posts this month') }}</td>
+                        </tr>
+                        {% endfor %}
+                    </tbody>
+                </table>
+            </div>
+            <div class="table-container view-year" style="display: none;">
+                <table class="data-table">
+                    <thead>
+                        <tr>
+                            <th>{{ _('Title') }}</th>
+                            <th>{{ _('URL Path') }}</th>
+                            <th>{{ _('Visits') }}</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {% for post in popular_posts_year %}
+                        <tr>
+                            <td>{{ post.page_title or _('No Title') }}</td>
+                            <td>{{ post.page_path }}</td>
+                            <td>{{ post.visit_count }}</td>
+                        </tr>
+                        {% else %}
+                        <tr>
+                            <td colspan="3" class="text-center">{{ _('No popular posts this year') }}</td>
+                        </tr>
+                        {% endfor %}
+                    </tbody>
+                </table>
+            </div>
+            <div class="table-container view-all" style="display: none;">
+                <table class="data-table">
+                    <thead>
+                        <tr>
+                            <th>{{ _('Title') }}</th>
+                            <th>{{ _('URL Path') }}</th>
+                            <th>{{ _('Visits') }}</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {% for post in popular_posts_all %}
+                        <tr>
+                            <td>{{ post.page_title or _('No Title') }}</td>
+                            <td>{{ post.page_path }}</td>
+                            <td>{{ post.visit_count }}</td>
+                        </tr>
+                        {% else %}
+                        <tr>
+                            <td colspan="3" class="text-center">{{ _('No popular posts') }}</td>
+                        </tr>
+                        {% endfor %}
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+        <!-- Referrer Section -->
+        <div class="section-container">
+            <h2>{{ _('Visitor Sources') }}</h2>
+            <div class="chart-grid">
+                <div class="pie-chart-container view-week">
+                    <canvas id="referrers-chart-week"></canvas>
+                </div>
+                <div class="pie-chart-container view-month" style="display: none;">
+                    <canvas id="referrers-chart-month"></canvas>
+                </div>
+                <div class="pie-chart-container view-year" style="display: none;">
+                    <canvas id="referrers-chart-year"></canvas>
+                </div>
+                <div class="pie-chart-container view-all" style="display: none;">
+                    <canvas id="referrers-chart-all"></canvas>
+                </div>
+            </div>
         </div>
     </div>
 
@@ -76,10 +230,39 @@
         document.addEventListener('DOMContentLoaded', function() {
             // Initialize chart with week data by default
             initChart('week');
+            initReferrerCharts();
+            
+            // Set week view as default
+            changeView('week');
         });
 
-        function changeChartView(range) {
+        function changeView(range) {
+            // Update chart
             initChart(range);
+            
+            // Update tables visibility
+            document.querySelectorAll('.table-container').forEach(container => {
+                container.style.display = 'none';
+            });
+            document.querySelectorAll('.pie-chart-container').forEach(container => {
+                container.style.display = 'none';
+            });
+            
+            document.querySelectorAll('.view-' + range).forEach(element => {
+                element.style.display = 'block';
+            });
+            
+            // Update active button
+            document.querySelectorAll('.chart-controls .btn').forEach(btn => {
+                btn.classList.remove('btn-primary');
+                btn.classList.add('btn-secondary');
+            });
+            
+            const activeBtn = document.querySelector(`.chart-controls .btn[onclick="changeView('${range}')"]`);
+            if (activeBtn) {
+                activeBtn.classList.remove('btn-secondary');
+                activeBtn.classList.add('btn-primary');
+            }
         }
 
         function initChart(range) {
@@ -197,7 +380,125 @@
             });
         }
 
-        // Update chart when theme changes
+        function initReferrerCharts() {
+            // Initialize referrer pie charts
+            initReferrerChart('week');
+            initReferrerChart('month');
+            initReferrerChart('year');
+            initReferrerChart('all');
+        }
+
+        function initReferrerChart(range) {
+            const ctx = document.getElementById(`referrers-chart-${range}`).getContext('2d');
+            
+            // Get referrer data
+            let referrers, counts;
+            
+            if (range === 'week') {
+                const referrerData = {{ referrers_week|tojson }};
+                referrers = referrerData.map(item => formatReferrer(item[0]));
+                counts = referrerData.map(item => item[1]);
+            } else if (range === 'month') {
+                const referrerData = {{ referrers_month|tojson }};
+                referrers = referrerData.map(item => formatReferrer(item[0]));
+                counts = referrerData.map(item => item[1]);
+            } else if (range === 'year') {
+                const referrerData = {{ referrers_year|tojson }};
+                referrers = referrerData.map(item => formatReferrer(item[0]));
+                counts = referrerData.map(item => item[1]);
+            } else if (range === 'all') {
+                const referrerData = {{ referrers_all|tojson }};
+                referrers = referrerData.map(item => formatReferrer(item[0]));
+                counts = referrerData.map(item => item[1]);
+            }
+            
+            // Check if we have data
+            if (!referrers || !counts || referrers.length === 0) {
+                ctx.font = '16px "Fira Code"';
+                ctx.fillStyle = getComputedStyle(document.documentElement).getPropertyValue('--secondary-color');
+                ctx.textAlign = 'center';
+                ctx.fillText('{{ _("No referrer data available.") }}', ctx.canvas.width / 2, ctx.canvas.height / 2);
+                return;
+            }
+            
+            // Get theme colors
+            const isDark = document.documentElement.classList.contains('dark');
+            const textColor = isDark ? '#c9d1d9' : '#24292f';
+            
+            // Generate colors for pie chart
+            const colors = generateColors(referrers.length, isDark);
+            
+            // Create chart
+            new Chart(ctx, {
+                type: 'pie',
+                data: {
+                    labels: referrers,
+                    datasets: [{
+                        data: counts,
+                        backgroundColor: colors,
+                        borderColor: isDark ? '#161b22' : '#ffffff',
+                        borderWidth: 2
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    plugins: {
+                        legend: {
+                            position: 'right',
+                            labels: {
+                                color: textColor,
+                                font: {
+                                    size: 12
+                                }
+                            }
+                        },
+                        tooltip: {
+                            callbacks: {
+                                label: function(context) {
+                                    const label = context.label || '';
+                                    const value = context.raw || 0;
+                                    const total = context.dataset.data.reduce((a, b) => a + b, 0);
+                                    const percentage = Math.round((value / total) * 100);
+                                    return `${label}: ${value} (${percentage}%)`;
+                                }
+                            }
+                        }
+                    }
+                }
+            });
+        }
+        
+        function formatReferrer(referrer) {
+            if (!referrer) return '{{ _("Direct") }}';
+            
+            try {
+                const url = new URL(referrer);
+                return url.hostname;
+            } catch (e) {
+                return referrer;
+            }
+        }
+        
+        function generateColors(count, isDark) {
+            const baseColors = isDark ? [
+                '#58a6ff', '#79c0ff', '#3fb950', '#f85149', '#d29922', '#a371f7', '#ff7b72',
+                '#388bfd', '#56d364', '#e3b341', '#f0883e', '#b180f0'
+            ] : [
+                '#0969da', '#2da44e', '#cf222e', '#bf8700', '#8250df', '#6639ba', '#d73a49',
+                '#1a7f37', '#9e6a03', '#953800', '#5a32a3', '#24292f'
+            ];
+            
+            // If we have more items than colors, repeat colors
+            const colors = [];
+            for (let i = 0; i < count; i++) {
+                colors.push(baseColors[i % baseColors.length]);
+            }
+            
+            return colors;
+        }
+
+        // Update charts when theme changes
         document.addEventListener('DOMContentLoaded', function() {
             // Watch for theme changes
             const observer = new MutationObserver(function(mutations) {
@@ -210,6 +511,9 @@
                                     window.visitorsChart.config.data.datasets[0].label.includes('Year') ? 'year' : 'all';
                             initChart(currentType);
                         }
+                        
+                        // Reinitialize referrer charts
+                        initReferrerCharts();
                     }
                 });
             });

@@ -7,301 +7,809 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PROJECT VERSION\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
-"POT-Creation-Date: 2023-04-15 12:00+0000\n"
-"PO-Revision-Date: 2023-04-15 12:00+0000\n"
+"POT-Creation-Date: 2023-04-15 12:00+0900\n"
+"PO-Revision-Date: 2023-04-15 12:00+0900\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language: ko\n"
 "Language-Team: ko <LL@li.org>\n"
-"Plural-Forms: nplurals=1; plural=0\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Generated-By: Babel 2.9.1\n"
+"Generated-By: Babel 2.12.1\n"
 
-msgid "Visitor Counter"
-msgstr "방문자 카운터"
+#: templates/api-docs.html:3
+msgid "API Documentation - Visitor Counter"
+msgstr "API 문서 - 방문자 카운터"
 
-msgid "Home"
-msgstr "홈"
+#: templates/api-docs.html:4
+msgid "Complete documentation for our visitor counter API. Track website visitors, retrieve statistics, and integrate with any website at no cost."
+msgstr "방문자 카운터 API에 대한 전체 문서입니다. 웹사이트 방문자를 추적하고, 통계를 검색하고, 무료로 모든 웹사이트와 통합하세요."
 
-msgid "API Docs"
-msgstr "API 문서"
+#: templates/api-docs.html:8
+msgid "Visitor Counter API Documentation"
+msgstr "방문자 카운터 API 문서"
 
-msgid "Dashboard"
-msgstr "대시보드"
+#: templates/api-docs.html:9
+msgid "Our API allows you to track visitors to your website and retrieve visitor statistics at no cost. No API keys, no rate limits, no premium features - just a simple, free API."
+msgstr "우리 API는 무료로 웹사이트 방문자를 추적하고 방문자 통계를 검색할 수 있게 해줍니다. API 키 없음, 속도 제한 없음, 프리미엄 기능 없음 - 단지 간단하고 무료인 API입니다."
 
-msgid "Track Your Website Visitors"
-msgstr "웹사이트 방문자 추적"
+#: templates/api-docs.html:13
+msgid "Introduction"
+msgstr "소개"
 
-msgid "A lightweight, easy-to-use visitor counter for your website with a beautiful dashboard and API."
-msgstr "아름다운 대시보드와 API가 있는 가볍고 사용하기 쉬운 웹사이트 방문자 카운터입니다."
+#: templates/api-docs.html:14
+msgid "The Visitor Counter API allows you to track visitors to your website and retrieve visitor statistics completely free of charge."
+msgstr "방문자 카운터 API는 웹사이트 방문자를 추적하고 완전히 무료로 방문자 통계를 검색할 수 있게 해줍니다."
 
-msgid "Get Started"
-msgstr "시작하기"
-
-msgid "View Dashboard"
-msgstr "대시보드 보기"
-
-msgid "Features"
-msgstr "기능"
-
-msgid "Real-time Tracking"
-msgstr "실시간 추적"
-
-msgid "Track visitors in real-time with accurate counting and duplicate prevention."
-msgstr "정확한 카운팅과 중복 방지 기능으로 실시간으로 방문자를 추적합니다."
-
-msgid "Responsive Dashboard"
-msgstr "반응형 대시보드"
-
-msgid "View your visitor statistics on any device with our responsive dashboard."
-msgstr "반응형 대시보드로 모든 기기에서 방문자 통계를 확인할 수 있습니다."
-
-msgid "Easy Integration"
-msgstr "쉬운 통합"
-
-msgid "Simple API makes it easy to integrate with any website or application."
-msgstr "간단한 API로 모든 웹사이트나 애플리케이션에 쉽게 통합할 수 있습니다."
-
-msgid "Multiple Websites"
-msgstr "다중 웹사이트"
-
-msgid "Track visitors across multiple domains with a single account."
-msgstr "단일 계정으로 여러 도메인의 방문자를 추적합니다."
-
-msgid "Multilingual Support"
-msgstr "다국어 지원"
-
-msgid "Available in English, Korean, and Japanese."
-msgstr "영어, 한국어, 일본어로 제공됩니다."
-
-msgid "Dark/Light Theme"
-msgstr "다크/라이트 테마"
-
-msgid "Switch between dark and light themes for comfortable viewing."
-msgstr "편안한 보기를 위해 다크 및 라이트 테마 간 전환이 가능합니다."
-
-msgid "How It Works"
-msgstr "작동 방식"
-
-msgid "Add the Script"
-msgstr "스크립트 추가"
-
-msgid "Add our tracking script to your website."
-msgstr "웹사이트에 추적 스크립트를 추가합니다."
-
-msgid "Track Visitors"
-msgstr "방문자 추적"
-
-msgid "We automatically track unique visitors to your site."
-msgstr "사이트의 고유 방문자를 자동으로 추적합니다."
-
-msgid "View your dashboard to see visitor statistics."
-msgstr "대시보드에서 방문자 통계를 확인합니다."
-
-msgid "Ready to Get Started?"
-msgstr "시작할 준비가 되셨나요?"
-
-msgid "Start tracking your website visitors today."
-msgstr "오늘부터 웹사이트 방문자 추적을 시작하세요."
-
-msgid "Get Started Now"
-msgstr "지금 시작하기"
-
-msgid "API Documentation"
-msgstr "API 문서"
-
-msgid "The Visitor Counter API allows you to track visitors to your website and retrieve visitor statistics."
-msgstr "방문자 카운터 API를 사용하면 웹사이트 방문자를 추적하고 방문자 통계를 검색할 수 있습니다."
-
+#: templates/api-docs.html:18
 msgid "Base URL"
 msgstr "기본 URL"
 
-msgid "Authentication"
-msgstr "인증"
+#: templates/api-docs.html:24
+msgid "Authentication - No API Key Required"
+msgstr "인증 - API 키 필요 없음"
 
-msgid "No authentication is required for basic usage. Your domain is used as an identifier."
-msgstr "기본 사용에는 인증이 필요하지 않습니다. 도메인이 식별자로 사용됩니다."
+#: templates/api-docs.html:25
+msgid "No authentication is required for basic usage. Your domain is used as an identifier. Our API has no usage limits."
+msgstr "기본 사용에는 인증이 필요하지 않습니다. 도메인이 식별자로 사용됩니다. 우리 API는 사용 제한이 없습니다."
 
-msgid "Endpoints"
-msgstr "엔드포인트"
+#: templates/api-docs.html:29
+msgid "API Endpoints"
+msgstr "API 엔드포인트"
 
+#: templates/api-docs.html:32
 msgid "Record a Visit"
-msgstr "방문 기록"
+msgstr "방문 기록하기"
 
+#: templates/api-docs.html:36
 msgid "Records a visit to your website."
 msgstr "웹사이트 방문을 기록합니다."
 
+#: templates/api-docs.html:37 templates/api-docs.html:67
 msgid "Request Body"
 msgstr "요청 본문"
 
+#: templates/api-docs.html:46 templates/api-docs.html:76
 msgid "Response"
 msgstr "응답"
 
+#: templates/api-docs.html:54 templates/api-docs.html:84
 msgid "Example"
 msgstr "예시"
 
+#: templates/api-docs.html:62
 msgid "Get Visit Statistics"
 msgstr "방문 통계 가져오기"
 
+#: templates/api-docs.html:66
 msgid "Retrieves visitor statistics for your website."
 msgstr "웹사이트의 방문자 통계를 검색합니다."
 
-msgid "Query Parameters"
-msgstr "쿼리 매개변수"
-
+#: templates/api-docs.html:92
 msgid "Integration"
 msgstr "통합"
 
+#: templates/api-docs.html:93
 msgid "To integrate the Visitor Counter with your website, add the following script to your HTML:"
-msgstr "방문자 카운터를 웹사이트에 통합하려면 다음 스크립트를 HTML에 추가하세요:"
+msgstr "방문자 카운터를 웹사이트와 통합하려면 다음 스크립트를 HTML에 추가하세요:"
 
-msgid "Error Handling"
-msgstr "오류 처리"
-
-msgid "The API returns standard HTTP status codes:"
-msgstr "API는 표준 HTTP 상태 코드를 반환합니다:"
-
-msgid "The request was successful."
-msgstr "요청이 성공했습니다."
-
-msgid "The request was invalid."
-msgstr "요청이 유효하지 않습니다."
-
-msgid "The requested resource was not found."
-msgstr "요청한 리소스를 찾을 수 없습니다."
-
-msgid "An error occurred on the server."
-msgstr "서버에서 오류가 발생했습니다."
-
-msgid "Rate Limiting"
-msgstr "속도 제한"
-
-msgid "The API is rate limited to 100 requests per minute per IP address."
-msgstr "API는 IP 주소당 분당 100개의 요청으로 제한됩니다."
-
-msgid "Login"
-msgstr "로그인"
-
-msgid "Access Dashboard"
-msgstr "대시보드 접근"
-
-msgid "Enter your website domain to view your visitor statistics."
-msgstr "방문자 통계를 보려면 웹사이트 도메인을 입력하세요."
-
-msgid "Website Domain"
-msgstr "웹사이트 도메인"
-
-msgid "or"
-msgstr "또는"
-
-msgid "Coming soon: User accounts for managing multiple websites."
-msgstr "곧 출시: 여러 웹사이트를 관리하기 위한 사용자 계정."
-
-msgid "Dashboard for"
-msgstr "대시보드 -"
-
-msgid "Date Range"
-msgstr "날짜 범위"
-
-msgid "Today"
-msgstr "오늘"
-
-msgid "Yesterday"
-msgstr "어제"
-
-msgid "This Week"
-msgstr "이번 주"
-
-msgid "This Month"
-msgstr "이번 달"
-
-msgid "This Year"
-msgstr "올해"
-
-msgid "All Time"
-msgstr "전체 기간"
-
-msgid "Total Visitors"
-msgstr "총 방문자"
-
-msgid "today"
-msgstr "오늘"
-
-msgid "Since"
-msgstr "이후"
-
-msgid "vs last week"
-msgstr "지난 주 대비"
-
-msgid "vs last month"
-msgstr "지난 달 대비"
-
-msgid "Visitor Trends"
-msgstr "방문자 추세"
-
-msgid "Integration Code"
-msgstr "통합 코드"
-
-msgid "Tracking Code"
-msgstr "추적 코드"
-
-msgid "Display Widget"
-msgstr "표시 위젯"
-
+#: templates/api-docs.html:138
 msgid "Copy Code"
 msgstr "코드 복사"
 
+#: templates/api-docs.html:140
+msgid "For more detailed installation instructions, see our"
+msgstr "더 자세한 설치 지침은 다음을 참조하세요"
+
+#: templates/api-docs.html:140
+msgid "Installation Guide"
+msgstr "설치 가이드"
+
+#: templates/api-docs.html:144
+msgid "NPM Package"
+msgstr "NPM 패키지"
+
+#: templates/api-docs.html:145
+msgid "We also offer an NPM package for easier integration:"
+msgstr "더 쉬운 통합을 위해 NPM 패키지도 제공합니다:"
+
+#: templates/api-docs.html:150
+msgid "For more information about our NPM package, visit our"
+msgstr "NPM 패키지에 대한 자세한 정보는 다음을 방문하세요"
+
+#: templates/api-docs.html:150
+msgid "GitHub repository"
+msgstr "GitHub 저장소"
+
+#: templates/api-docs.html:154
+msgid "Error Handling"
+msgstr "오류 처리"
+
+#: templates/api-docs.html:155
+msgid "The API returns standard HTTP status codes:"
+msgstr "API는 표준 HTTP 상태 코드를 반환합니다:"
+
+#: templates/api-docs.html:157
+msgid "The request was successful."
+msgstr "요청이 성공했습니다."
+
+#: templates/api-docs.html:158
+msgid "The request was invalid."
+msgstr "요청이 유효하지 않습니다."
+
+#: templates/api-docs.html:159
+msgid "The requested resource was not found."
+msgstr "요청한 리소스를 찾을 수 없습니다."
+
+#: templates/api-docs.html:160
+msgid "An error occurred on the server."
+msgstr "서버에서 오류가 발생했습니다."
+
+#: templates/api-docs.html:162
+msgid "Error Response Format"
+msgstr "오류 응답 형식"
+
+#: templates/api-docs.html:170
+msgid "Rate Limiting - Generous Limits"
+msgstr "속도 제한 - 관대한 제한"
+
+#: templates/api-docs.html:171
+msgid "The API is rate limited to 100 requests per minute per IP address, which is more than enough for most websites."
+msgstr "API는 IP 주소당 분당 100개의 요청으로 제한되어 있으며, 이는 대부분의 웹사이트에 충분합니다."
+
+#: templates/api-docs.html:172
+msgid "If you exceed this limit, you will receive a 429 Too Many Requests response."
+msgstr "이 제한을 초과하면 429 Too Many Requests 응답을 받게 됩니다."
+
+#: templates/api-docs.html:176
+msgid "CORS Policy"
+msgstr "CORS 정책"
+
+#: templates/api-docs.html:177
+msgid "Our API allows cross-origin requests from any domain."
+msgstr "우리 API는 모든 도메인에서의 교차 출처 요청을 허용합니다."
+
+#: templates/api-docs.html:181
+msgid "Ready to Get Started?"
+msgstr "시작할 준비가 되셨나요?"
+
+#: templates/api-docs.html:182
+msgid "Start tracking your website visitors today."
+msgstr "오늘부터 웹사이트 방문자를 추적해보세요."
+
+#: templates/api-docs.html:184
+msgid "View Dashboard"
+msgstr "대시보드 보기"
+
+#: templates/api-docs.html:198
 msgid "Copied!"
-msgstr "복사됨!"
+msgstr "���사됨!"
 
-msgid "visitors"
-msgstr "방문자"
+#: templates/dashboard.html:3
+msgid "Free Dashboard"
+msgstr "무료 대시보드"
 
-msgid "Visitors"
-msgstr "방문자"
+#: templates/dashboard.html:8
+msgid "Week"
+msgstr "주"
 
-msgid "Not Found"
-msgstr "찾을 수 없음"
+#: templates/dashboard.html:9
+msgid "Month"
+msgstr "월"
 
-msgid "Website Not Found"
-msgstr "웹사이트를 찾을 수 없음"
+#: templates/dashboard.html:10
+msgid "Year"
+msgstr "년"
 
-msgid "We couldn't find any visitor data for the domain you entered."
-msgstr "입력한 도메인에 대한 방문자 데이터를 찾을 수 없습니다."
+#: templates/dashboard.html:11
+msgid "All"
+msgstr "전체"
 
-msgid "This could be because:"
-msgstr "이유는 다음과 같을 수 있습니다:"
+#: templates/dashboard.html:20
+msgid "Total Visitors"
+msgstr "총 방문자"
 
-msgid "The domain has not been registered with our service yet."
-msgstr "도메인이 아직 서비스에 등록되지 않았습니다."
+#: templates/dashboard.html:29
+msgid "Today"
+msgstr "오늘"
 
-msgid "You may have mistyped the domain name."
-msgstr "도메인 이름을 잘못 입력했을 수 있습니다."
+#: templates/dashboard.html:32
+msgid "vs yesterday"
+msgstr "어제 대비"
 
-msgid "The tracking script has not been installed on your website."
-msgstr "웹사이트에 추적 스크립트가 설치되지 않았습니다."
+#: templates/dashboard.html:41
+msgid "This Week"
+msgstr "이번 주"
 
-msgid "Try Again"
-msgstr "다시 시도"
+#: templates/dashboard.html:44
+msgid "vs last week"
+msgstr "지난 주 대비"
 
+#: templates/dashboard.html:53
+msgid "This Month"
+msgstr "이번 달"
+
+#: templates/dashboard.html:56
+msgid "vs last month"
+msgstr "지난 달 대비"
+
+#: templates/dashboard.html:65
+msgid "Recent Posts"
+msgstr "최근 게시물"
+
+#: templates/dashboard.html:70
+msgid "Title"
+msgstr "제목"
+
+#: templates/dashboard.html:71
+msgid "URL Path"
+msgstr "URL 경로"
+
+#: templates/dashboard.html:72
+msgid "Referrer"
+msgstr "참조자"
+
+#: templates/dashboard.html:73
+msgid "Search Query"
+msgstr "검색 쿼리"
+
+#: templates/dashboard.html:74
+msgid "Time"
+msgstr "시간"
+
+#: templates/dashboard.html:82
+msgid "No Title"
+msgstr "제목 없음"
+
+#: templates/dashboard.html:84
+msgid "Direct"
+msgstr "직접"
+
+#: templates/dashboard.html:89
+msgid "No recent posts"
+msgstr "최근 게시물 없음"
+
+#: templates/dashboard.html:98
+msgid "Visitor Trends"
+msgstr "방문자 추세"
+
+#: templates/dashboard.html:104
+msgid "Popular Posts"
+msgstr "인기 게시물"
+
+#: templates/dashboard.html:111 templates/dashboard.html:130 templates/dashboard.html:149 templates/dashboard.html:168
+msgid "Visits"
+msgstr "방문"
+
+#: templates/dashboard.html:122
+msgid "No popular posts this week"
+msgstr "이번 주 인기 게시물 없음"
+
+#: templates/dashboard.html:141
+msgid "No popular posts this month"
+msgstr "이번 달 인기 게시물 없음"
+
+#: templates/dashboard.html:160
+msgid "No popular posts this year"
+msgstr "올해 인기 게시물 없음"
+
+#: templates/dashboard.html:179
+msgid "No popular posts"
+msgstr "인기 게시물 없음"
+
+#: templates/dashboard.html:187
+msgid "Visitor Sources"
+msgstr "방문자 출처"
+
+#: templates/dashboard.html:271
+msgid "Weekly Visitors"
+msgstr "주간 방문자"
+
+#: templates/dashboard.html:276
+msgid "Monthly Visitors"
+msgstr "월간 방문자"
+
+#: templates/dashboard.html:281
+msgid "Yearly Visitors"
+msgstr "연간 방문자"
+
+#: templates/dashboard.html:286
+msgid "All Time Visitors"
+msgstr "전체 기간 방문자"
+
+#: templates/dashboard.html:294
+msgid "No data available for this range."
+msgstr "이 범위에 대한 데이터가 없습니다."
+
+#: templates/dashboard.html:394
+msgid "No referrer data available."
+msgstr "참조자 데이터가 없습니다."
+
+#: templates/error.html:3 templates/error.html:11
 msgid "Error"
 msgstr "오류"
 
-msgid "The page you are looking for does not exist."
-msgstr "찾고 있는 페이지가 존재하지 않습니다."
+#: templates/error.html:3 templates/login.html:3
+msgid "Free Visitor Counter"
+msgstr "무료 방문자 카운터"
 
+#: templates/error.html:13
+msgid "The page you are looking for does not exist."
+msgstr "찾고 계신 페이지가 존재하지 않습니다."
+
+#: templates/error.html:15
 msgid "An internal server error occurred."
 msgstr "내부 서버 오류가 발생했습니다."
 
+#: templates/error.html:17
 msgid "An error occurred."
 msgstr "오류가 발생했습니다."
 
+#: templates/error.html:21
 msgid "Go Home"
 msgstr "홈으로"
 
+#: templates/error.html:22
 msgid "Go Back"
 msgstr "뒤로 가기"
 
-msgid "Visitor Counter. All rights reserved."
-msgstr "방문자 카운터. 모든 권리 보유."
+#: templates/index.html:3
+msgid "Visitor Counter - 100% Free Website Analytics Tool"
+msgstr "방문자 카운터 - 100% 무료 웹사이트 분석 도구"
+
+#: templates/index.html:4
+msgid "A completely free, lightweight visitor counter for your website with a beautiful dashboard and API. No hidden costs, no premium features."
+msgstr "아름다운 대시보드와 API가 있는 완전히 무료인 가벼운 웹사이트 방문자 카운터입니다. 숨겨진 비용이나 프리미엄 기능이 없습니다."
+
+#: templates/index.html:9
+msgid "100% Free Website Visitor Counter"
+msgstr "100% 무료 웹사이트 방문자 카운터"
+
+#: templates/index.html:10
+msgid "A lightweight visitor counter for your website with a beautiful dashboard and API. No hidden costs, no premium features, just completely free."
+msgstr "아름다운 대시보드와 API가 있는 가벼운 웹사이트 방문자 카운터입니다. 숨겨진 비용이나 프리미엄 기능이 없으며, 완전히 무료입니다."
+
+#: templates/index.html:12
+msgid "Get Started"
+msgstr "시작하기"
+
+#: templates/index.html:18
+msgid "Features - No Premium Tiers"
+msgstr "기능 - 프리미엄 등급 없음"
+
+#: templates/index.html:24
+msgid "Real-time Tracking"
+msgstr "실시간 추적"
+
+#: templates/index.html:25
+msgid "Track visitors in real-time with accurate counting and duplicate prevention."
+msgstr "정확한 카운팅과 중복 방지 기능으로 실시간으로 방문자를 추적합니다."
+
+#: templates/index.html:31
+msgid "Responsive Dashboard"
+msgstr "반응형 대시보드"
+
+#: templates/index.html:32
+msgid "View your visitor statistics on any device with our responsive dashboard."
+msgstr "반응형 대시보드로 어떤 기기에서든 방문자 통계를 확인하세요."
+
+#: templates/index.html:38
+msgid "Easy Integration"
+msgstr "쉬운 통합"
+
+#: templates/index.html:39
+msgid "Simple API makes it easy to integrate with any website or application."
+msgstr "간단한 API로 어떤 웹사이트나 애플리케이션과도 쉽게 통합할 수 있습니다."
+
+#: templates/index.html:45
+msgid "Multiple Websites"
+msgstr "여러 웹사이트"
+
+#: templates/index.html:46
+msgid "Track visitors across multiple domains with a single account."
+msgstr "단일 계정으로 여러 도메인의 방문자를 추적하세요."
+
+#: templates/index.html:52
+msgid "Multilingual Support"
+msgstr "다국어 지원"
+
+#: templates/index.html:53
+msgid "Available in English, Korean, and Japanese."
+msgstr "영어, 한국어, 일본어로 제공됩니다."
+
+#: templates/index.html:59
+msgid "Dark/Light Theme"
+msgstr "다크/라이트 테마"
+
+#: templates/index.html:60
+msgid "Switch between dark and light themes for comfortable viewing."
+msgstr "편안한 보기를 위해 다크 테마와 라이트 테마를 전환하세요."
+
+#: templates/index.html:67
+msgid "How It Works"
+msgstr "작동 방식"
+
+#: templates/index.html:71
+msgid "Add the Script"
+msgstr "스크립트 추가"
+
+#: templates/index.html:72
+msgid "Add our tracking script to your website."
+msgstr "웹사이트에 추적 스크립트를 추가하세요."
+
+#: templates/index.html:76
+msgid "Track Visitors"
+msgstr "방문자 추적"
+
+#: templates/index.html:77
+msgid "We automatically track unique visitors to your site."
+msgstr "사이트의 고유 방문자를 자동으로 추적합니다."
+
+#: templates/index.html:81
+msgid "View Dashboard"
+msgstr "대시보드 보기"
+
+#: templates/index.html:82
+msgid "Access your dashboard to see visitor statistics."
+msgstr "대시보드에 접속하여 방문자 통계를 확인하세요."
+
+#: templates/index.html:89
+msgid "Ready to Get Started?"
+msgstr "시작할 준비가 되셨나요?"
+
+#: templates/index.html:90
+msgid "Start tracking your website visitors today at no cost."
+msgstr "오늘부터 무료로 웹사이트 방문자를 추적해보세요."
+
+#: templates/index.html:91
+msgid "Get Started Now"
+msgstr "지금 시작하기"
+
+#: templates/index.html:96
+msgid "Frequently Asked Questions"
+msgstr "자주 묻는 질문"
+
+#: templates/index.html:99
+msgid "Is this visitor counter really 100% free?"
+msgstr "이 방문자 카운터는 정말로 100% 무료인가요?"
+
+#: templates/index.html:100
+msgid "Yes, our visitor counter is completely free. There are no hidden costs, premium features, or paid tiers. Everything is available at no cost."
+msgstr "네, 저희 방문자 카운터는 완전히 무료입니다. 숨겨진 비용, 프리미엄 기능, 유료 등급이 없습니다. 모든 것이 무료로 제공됩니다."
+
+#: templates/index.html:104
+msgid "How accurate is the visitor counter?"
+msgstr "방문자 카운터는 얼마나 정확한가요?"
+
+#: templates/index.html:105
+msgid "Our counter uses advanced techniques to ensure accurate counting. We prevent duplicate counts from the same visitor within a 20-minute window and track unique visitors based on their IP and user agent."
+msgstr "저희 카운터는 정확한 카운팅을 보장하기 위해 고급 기술을 사용합니다. 20분 이내에 동일한 방문자의 중복 카운트를 방지하고 IP와 사용자 에이전트를 기반으로 고유 방문자를 추적합니다."
+
+#: templates/index.html:109
+msgid "Can I track multiple websites?"
+msgstr "여러 웹사이트를 추적할 수 있나요?"
+
+#: templates/index.html:110
+msgid "Yes, you can track as many websites as you want. Each domain is tracked separately, and you can access statistics for each site individually."
+msgstr "네, 원하는 만큼 많은 웹사이트를 추적할 수 있습니다. 각 도메인은 별도로 추적되며, 각 사이트의 통계에 개별적으로 접근할 수 있습니다."
+
+#: templates/index.html:114
+msgid "Does the visitor counter slow down my website?"
+msgstr "방문자 카운터가 내 웹사이트를 느리게 만드나요?"
+
+#: templates/index.html:115
+msgid "No, our script is extremely lightweight and loads asynchronously, so it will not affect your website's performance or loading speed."
+msgstr "아니요, 저희 스크립트는 매우 가볍고 비동기적으로 로드되므로 웹사이트의 성능이나 로딩 속도에 영향을 미치지 않습니다."
+
+#: templates/index.html:119
+msgid "What statistics does the dashboard show?"
+msgstr "대시보드는 어떤 통계를 보여주나요?"
+
+#: templates/index.html:120
+msgid "Our dashboard shows total visitor count, today's visitors, weekly and monthly trends, popular pages, referrer sources, and search queries."
+msgstr "저희 대시보드는 총 방문자 수, 오늘의 방문자, 주간 및 월간 추세, 인기 페이지, 참조 소스 및 검색 쿼리를 보여줍니다."
+
+#: templates/installation.html:3
+msgid "Installation Guide - Visitor Counter Setup"
+msgstr "설치 가이드 - 방문자 카운터 설정"
+
+#: templates/installation.html:4
+msgid "Complete installation guide for our visitor counter. Easy setup instructions to add a visitor counter to any website in minutes."
+msgstr "방문자 카운터에 대한 완전한 설치 가이드입니다. 몇 분 안에 어떤 웹사이트에도 방문자 카운터를 추가하는 쉬운 설정 지침입니다."
+
+#: templates/installation.html:8
+msgid "Visitor Counter Installation Guide - 100% Free Forever"
+msgstr "방문자 카운터 설치 가이드 - 영원히 100% 무료"
+
+#: templates/installation.html:10
+msgid "Quick Start"
+msgstr "빠른 시작"
+
+#: templates/installation.html:11
+msgid "Follow these simple steps to add the visitor counter to your website:"
+msgstr "다음 간단한 단계에 따라 웹사이트에 방문자 카운터를 추가하세요:"
+
+#: templates/installation.html:14
+msgid "Add the Script to Your Website"
+msgstr "웹사이트에 스크립트 추가하기"
+
+#: templates/installation.html:15
+msgid "Copy and paste the following script into your HTML, just before the closing body tag:"
+msgstr "다음 스크립트를 HTML의 닫는 body 태그 바로 앞에 복사하여 붙여넣으세요:"
+
+#: templates/installation.html:64
+msgid "Display the Counter (Optional)"
+msgstr "카운터 표시하기 (선택 사항)"
+
+#: templates/installation.html:65
+msgid "If you want to display the visitor count on your page, add this HTML where you want the counter to appear:"
+msgstr "페이지에 방문자 수를 표시하려면 카운터가 나타나길 원하는 곳에 이 HTML을 추가하세요:"
+
+#: templates/installation.html:68
+msgid "Visitors:"
+msgstr "방문자:"
+
+#: templates/installation.html:77
+msgid "Access Your Dashboard"
+msgstr "대시보드 접근하기"
+
+#: templates/installation.html:78
+msgid "Visit your dashboard to see detailed visitor statistics:"
+msgstr "대시보드를 방문하여 자세한 방문자 통계를 확인하세요:"
+
+#: templates/installation.html:79
+msgid "Go to Dashboard"
+msgstr "대시보드로 가기"
+
+#: templates/installation.html:85
+msgid "Advanced Installation Options"
+msgstr "고급 설치 옵션"
+
+#: templates/installation.html:87
+msgid "Using NPM Package"
+msgstr "NPM 패키지 사용하기"
+
+#: templates/installation.html:88
+msgid "Install our official NPM package for easier integration with JavaScript frameworks:"
+msgstr "JavaScript 프레임워크와 더 쉬운 통합을 위해 공식 NPM 패키지를 설치하세요:"
+
+#: templates/installation.html:93
+msgid "Then import and use it in your code:"
+msgstr "그런 다음 코드에서 가져와 사용하세요:"
+
+#: templates/installation.html:123
+msgid "For more information, visit the"
+msgstr "자세한 정보는 다음을 방문하세요"
+
+#: templates/installation.html:127
+msgid "Custom Implementation"
+msgstr "사용자 정의 구현"
+
+#: templates/installation.html:128
+msgid "For custom implementations, you can use our API directly:"
+msgstr "사용자 정의 구현을 위해 API를 직접 사용할 수 있습니다:"
+
+#: templates/installation.html:155
+msgid "Troubleshooting"
+msgstr "문제 해결"
+
+#: templates/installation.html:157
+msgid "The counter is not updating"
+msgstr "카운터가 업데이트되지 않음"
+
+#: templates/installation.html:158
+msgid "Make sure your domain is correctly detected. Check the browser console for any errors."
+msgstr "도메인이 올바르게 감지되었는지 확인하세요. 브라우저 콘솔에서 오류를 확인하세요."
+
+#: templates/installation.html:161
+msgid "CORS errors in console"
+msgstr "콘솔의 CORS 오류"
+
+#: templates/installation.html:162
+msgid "Our API allows cross-origin requests. If you're seeing CORS errors, it might be due to network restrictions or browser extensions."
+msgstr "우리 API는 교차 출처 요청을 허용합니다. CORS 오류가 보인다면 네트워크 제한이나 브라우저 확장 프로그램 때문일 수 있습니다."
+
+#: templates/installation.html:165
+msgid "Need more help?"
+msgstr "더 많은 도움이 필요하신가요?"
+
+#: templates/installation.html:166
+msgid "Please open an issue on our"
+msgstr "다음에서 이슈를 열어주세요"
+
+#: templates/installation.html:171
+msgid "Frequently Asked Questions About Installation"
+msgstr "설치에 관한 자주 묻는 질문"
+
+#: templates/installation.html:173
+msgid "Is this visitor counter really free to install?"
+msgstr "이 방문자 카운터는 정말로 무료로 설치할 수 있나요?"
+
+#: templates/installation.html:174
+msgid "Yes, our visitor counter is completely free to install and use. There are no hidden costs, premium features, or paid tiers."
+msgstr "네, 저희 방문자 카운터는 완전히 무료로 설치하고 사용할 수 있습니다. 숨겨진 비용, 프리미엄 기능, 유료 등급이 없습니다."
+
+#: templates/installation.html:177
+msgid "Do I need to create an account to use the counter?"
+msgstr "카운터를 사용하기 위해 계정을 만들어야 하나요?"
+
+#: templates/installation.html:178
+msgid "No, you don't need to create an account. Simply add the script to your website and it will start tracking visitors immediately."
+msgstr "아니요, 계정을 만들 필요가 없습니다. 웹사이트에 스크립트를 추가하기만 하면 즉시 방문자 추적을 시작합니다."
+
+#: templates/installation.html:181
+msgid "Will the counter work with any website?"
+msgstr "카운터는 모든 웹사이트에서 작동하나요?"
+
+#: templates/installation.html:182
+msgid "Yes, our visitor counter works with any website, regardless of the platform or technology used. It's compatible with WordPress, Shopify, Wix, custom HTML sites, and more."
+msgstr "네, 저희 방문자 카운터는 사용된 플랫폼이나 기술에 관계없이 모든 웹사이트에서 작동합니다. WordPress, Shopify, Wix, 사용자 정의 HTML 사이트 등과 호환됩니다."
+
+#: templates/installation.html:185
+msgid "How do I customize the appearance of the counter?"
+msgstr "카운터의 외관을 어떻게 사용자 정의하나요?"
+
+#: templates/installation.html:186
+msgid "You can customize the appearance of the counter by styling the HTML element that displays the count. You can use CSS to change the font, color, size, and more."
+msgstr "카운트를 표시하는 HTML 요소의 스타일을 지정하여 카운터의 외관을 사용자 정의할 수 있습니다. CSS를 사용하여 글꼴, 색상, 크기 등을 변경할 수 있습니다."
+
+#: templates/installation.html:189
+msgid "Can I use the counter with a single-page application (SPA)?"
+msgstr "단일 페이지 애플리케이션(SPA)에서 카운터를 사용할 수 있나요?"
+
+#: templates/installation.html:190
+msgid "Yes, our visitor counter works with single-page applications. You can use our NPM package for easier integration with React, Vue, Angular, and other JavaScript frameworks."
+msgstr "네, 저희 방문자 카운터는 단일 페이지 애플리케이션에서 작동합니다. React, Vue, Angular 및 기타 JavaScript 프레임워크와 더 쉬운 통합을 위해 NPM 패키지를 사용할 수 있습니다."
+
+#: templates/login.html:3
+msgid "Dashboard Login - Access Your Visitor Statistics"
+msgstr "대시보드 로그인 - 방문자 통계 접근하기"
+
+#: templates/login.html:4
+msgid "Access your visitor counter dashboard. View detailed statistics about your website visitors at no cost - completely free with no registration required."
+msgstr "방문자 카운터 대시보드에 접근하세요. 웹사이트 방문자에 대한 자세한 통계를 무료로 확인하세요 - 등록이 필요 없이 완전히 무료입니다."
+
+#: templates/login.html:9
+msgid "Access Your Dashboard"
+msgstr "대시보드 접근하기"
+
+#: templates/login.html:10
+msgid "Enter your website domain to view your visitor statistics. No registration or payment required - completely free."
+msgstr "방문자 통계를 보려면 웹사이트 도메인을 입력하세요. 등록이나 결제가 필요 없습니다 - 완전히 무료입니다."
+
+#: templates/login.html:13
+msgid "Website Domain"
+msgstr "웹사이트 도메인"
+
+#: templates/login.html:18
+msgid "or"
+msgstr "또는"
+
+#: templates/login.html:20
+msgid "Coming soon: User accounts for managing multiple websites."
+msgstr "곧 출시: 여러 웹사이트를 관리하기 위한 사용자 계정."
+
+#: templates/login.html:23
+msgid "Benefits of Our Visitor Counter Dashboard"
+msgstr "저희 방문자 카운터 대시보드의 장점"
+
+#: templates/login.html:25
+msgid "100% Free: No hidden costs or premium features"
+msgstr "100% 무료: 숨겨진 비용이나 프리미엄 기능 없음"
+
+#: templates/login.html:26
+msgid "Real-time Statistics: See visitor data as it happens"
+msgstr "실시간 통계: 방문자 데이터를 실시간으로 확인"
+
+#: templates/login.html:27
+msgid "Detailed Analytics: View trends, popular pages, and referrers"
+msgstr "상세한 분석: 추세, 인기 페이지 및 참조자 확인"
+
+#: templates/login.html:28
+msgid "No Registration: Just enter your domain to access"
+msgstr "등록 불필요: 접근하려면 도메인만 입력하세요"
+
+#: templates/login.html:29
+msgid "Mobile Friendly: Check stats on any device"
+msgstr "모바일 친화적: 어떤 기기에서든 통계 확인"
+
+#: templates/not-found.html:3
+msgid "Not Found"
+msgstr "찾을 수 없음"
+
+#: templates/not-found.html:9
+msgid "Website Not Found"
+msgstr "웹사이트를 찾을 수 없음"
+
+#: templates/not-found.html:10
+msgid "We couldn't find any visitor data for the domain you entered."
+msgstr "입력하신 도메인에 대한 방문자 데이터를 찾을 수 없습니다."
+
+#: templates/not-found.html:11
+msgid "This could be because:"
+msgstr "이는 다음과 같은 이유 때문일 수 있습니다:"
+
+#: templates/not-found.html:13
+msgid "The domain has not been registered with our service yet."
+msgstr "도메인이 아직 저희 서비스에 등록되지 않았습니다."
+
+#: templates/not-found.html:14
+msgid "You may have mistyped the domain name."
+msgstr "도메인 이름을 잘못 입력했을 수 있습니다."
+
+#: templates/not-found.html:15
+msgid "The tracking script has not been installed on your website."
+msgstr "추적 스크립트가 웹사이트에 설치되지 않았습니다."
+
+#: templates/not-found.html:18
+msgid "Try Again"
+msgstr "다시 시도"
+
+#: templates/not-found.html:19
+msgid "View API Docs"
+msgstr "API 문서 보기"
+
+#: templates/layout.html:3
+msgid "Visitor Counter - 100% Free Website Analytics"
+msgstr "방문자 카운터 - 100% 무료 웹사이트 분석"
+
+#: templates/layout.html:4
+msgid "A completely free visitor counter for websites with a beautiful dashboard and API. No hidden costs, no premium features."
+msgstr "아름다운 대시보드와 API가 있는 완전히 무료인 웹사이트 방문자 카운터입니다. 숨겨진 비용이나 프리미엄 기능이 없습니다."
+
+#: templates/layout.html:254
+msgid "Home"
+msgstr "홈"
+
+#: templates/layout.html:255
+msgid "Installation"
+msgstr "설치"
+
+#: templates/layout.html:256
+msgid "Docs"
+msgstr "문서"
+
+#: templates/layout.html:257
+msgid "Dashboard"
+msgstr "대시보드"
+
+#: templates/layout.html:280
+msgid "A lightweight visitor counter for websites with a beautiful dashboard and API. No hidden costs."
+msgstr "아름다운 대시보드와 API가 있는 가벼운 웹사이트 방문자 카운터입니다. 숨겨진 비용이 없습니다."
+
+#: templates/layout.html:285
+msgid "Product"
+msgstr "제품"
+
+#: templates/layout.html:287
+msgid "Home"
+msgstr "홈"
+
+#: templates/layout.html:288
+msgid "Installation"
+msgstr "설치"
+
+#: templates/layout.html:289
+msgid "API Docs"
+msgstr "API 문서"
+
+#: templates/layout.html:290
+msgid "Dashboard"
+msgstr "대시보드"
+
+#: templates/layout.html:294
+msgid "Connect"
+msgstr "연결"
+
+#: templates/layout.html:300
+msgid "Language"
+msgstr "언어"
+
+#: templates/layout.html:312
+msgid "All rights reserved."
+msgstr "모든 권리 보유."
+
+#: templates/layout.html:313
+msgid "Visitor Counter - 100% Free Website Analytics"
+msgstr "방문자 카운터 - 100% 무료 웹사이트 분석"

@@ -1,12 +1,13 @@
 {% extends 'layout.html' %}
 
-{% block title %}{{ _('Login') }} - {{ _('Visitor Counter') }}{% endblock %}
+{% block title %}{{ _('Dashboard Login - Access Your Visitor Statistics') }}{% endblock %}
+{% block meta_description %}{{ _('Access your visitor counter dashboard. View detailed statistics about your website visitors at no cost - completely free with no registration required.') }}{% endblock %}
 
 {% block content %}
     <div class="auth-container">
         <div class="auth-form">
-            <h1>{{ _('Access Dashboard') }}</h1>
-            <p>{{ _('Enter your website domain to view your visitor statistics.') }}</p>
+            <h1>{{ _('Access Your Dashboard') }}</h1>
+            <p>{{ _('Enter your website domain to view your visitor statistics. No registration or payment required - completely free.') }}</p>
             <form action="{{ url_for('dashboard') }}" method="get">
                 <div class="form-group">
                     <label for="domain">{{ _('Website Domain') }}</label>
@@ -14,10 +15,6 @@
                 </div>
                 <button class="btn btn-primary btn-block" type="submit">{{ _('View Dashboard') }}</button>
             </form>
-            <div class="auth-separator">
-                <span>{{ _('or') }}</span>
-            </div>
-            <p class="text-center">{{ _('Coming soon: User accounts for managing multiple websites.') }}</p>
         </div>
     </div>
 {% endblock %}

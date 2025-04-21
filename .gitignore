@@ -4,3 +4,5 @@
 tmp
 stderr.log
 .idea
+__pycache__
+tmp

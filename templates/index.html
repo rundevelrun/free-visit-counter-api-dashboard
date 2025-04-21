@@ -1,13 +1,13 @@
 {% extends 'layout.html' %}
 
-{% block title %}{{ _('Home') }} - {{ _('Visitor Counter') }}{% endblock %}
-{% block meta_description %}{{ _('A lightweight, easy-to-use visitor counter for your website with a beautiful dashboard and API.') }}{% endblock %}
+{% block title %}{{ _('Visitor Counter - 100% Free Website Analytics Tool') }}{% endblock %}
+{% block meta_description %}{{ _('A completely free, lightweight visitor counter for your website with a beautiful dashboard and API. No hidden costs, no premium features.') }}{% endblock %}
 
 {% block content %}
 <section class="hero">
     <div class="hero-content">
-        <h1>{{ _('Track Your Website Visitors') }}</h1>
-        <p>{{ _('A lightweight, easy-to-use visitor counter for your website with a beautiful dashboard and API.') }}</p>
+        <h1>{{ _('100% Free Website Visitor Counter') }}</h1>
+        <p>{{ _('A lightweight visitor counter for your website with a beautiful dashboard and API. No hidden costs, no premium features, just completely free.') }}</p>
         <div class="hero-buttons">
             <a class="btn btn-primary" href="{{ url_for('installation') }}">{{ _('Get Started') }}</a>
             <a class="btn btn-secondary" href="{{ url_for('login') }}">{{ _('View Dashboard') }}</a>
@@ -16,7 +16,7 @@
 </section>
 
 <section class="features">
-    <h2>{{ _('Features') }}</h2>
+    <h2>{{ _('Features - No Premium Tiers') }}</h2>
     <div class="feature-grid">
         <div class="feature-card">
             <div class="feature-icon">
@@ -86,7 +86,37 @@
 
 <section class="cta">
     <h2>{{ _('Ready to Get Started?') }}</h2>
-    <p>{{ _('Start tracking your website visitors today.') }}</p>
+    <p>{{ _('Start tracking your website visitors today at no cost.') }}</p>
     <a class="btn btn-primary" href="{{ url_for('installation') }}">{{ _('Get Started Now') }}</a>
+</section>
+
+<!-- FAQ Section for SEO -->
+<section class="faq-section">
+    <h2>{{ _('Frequently Asked Questions') }}</h2>
+    
+    <div class="faq-item">
+        <h3>{{ _('Is this visitor counter really 100% free?') }}</h3>
+        <p>{{ _('Yes, our visitor counter is completely free. There are no hidden costs, premium features, or paid tiers. Everything is available at no cost.') }}</p>
+    </div>
+    
+    <div class="faq-item">
+        <h3>{{ _('How accurate is the visitor counter?') }}</h3>
+        <p>{{ _('Our counter uses advanced techniques to ensure accurate counting. We prevent duplicate counts from the same visitor within a 20-minute window and track unique visitors based on their IP and user agent.') }}</p>
+    </div>
+    
+    <div class="faq-item">
+        <h3>{{ _('Can I track multiple websites?') }}</h3>
+        <p>{{ _('Yes, you can track as many websites as you want. Each domain is tracked separately, and you can access statistics for each site individually.') }}</p>
+    </div>
+    
+    <div class="faq-item">
+        <h3>{{ _('Does the visitor counter slow down my website?') }}</h3>
+        <p>{{ _('No, our script is extremely lightweight and loads asynchronously, so it will not affect your website\'s performance or loading speed.') }}</p>
+    </div>
+    
+    <div class="faq-item">
+        <h3>{{ _('What statistics does the dashboard show?') }}</h3>
+        <p>{{ _('Our dashboard shows total visitor count, today\'s visitors, weekly and monthly trends, popular pages, referrer sources, and search queries.') }}</p>
+    </div>
 </section>
 {% endblock %}

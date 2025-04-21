@@ -1,26 +1,33 @@
 <!DOCTYPE html>
-<html lang="{{ g.get('lang_code', 'en') }}">
+<html lang="{{ g.lang_code }}">
 <head>
     <meta charset="utf-8"/>
     <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
     <!-- SEO Meta Tags -->
-    <title>{% block title %}{{ _('Visitor Counter') }}{% endblock %}</title>
-    <meta content="{% block meta_description %}{{ _('A lightweight visitor counter for websites with a beautiful dashboard and API.') }}{% endblock %}" name="description"/>
-    <meta content="visitor counter, website analytics, visitor tracking, website statistics, web analytics" name="keywords"/>
+    <title>{% block title %}{{ _('Visitor Counter - 100% Free Website Analytics') }}{% endblock %}</title>
+    <meta content="{% block meta_description %}{{ _('A completely free visitor counter for websites with a beautiful dashboard and API. No hidden costs, no premium features.') }}{% endblock %}" name="description"/>
+    <meta content="free visitor counter, free website analytics, visitor tracking, website statistics, web analytics, no cost counter, website stats, traffic counter, hit counter" name="keywords"/>
     <meta content="RUN:DEVEL:RUN" name="author"/>
     <!-- Canonical URL -->
     <link href="https://visitor.6developer.com{{ request.path }}" rel="canonical"/>
+    <!-- Alternate language versions -->
+    <link rel="alternate" hreflang="en" href="https://visitor.6developer.com{{ request.path }}?lang=en" />
+    <link rel="alternate" hreflang="ko" href="https://visitor.6developer.com{{ request.path }}?lang=ko" />
+    <link rel="alternate" hreflang="ja" href="https://visitor.6developer.com{{ request.path }}?lang=ja" />
+    <link rel="alternate" hreflang="x-default" href="https://visitor.6developer.com{{ request.path }}" />
     <!-- Open Graph / Facebook -->
     <meta content="website" property="og:type"/>
     <meta content="https://visitor.6developer.com{{ request.path }}" property="og:url"/>
-    <meta content="{% block og_title %}{{ _('Visitor Counter') }}{% endblock %}" property="og:title"/>
-    <meta content="{% block og_description %}{{ _('A lightweight visitor counter for websites with a beautiful dashboard and API.') }}{% endblock %}" property="og:description"/>
+    <meta content="{% block og_title %}{{ _('Visitor Counter - 100% Free Website Analytics') }}{% endblock %}" property="og:title"/>
+    <meta content="{% block og_description %}{{ _('A completely free visitor counter for websites with a beautiful dashboard and API. No hidden costs, no premium features.') }}{% endblock %}" property="og:description"/>
     <meta content="https://visitor.6developer.com{{ url_for('static', filename='img/og-image.png') }}" property="og:image"/>
+    <meta content="1200" property="og:image:width"/>
+    <meta content="630" property="og:image:height"/>
     <!-- Twitter -->
     <meta content="summary_large_image" property="twitter:card"/>
     <meta content="https://visitor.6developer.com{{ request.path }}" property="twitter:url"/>
-    <meta content="{% block twitter_title %}{{ _('Visitor Counter') }}{% endblock %}" property="twitter:title"/>
-    <meta content="{% block twitter_description %}{{ _('A lightweight visitor counter for websites with a beautiful dashboard and API.') }}{% endblock %}" property="twitter:description"/>
+    <meta content="{% block twitter_title %}{{ _('Visitor Counter - 100% Free Website Analytics') }}{% endblock %}" property="twitter:title"/>
+    <meta content="{% block twitter_description %}{{ _('A completely free visitor counter for websites with a beautiful dashboard and API. No hidden costs, no premium features.') }}{% endblock %}" property="twitter:description"/>
     <meta content="https://visitor.6developer.com{{ url_for('static', filename='img/twitter-image.png') }}" property="twitter:image"/>
     <!-- Favicon -->
     <link href="{{ url_for('static', filename='favicon.ico') }}" rel="icon" type="image/x-icon"/>
@@ -89,6 +96,41 @@
             document.documentElement.classList.add("dark");
         }
     </script>
+
+    <style>
+        @media (max-width: 480px) {
+            .logo-text {
+                font-size: 12px;
+            }
+        }
+        @media (max-width: 360px) {
+            .logo-text {
+                font-size: 10px;
+            }
+        }
+    </style>
+
+    <!-- JSON-LD Structured Data -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "SoftwareApplication",
+      "name": "Visitor Counter",
+      "applicationCategory": "WebApplication",
+      "operatingSystem": "Web",
+      "offers": {
+        "@type": "Offer",
+        "price": "0",
+        "priceCurrency": "USD"
+      },
+      "description": "A completely free visitor counter for websites with a beautiful dashboard and API. No hidden costs or premium features.",
+      "url": "https://visitor.6developer.com",
+      "author": {
+        "@type": "Organization",
+        "name": "RUN:DEVEL:RUN"
+      }
+    }
+    </script>
 </head>
 <body>
 <!-- Header -->
@@ -97,7 +139,7 @@
         <div class="header-content">
             <div class="header-logo">
                 <a href="{{ url_for('index') }}" class="logo-link">
-                    <span class="logo-text">RUN:DEVEL:RUN => visitorCounter()</span>
+                    <span class="logo-text">RUN:DEVEL:RUN => freeVisitorCounter()</span>
                 </a>
             </div>
             <nav class="header-nav">
@@ -133,9 +175,9 @@
         <div class="footer-content">
             <div class="footer-info">
                 <div class="footer-logo">
-                    <span class="logo-text">RUN:DEVEL:RUN => visitorCounter()</span>
+                    <span class="logo-text">RUN:DEVEL:RUN => freeVisitorCounter()</span>
                 </div>
-                <p class="footer-description">{{ _('A lightweight visitor counter for websites with a beautiful dashboard and API.') }}</p>
+                <p class="footer-description">{{ _('A lightweight visitor counter for websites with a beautiful dashboard and API. No hidden costs.') }}</p>
             </div>
             <div class="footer-links">
                 <div class="footer-links-column">
@@ -153,10 +195,19 @@
                         <li><a href="https://github.com/rundevelrun" target="_blank" rel="noopener">GitHub</a></li>
                     </ul>
                 </div>
+                <div class="footer-links-column">
+                    <h3 class="footer-heading">{{ _('Language') }}</h3>
+                    <ul class="footer-list">
+                        <li><a href="{{ request.path }}?lang=en" class="language-link {% if g.lang_code == 'en' %}active{% endif %}">English</a></li>
+                        <li><a href="{{ request.path }}?lang=ko" class="language-link {% if g.lang_code == 'ko' %}active{% endif %}">한국어</a></li>
+                        <li><a href="{{ request.path }}?lang=ja" class="language-link {% if g.lang_code == 'ja' %}active{% endif %}">日本語</a></li>
+                    </ul>
+                </div>
             </div>
         </div>
         <div class="footer-bottom">
             <p>© {{ now('utc', '%Y') }} RUN:DEVEL:RUN. {{ _('All rights reserved.') }}</p>
+            <p>{{ _('Visitor Counter - 100% Free Website Analytics') }}</p>
         </div>
     </div>
 </footer>
@@ -180,6 +231,23 @@
                 }
             });
         }
+
+        // Add active class to current language
+        const languageLinks = document.querySelectorAll('.language-link');
+        const currentLang = '{{ g.lang_code }}';
+
+        languageLinks.forEach(link => {
+            const linkLang = link.href.split('lang=')[1];
+            if (linkLang === currentLang) {
+                link.classList.add('active');
+            }
+
+            // Add click event to ensure page reloads with new language
+            link.addEventListener('click', function(e) {
+                e.preventDefault();
+                window.location.href = this.href;
+            });
+        });
     });
 </script>
 

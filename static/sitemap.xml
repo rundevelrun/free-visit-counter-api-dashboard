@@ -1,27 +1,40 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:xhtml="http://www.w3.org/1999/xhtml">
    <url>
       <loc>https://visitor.6developer.com/</loc>
       <lastmod>2023-04-15</lastmod>
       <changefreq>monthly</changefreq>
       <priority>1.0</priority>
+      <xhtml:link rel="alternate" hreflang="en" href="https://visitor.6developer.com/?lang=en"/>
+      <xhtml:link rel="alternate" hreflang="ko" href="https://visitor.6developer.com/?lang=ko"/>
+      <xhtml:link rel="alternate" hreflang="ja" href="https://visitor.6developer.com/?lang=ja"/>
    </url>
    <url>
       <loc>https://visitor.6developer.com/api-docs</loc>
       <lastmod>2023-04-15</lastmod>
       <changefreq>monthly</changefreq>
       <priority>0.8</priority>
+      <xhtml:link rel="alternate" hreflang="en" href="https://visitor.6developer.com/api-docs?lang=en"/>
+      <xhtml:link rel="alternate" hreflang="ko" href="https://visitor.6developer.com/api-docs?lang=ko"/>
+      <xhtml:link rel="alternate" hreflang="ja" href="https://visitor.6developer.com/api-docs?lang=ja"/>
    </url>
    <url>
       <loc>https://visitor.6developer.com/installation</loc>
       <lastmod>2023-04-15</lastmod>
       <changefreq>monthly</changefreq>
       <priority>0.8</priority>
+      <xhtml:link rel="alternate" hreflang="en" href="https://visitor.6developer.com/installation?lang=en"/>
+      <xhtml:link rel="alternate" hreflang="ko" href="https://visitor.6developer.com/installation?lang=ko"/>
+      <xhtml:link rel="alternate" hreflang="ja" href="https://visitor.6developer.com/installation?lang=ja"/>
    </url>
    <url>
       <loc>https://visitor.6developer.com/login</loc>
       <lastmod>2023-04-15</lastmod>
       <changefreq>monthly</changefreq>
       <priority>0.7</priority>
+      <xhtml:link rel="alternate" hreflang="en" href="https://visitor.6developer.com/login?lang=en"/>
+      <xhtml:link rel="alternate" hreflang="ko" href="https://visitor.6developer.com/login?lang=ko"/>
+      <xhtml:link rel="alternate" hreflang="ja" href="https://visitor.6developer.com/login?lang=ja"/>
    </url>
 </urlset>

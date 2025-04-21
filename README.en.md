@@ -32,21 +32,51 @@ A lightweight, **free** visitor counter for websites with a beautiful dashboard 
 - **Duplicate Prevention**: Uses Redis with a 20-minute TTL to avoid counting the same visitor multiple times
 - **Timezone Support**: Calculates "today" based on the visitor's timezone
 - **NPM Package**: Official NPM package for easy integration with JavaScript frameworks
+- **Page Analytics**: Track popular pages, referrers, and search queries
 
 ## 🚀 Quick Start
 
 ### 1. Add this script to your website
 
-```html
+\`\`\`html
 <script>
 (function() {
   const domain = encodeURIComponent(window.location.hostname);
   const timezone = encodeURIComponent(Intl.DateTimeFormat().resolvedOptions().timeZone);
+  const page_path = window.location.pathname;
+  const page_title = document.title;
+  const referrer = document.referrer;
   
+  // Extract search query if coming from a search engine
+  let search_query = '';
+  if (referrer) {
+    try {
+      const url = new URL(referrer);
+      if (url.hostname.includes('google.com')) {
+        search_query = url.searchParams.get('q') || '';
+      } else if (url.hostname.includes('bing.com')) {
+        search_query = url.searchParams.get('q') || '';
+      } else if (url.hostname.includes('yahoo.com')) {
+        search_query = url.searchParams.get('p') || '';
+      } else if (url.hostname.includes('duckduckgo.com')) {
+        search_query = url.searchParams.get('q') || '';
+      }
+    } catch (e) {
+      // Invalid URL, ignore
+    }
+  }
+
   fetch('https://visitor.6developer.com/visit', {
     method: 'POST',
     headers: { 'Content-Type': 'application/json' },
-    body: JSON.stringify({ domain, timezone })
+    body: JSON.stringify({ 
+      domain, 
+      timezone,
+      page_path,
+      page_title,
+      referrer,
+      search_query
+    })
   })
   .then(response => response.json())
   .then(data => {
@@ -59,7 +89,7 @@ A lightweight, **free** visitor counter for websites with a beautiful dashboard 
   .catch(error => console.error('Error:', error));
 })();
 </script>
-```
+\`\`\`
 
 ### 2. View your dashboard
 
@@ -69,13 +99,15 @@ Go to `https://visitor.6developer.com/login` and enter your domain to see your v
 
 Use our official NPM package for easy integration with JavaScript frameworks:
 
-```bash
+\`\`\`bash
 npm install @rundevelrun/free-visitor-counter
-```
+# or
+yarn add @rundevelrun/free-visitor-counter
+\`\`\`
 
 ### Using with React
 
-```jsx
+\`\`\`jsx
 import { VisitorCounter } from '@rundevelrun/free-visitor-counter';
 
 function App() {
@@ -86,11 +118,11 @@ function App() {
     </div>
   );
 }
-```
+\`\`\`
 
 ### Using with JavaScript
 
-```javascript
+\`\`\`javascript
 import { trackVisit, displayCounter } from '@rundevelrun/free-visitor-counter';
 
 // Track visit
@@ -100,7 +132,7 @@ trackVisit().then(data => {
 
 // Display counter in element with id "visitor-counter"
 displayCounter('visitor-counter');
-```
+\`\`\`
 
 For more information, visit the [NPM package repository](https://github.com/rundevelrun/free-visitor-counter).
 
@@ -108,50 +140,54 @@ For more information, visit the [NPM package repository](https://github.com/rund
 
 ### Base URL
 
-```
+\`\`\`
 https://visitor.6developer.com
-```
+\`\`\`
 
 ### Record a Visit
 
-```
+\`\`\`
 POST /visit
-```
+\`\`\`
 
 **Request Body:**
 
-```json
+\`\`\`json
 {
   "domain": "example.com",
-  "timezone": "America/New_York" // Optional, defaults to UTC
+  "timezone": "America/New_York", // Optional, defaults to UTC
+  "page_path": "/blog/my-article", // Optional, the path of the current page
+  "page_title": "My Article Title", // Optional, the title of the current page
+  "referrer": "https://google.com", // Optional, the referrer URL
+  "search_query": "my search query" // Optional, the search query if coming from a search engine
 }
-```
+\`\`\`
 
 **Response:**
 
-```json
+\`\`\`json
 {
   "dashboardUrl": "https://visitor.6developer.com/dashboard?domain=example.com",
   "totalCount": 42,
   "todayCount": 5
 }
-```
+\`\`\`
 
 ### Get Visit Statistics
 
-```
+\`\`\`
 GET /visit?domain=example.com
-```
+\`\`\`
 
 **Response:**
 
-```json
+\`\`\`json
 {
   "dashboardUrl": "https://visitor.6developer.com/dashboard?domain=example.com",
   "totalCount": 42,
   "todayCount": 5
 }
-```
+\`\`\`
 
 For more details, see the [API Documentation](https://visitor.6developer.com/api-docs).
 
@@ -164,6 +200,9 @@ The dashboard provides:
 - Today's visitors
 - Weekly and monthly trends
 - Graphical representation of visitor data
+- Popular pages analysis
+- Referrer analysis
+- Search query analysis
 
 ## 🤝 Contributing
 

@@ -29,15 +29,28 @@ app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 db = SQLAlchemy(app)
 migrate = Migrate(app, db)
 
+
 # Babel configuration
 def get_locale():
     # Get locale from URL parameter, user settings, or request headers
     locale = request.args.get('lang')
-    if locale:
+    if locale and locale in ['en', 'ko', 'ja']:
         session['lang'] = locale
+        return locale
     return session.get('lang', request.accept_languages.best_match(['en', 'ko', 'ja']))
 
+
 babel = Babel(app, locale_selector=get_locale)
+
+
+# Before request handler to ensure language is set
+@app.before_request
+def before_request():
+    g.lang_code = get_locale()
+    # Force the locale to be applied for this request
+    if hasattr(g, 'lang_code'):
+        babel.locale = g.lang_code
+
 
 # Initialize Redis
 redis_client = redis.Redis(
@@ -49,6 +62,7 @@ redis_client = redis.Redis(
 
 # Import models after initializing db
 from models import Site, VisitLog
+
 
 # Context processor for translations and custom filters
 @app.context_processor
@@ -65,22 +79,27 @@ def utility_processor():
 
     return dict(_=translate, now=now)
 
+
 # Routes
 @app.route('/')
 def index():
     return render_template('index.html')
 
+
 @app.route('/api-docs')
 def api_docs():
     return render_template('api-docs.html')
+
 
 @app.route('/login')
 def login():
     return render_template('login.html')
 
+
 @app.route('/installation')
 def installation():
     return render_template('installation.html')
+
 
 @app.route('/dashboard')
 def dashboard():
@@ -121,8 +140,8 @@ def dashboard():
     year_end = today.replace(month=12, day=31)
 
     # Previous year
-    prev_year_start = year_start.replace(year=year_start.year-1)
-    prev_year_end = year_end.replace(year=year_end.year-1)
+    prev_year_start = year_start.replace(year=year_start.year - 1)
+    prev_year_end = year_end.replace(year=year_end.year - 1)
 
     # Query for today's visits
     today_visits = db.session.query(
@@ -201,7 +220,7 @@ def dashboard():
 
     # Create a dictionary with dates and counts for the month
     days_in_month = (month_end - month_start).days + 1
-    month_data = {str(i+1): 0 for i in range(days_in_month)}
+    month_data = {str(i + 1): 0 for i in range(days_in_month)}
     for date, count in month_visits:
         day = str(date.day)
         month_data[day] = count
@@ -277,7 +296,7 @@ def dashboard():
 
     # Get recent posts
     recent_posts = get_recent_posts(site.id)
-        
+
     return render_template('dashboard.html',
                            site=site,
                            week_data=week_data,
@@ -302,17 +321,21 @@ def dashboard():
                            recent_posts=recent_posts
                            )
 
+
 @app.route('/not-found')
 def not_found():
     return render_template('not-found.html')
+
 
 @app.errorhandler(404)
 def page_not_found(e):
     return render_template('error.html', error=404), 404
 
+
 @app.errorhandler(500)
 def server_error(e):
     return render_template('error.html', error=500), 500
+
 
 # API Routes
 @app.route('/visit', methods=['POST'])
@@ -347,7 +370,7 @@ def record_visit():
         if not redis_client.exists(visitor_key):
             # Record the visit
             visit_log = VisitLog(
-                site_id=site.id, 
+                site_id=site.id,
                 timezone=timezone,
                 page_path=page_path,
                 page_title=page_title,
@@ -436,6 +459,7 @@ def get_visit_stats():
         "todayCount": today_count
     })
 
+
 def get_popular_posts(site_id, start_date=None, end_date=None, limit=10):
     """Get popular posts for a site within a date range."""
     query = db.session.query(
@@ -443,21 +467,31 @@ def get_popular_posts(site_id, start_date=None, end_date=None, limit=10):
         VisitLog.page_title,
         func.count(VisitLog.id).label('visit_count')
     ).filter(
-        VisitLog.site_id == site_id,
-        VisitLog.page_path != ''
+        VisitLog.site_id == site_id
+        # page_path != '' 조건 제거
     )
-    
+
     if start_date:
         query = query.filter(func.date(VisitLog.timestamp) >= start_date)
     if end_date:
         query = query.filter(func.date(VisitLog.timestamp) <= end_date)
-    
-    return query.group_by(
+
+    results = query.group_by(
         VisitLog.page_path,
         VisitLog.page_title
     ).order_by(
         func.count(VisitLog.id).desc()
     ).limit(limit).all()
+
+    # Row 객체를 딕셔너리 리스트로 변환
+    return [
+        {
+            'page_path': row.page_path,
+            'page_title': row.page_title,
+            'visit_count': row.visit_count
+        } for row in results
+    ]
+
 
 def get_referrers(site_id, start_date=None, end_date=None, limit=10):
     """Get referrer statistics for a site within a date range."""
@@ -465,32 +499,49 @@ def get_referrers(site_id, start_date=None, end_date=None, limit=10):
         VisitLog.referrer,
         func.count(VisitLog.id).label('visit_count')
     ).filter(
-        VisitLog.site_id == site_id,
-        VisitLog.referrer != ''
+        VisitLog.site_id == site_id
+        # referrer != '' 조건 제거
     )
-    
+
     if start_date:
         query = query.filter(func.date(VisitLog.timestamp) >= start_date)
     if end_date:
         query = query.filter(func.date(VisitLog.timestamp) <= end_date)
-    
-    return query.group_by(
+
+    results = query.group_by(
         VisitLog.referrer
     ).order_by(
         func.count(VisitLog.id).desc()
     ).limit(limit).all()
 
+    # Row 객체를 리스트로 변환 (referrer, count 튜플)
+    return [
+        [row.referrer, row.visit_count] for row in results
+    ]
+
+
 def get_recent_posts(site_id, limit=10):
     """Get recent posts for a site."""
-    return db.session.query(
+    results = db.session.query(
         VisitLog.page_path,
         VisitLog.page_title,
         VisitLog.referrer,
         VisitLog.search_query,
         VisitLog.timestamp
     ).filter(
-        VisitLog.site_id == site_id,
-        VisitLog.page_path != ''
+        VisitLog.site_id == site_id
+        # page_path != '' 조건 제거
     ).order_by(
         VisitLog.timestamp.desc()
     ).limit(limit).all()
+
+    # Row 객체를 딕셔너리 리스트로 변환
+    return [
+        {
+            'page_path': row.page_path,
+            'page_title': row.page_title,
+            'referrer': row.referrer,
+            'search_query': row.search_query,
+            'timestamp': row.timestamp
+        } for row in results
+    ]

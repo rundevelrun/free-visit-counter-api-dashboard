@@ -1,11 +1,11 @@
 {% extends 'layout.html' %}
 
-{% block title %}{{ _('Dashboard') }} - {{ site.domain }}{% endblock %}
+{% block title %}{{ _('Free Dashboard') }} - {{ site.domain }}{% endblock %}
 
 {% block content %}
     <div class="dashboard-container">
         <div class="dashboard-header">
-            <h1>{{ site.domain }} {{ _('Dashboard') }}</h1>
+            <h1>{{ site.domain }} {{ _('Free Dashboard') }}</h1>
             <div class="chart-controls">
                 <button class="btn btn-secondary" onclick="changeView('week')">{{ _('Week') }}</button>
                 <button class="btn btn-secondary" onclick="changeView('month')">{{ _('Month') }}</button>

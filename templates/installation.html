@@ -1,15 +1,15 @@
 {% extends 'layout.html' %}
 
-{% block title %}{{ _('Installation Guide') }} - {{ _('Visitor Counter') }}{% endblock %}
+{% block title %}{{ _('Installation Guide - Visitor Counter Setup') }}{% endblock %}
+{% block meta_description %}{{ _('Complete installation guide for our visitor counter. Easy setup instructions to add a visitor counter to any website in minutes.') }}{% endblock %}
 
 {% block content %}
     <div class="installation-guide">
-        <h1>{{ _('Installation Guide') }}</h1>
+        <h1>{{ _('Visitor Counter Installation Guide - 100% Free Forever') }}</h1>
         <section class="installation-section">
             <h2>{{ _('Quick Start') }}</h2>
             <p>{{ _('Follow these simple steps to add the visitor counter to your website:') }}</p>
             <div class="step-card">
-{#                <div class="step-number">1</div>#}
                 <div class="step-content">
                     <h3>{{ _('Add the Script to Your Website') }}</h3>
                     <p>{{ _('Copy and paste the following script into your HTML, just before the closing body tag:') }}</p>
@@ -69,7 +69,6 @@
                 </div>
             </div>
             <div class="step-card">
-{#                <div class="step-number">2</div>#}
                 <div class="step-content">
                     <h3>{{ _('Display the Counter (Optional)') }}</h3>
                     <p>{{ _('If you want to display the visitor count on your page, add this HTML where you want the counter to appear:') }}</p>
@@ -82,7 +81,6 @@
                 </div>
             </div>
             <div class="step-card">
-{#                <div class="step-number">3</div>#}
                 <div class="step-content">
                     <h3>{{ _('Access Your Dashboard') }}</h3>
                     <p>{{ _('Visit your dashboard to see detailed visitor statistics:') }}</p>
@@ -91,7 +89,7 @@
             </div>
         </section>
         <section class="installation-section">
-            <h2>{{ _('Advanced Installation') }}</h2>
+            <h2>{{ _('Advanced Installation Options') }}</h2>
             <div class="advanced-option">
                 <h3>{{ _('Using NPM Package') }}</h3>
                 <p>{{ _('Install our official NPM package for easier integration with JavaScript frameworks:') }}</p>
@@ -171,6 +169,31 @@ recordVisit();</code></pre>
             <div class="faq-item">
                 <h3>{{ _('Need more help?') }}</h3>
                 <p>{{ _('Please open an issue on our') }} <a href="https://github.com/rundevelrun/free-visit-counter-api-dashboard/issues" target="_blank">GitHub repository</a>.</p>
+            </div>
+        </section>
+        
+        <!-- SEO-focused FAQ section -->
+        <section class="installation-section">
+            <h2>{{ _('Frequently Asked Questions About Installation') }}</h2>
+            <div class="faq-item">
+                <h3>{{ _('Is this visitor counter really free to install?') }}</h3>
+                <p>{{ _('Yes, our visitor counter is completely free to install and use. There are no hidden costs, premium features, or paid tiers.') }}</p>
+            </div>
+            <div class="faq-item">
+                <h3>{{ _('Do I need to create an account to use the counter?') }}</h3>
+                <p>{{ _('No, you don\'t need to create an account. Simply add the script to your website and it will start tracking visitors immediately.') }}</p>
+            </div>
+            <div class="faq-item">
+                <h3>{{ _('Will the counter work with any website?') }}</h3>
+                <p>{{ _('Yes, our visitor counter works with any website, regardless of the platform or technology used. It\'s compatible with WordPress, Shopify, Wix, custom HTML sites, and more.') }}</p>
+            </div>
+            <div class="faq-item">
+                <h3>{{ _('How do I customize the appearance of the counter?') }}</h3>
+                <p>{{ _('You can customize the appearance of the counter by styling the HTML element that displays the count. You can use CSS to change the font, color, size, and more.') }}</p>
+            </div>
+            <div class="faq-item">
+                <h3>{{ _('Can I use the counter with a single-page application (SPA)?') }}</h3>
+                <p>{{ _('Yes, our visitor counter works with single-page applications. You can use our NPM package for easier integration with React, Vue, Angular, and other JavaScript frameworks.') }}</p>
             </div>
         </section>
     </div>

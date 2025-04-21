@@ -1,26 +1,32 @@
 {% extends 'layout.html' %}
 
-{% block title %}{{ _('API Documentation') }} - {{ _('Visitor Counter') }}{% endblock %}
+{% block title %}{{ _('API Documentation - Visitor Counter') }}{% endblock %}
+{% block meta_description %}{{ _('Complete documentation for our visitor counter API. Track website visitors, retrieve statistics, and integrate with any website at no cost.') }}{% endblock %}
 
 {% block content %}
 <div class="api-docs">
-    <h1>{{ _('API Documentation') }}</h1>
+    <h1>{{ _('Visitor Counter API Documentation') }}</h1>
+    <p class="api-intro">{{ _('Our API allows you to track visitors to your website and retrieve visitor statistics at no cost. No API keys, no rate limits, no premium features - just a simple, free API.') }}</p>
+    
     <section class="api-section">
         <h2>{{ _('Introduction') }}</h2>
-        <p>{{ _('The Visitor Counter API allows you to track visitors to your website and retrieve visitor statistics.') }}</p>
+        <p>{{ _('The Visitor Counter API allows you to track visitors to your website and retrieve visitor statistics completely free of charge.') }}</p>
     </section>
+    
     <section class="api-section">
         <h2>{{ _('Base URL') }}</h2>
         <div class="code-block">
             <code>https://visitor.6developer.com</code>
         </div>
     </section>
+    
     <section class="api-section">
-        <h2>{{ _('Authentication') }}</h2>
-        <p>{{ _('No authentication is required for basic usage. Your domain is used as an identifier.') }}</p>
+        <h2>{{ _('Authentication - No API Key Required') }}</h2>
+        <p>{{ _('No authentication is required for basic usage. Your domain is used as an identifier. Our API has no usage limits.') }}</p>
     </section>
+    
     <section class="api-section">
-        <h2>{{ _('Endpoints') }}</h2>
+        <h2>{{ _('API Endpoints') }}</h2>
         <div class="endpoint">
             <h3>{{ _('Record a Visit') }}</h3>
             <div class="endpoint-details">
@@ -91,6 +97,7 @@
             </div>
         </div>
     </section>
+    
     <section class="api-section">
         <h2>{{ _('Integration') }}</h2>
         <p>{{ _('To integrate the Visitor Counter with your website, add the following script to your HTML:') }}</p>
@@ -99,11 +106,40 @@
 (function() {
   const domain = encodeURIComponent(window.location.hostname);
   const timezone = Intl.DateTimeFormat().resolvedOptions().timeZone;
+  const page_path = window.location.pathname;
+  const page_title = document.title;
+  const referrer = document.referrer;
+  
+  // Extract search query if coming from a search engine
+  let search_query = '';
+  if (referrer) {
+    try {
+      const url = new URL(referrer);
+      if (url.hostname.includes('google.com')) {
+        search_query = url.searchParams.get('q') || '';
+      } else if (url.hostname.includes('bing.com')) {
+        search_query = url.searchParams.get('q') || '';
+      } else if (url.hostname.includes('yahoo.com')) {
+        search_query = url.searchParams.get('p') || '';
+      } else if (url.hostname.includes('duckduckgo.com')) {
+        search_query = url.searchParams.get('q') || '';
+      }
+    } catch (e) {
+      // Invalid URL, ignore
+    }
+  }
   
   fetch('https://visitor.6developer.com/visit', {
     method: 'POST',
     headers: { 'Content-Type': 'application/json' },
-    body: JSON.stringify({ domain, timezone })
+    body: JSON.stringify({ 
+      domain, 
+      timezone,
+      page_path,
+      page_title,
+      referrer,
+      search_query
+    })
   })
   .then(response => response.json())
   .then(data => {
@@ -120,6 +156,17 @@
         </div>
         <p>{{ _('For more detailed installation instructions, see our') }} <a href="{{ url_for('installation') }}">{{ _('Installation Guide') }}</a>.</p>
     </section>
+    
+    <section class="api-section">
+        <h2>{{ _('NPM Package') }}</h2>
+        <p>{{ _('We also offer an NPM package for easier integration:') }}</p>
+        <div class="code-block">
+            <pre>npm install @rundevelrun/free-visitor-counter</pre>
+            <button class="copy-button" onclick="copyCode(this)">{{ _('Copy Code') }}</button>
+        </div>
+        <p>{{ _('For more information about our NPM package, visit our') }} <a href="https://github.com/rundevelrun/free-visitor-counter" target="_blank">{{ _('GitHub repository') }}</a>.</p>
+    </section>
+    
     <section class="api-section">
         <h2>{{ _('Error Handling') }}</h2>
         <p>{{ _('The API returns standard HTTP status codes:') }}</p>
@@ -136,15 +183,18 @@
 }</pre>
         </div>
     </section>
+    
     <section class="api-section">
-        <h2>{{ _('Rate Limiting') }}</h2>
-        <p>{{ _('The API is rate limited to 100 requests per minute per IP address.') }}</p>
+        <h2>{{ _('Rate Limiting - Generous Limits') }}</h2>
+        <p>{{ _('The API is rate limited to 100 requests per minute per IP address, which is more than enough for most websites.') }}</p>
         <p>{{ _('If you exceed this limit, you will receive a 429 Too Many Requests response.') }}</p>
     </section>
+    
     <section class="api-section">
         <h2>{{ _('CORS Policy') }}</h2>
         <p>{{ _('Our API allows cross-origin requests from any domain.') }}</p>
     </section>
+    
     <section class="api-section cta">
         <h2>{{ _('Ready to Get Started?') }}</h2>
         <p>{{ _('Start tracking your website visitors today.') }}</p>

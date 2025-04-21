@@ -7,301 +7,809 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PROJECT VERSION\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
-"POT-Creation-Date: 2023-04-15 12:00+0000\n"
-"PO-Revision-Date: 2023-04-15 12:00+0000\n"
+"POT-Creation-Date: 2023-04-15 12:00+0900\n"
+"PO-Revision-Date: 2023-04-15 12:00+0900\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language: ja\n"
 "Language-Team: ja <LL@li.org>\n"
-"Plural-Forms: nplurals=1; plural=0\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Generated-By: Babel 2.9.1\n"
+"Generated-By: Babel 2.12.1\n"
 
-msgid "Visitor Counter"
-msgstr "訪問者カウンター"
+#: templates/api-docs.html:3
+msgid "API Documentation - Visitor Counter"
+msgstr "API ドキュメント - 訪問者カウンター"
 
-msgid "Home"
-msgstr "ホーム"
+#: templates/api-docs.html:4
+msgid "Complete documentation for our visitor counter API. Track website visitors, retrieve statistics, and integrate with any website at no cost."
+msgstr "訪問者カウンターAPIの完全なドキュメント。ウェブサイトの訪問者を追跡し、統計を取得し、無料で任意のウェブサイトと統合します。"
 
-msgid "API Docs"
-msgstr "API ドキュメント"
+#: templates/api-docs.html:8
+msgid "Visitor Counter API Documentation"
+msgstr "訪問者カウンターAPI ドキュメント"
 
-msgid "Dashboard"
-msgstr "ダッシュボード"
+#: templates/api-docs.html:9
+msgid "Our API allows you to track visitors to your website and retrieve visitor statistics at no cost. No API keys, no rate limits, no premium features - just a simple, free API."
+msgstr "私たちのAPIを使用すると、ウェブサイトの訪問者を追跡し、訪問者統計を無料で取得できます。APIキーなし、レート制限なし、プレミアム機能なし - シンプルで無料のAPIだけです。"
 
-msgid "Track Your Website Visitors"
-msgstr "ウェブサイトの訪問者を追跡"
+#: templates/api-docs.html:13
+msgid "Introduction"
+msgstr "はじめに"
 
-msgid "A lightweight, easy-to-use visitor counter for your website with a beautiful dashboard and API."
-msgstr "美しいダッシュボードとAPIを備えた、軽量で使いやすいウェブサイト訪問者カウンター。"
+#: templates/api-docs.html:14
+msgid "The Visitor Counter API allows you to track visitors to your website and retrieve visitor statistics completely free of charge."
+msgstr "訪問者カウンターAPIを使用すると、ウェブサイトの訪問者を追跡し、訪問者統計を完全に無料で取得できます。"
 
-msgid "Get Started"
-msgstr "始める"
-
-msgid "View Dashboard"
-msgstr "ダッシュボードを見る"
-
-msgid "Features"
-msgstr "機能"
-
-msgid "Real-time Tracking"
-msgstr "リアルタイム追跡"
-
-msgid "Track visitors in real-time with accurate counting and duplicate prevention."
-msgstr "正確なカウントと重複防止機能で訪問者をリアルタイムに追跡します。"
-
-msgid "Responsive Dashboard"
-msgstr "レスポンシブダッシュボード"
-
-msgid "View your visitor statistics on any device with our responsive dashboard."
-msgstr "レスポンシブダッシュボードで、どのデバイスからでも訪問者統計を確認できます。"
-
-msgid "Easy Integration"
-msgstr "簡単な統合"
-
-msgid "Simple API makes it easy to integrate with any website or application."
-msgstr "シンプルなAPIで、どのウェブサイトやアプリケーションにも簡単に統合できます。"
-
-msgid "Multiple Websites"
-msgstr "複数のウェブサイト"
-
-msgid "Track visitors across multiple domains with a single account."
-msgstr "単一のアカウントで複数のドメインの訪問者を追跡します。"
-
-msgid "Multilingual Support"
-msgstr "多言語サポート"
-
-msgid "Available in English, Korean, and Japanese."
-msgstr "英語、韓国語、日本語で利用可能です。"
-
-msgid "Dark/Light Theme"
-msgstr "ダーク/ライトテーマ"
-
-msgid "Switch between dark and light themes for comfortable viewing."
-msgstr "快適な閲覧のためにダークテーマとライトテーマを切り替えることができます。"
-
-msgid "How It Works"
-msgstr "仕組み"
-
-msgid "Add the Script"
-msgstr "スクリプトを追加"
-
-msgid "Add our tracking script to your website."
-msgstr "ウェブサイトに追跡スクリプトを追加します。"
-
-msgid "Track Visitors"
-msgstr "訪問者を追跡"
-
-msgid "We automatically track unique visitors to your site."
-msgstr "サイトのユニーク訪問者を自動的に追跡します。"
-
-msgid "View your dashboard to see visitor statistics."
-msgstr "ダッシュボードで訪問者統計を確認します。"
-
-msgid "Ready to Get Started?"
-msgstr "始める準備はできましたか？"
-
-msgid "Start tracking your website visitors today."
-msgstr "今日からウェブサイトの訪問者追跡を始めましょう。"
-
-msgid "Get Started Now"
-msgstr "今すぐ始める"
-
-msgid "API Documentation"
-msgstr "API ドキュメント"
-
-msgid "The Visitor Counter API allows you to track visitors to your website and retrieve visitor statistics."
-msgstr "訪問者カウンターAPIを使用すると、ウェブサイトの訪問者を追跡し、訪問者統計を取得できます。"
-
+#: templates/api-docs.html:18
 msgid "Base URL"
 msgstr "ベースURL"
 
-msgid "Authentication"
-msgstr "認証"
+#: templates/api-docs.html:24
+msgid "Authentication - No API Key Required"
+msgstr "認証 - APIキー不要"
 
-msgid "No authentication is required for basic usage. Your domain is used as an identifier."
-msgstr "基本的な使用には認証は必要ありません。ドメインが識別子として使用されます。"
+#: templates/api-docs.html:25
+msgid "No authentication is required for basic usage. Your domain is used as an identifier. Our API has no usage limits."
+msgstr "基本的な使用には認証は必要ありません。ドメインが識別子として使用されます。私たちのAPIには使用制限はありません。"
 
-msgid "Endpoints"
-msgstr "エンドポイント"
+#: templates/api-docs.html:29
+msgid "API Endpoints"
+msgstr "APIエンドポイント"
 
+#: templates/api-docs.html:32
 msgid "Record a Visit"
-msgstr "訪問を記録"
+msgstr "訪問を記録する"
 
+#: templates/api-docs.html:36
 msgid "Records a visit to your website."
 msgstr "ウェブサイトへの訪問を記録します。"
 
+#: templates/api-docs.html:37 templates/api-docs.html:67
 msgid "Request Body"
 msgstr "リクエストボディ"
 
+#: templates/api-docs.html:46 templates/api-docs.html:76
 msgid "Response"
 msgstr "レスポンス"
 
+#: templates/api-docs.html:54 templates/api-docs.html:84
 msgid "Example"
 msgstr "例"
 
+#: templates/api-docs.html:62
 msgid "Get Visit Statistics"
-msgstr "訪問統計を取得"
+msgstr "訪問統計を取得する"
 
+#: templates/api-docs.html:66
 msgid "Retrieves visitor statistics for your website."
 msgstr "ウェブサイトの訪問者統計を取得します。"
 
-msgid "Query Parameters"
-msgstr "クエリパラメータ"
-
+#: templates/api-docs.html:92
 msgid "Integration"
 msgstr "統合"
 
+#: templates/api-docs.html:93
 msgid "To integrate the Visitor Counter with your website, add the following script to your HTML:"
 msgstr "訪問者カウンターをウェブサイトに統合するには、次のスクリプトをHTMLに追加してください："
 
-msgid "Error Handling"
-msgstr "エラー処理"
-
-msgid "The API returns standard HTTP status codes:"
-msgstr "APIは標準のHTTPステータスコードを返します："
-
-msgid "The request was successful."
-msgstr "リクエストは成功しました。"
-
-msgid "The request was invalid."
-msgstr "リクエストが無効です。"
-
-msgid "The requested resource was not found."
-msgstr "要求されたリソースが見つかりませんでした。"
-
-msgid "An error occurred on the server."
-msgstr "サーバーでエラーが発生しました。"
-
-msgid "Rate Limiting"
-msgstr "レート制限"
-
-msgid "The API is rate limited to 100 requests per minute per IP address."
-msgstr "APIはIPアドレスごとに1分間に100リクエストに制限されています。"
-
-msgid "Login"
-msgstr "ログイン"
-
-msgid "Access Dashboard"
-msgstr "ダッシュボードにアクセス"
-
-msgid "Enter your website domain to view your visitor statistics."
-msgstr "訪問者統計を表示するには、ウェブサイトのドメインを入力してください。"
-
-msgid "Website Domain"
-msgstr "ウェブサイトドメイン"
-
-msgid "or"
-msgstr "または"
-
-msgid "Coming soon: User accounts for managing multiple websites."
-msgstr "近日公開：複数のウェブサイトを管理するためのユーザーアカウント。"
-
-msgid "Dashboard for"
-msgstr "ダッシュボード："
-
-msgid "Date Range"
-msgstr "日付範囲"
-
-msgid "Today"
-msgstr "今日"
-
-msgid "Yesterday"
-msgstr "昨日"
-
-msgid "This Week"
-msgstr "今週"
-
-msgid "This Month"
-msgstr "今月"
-
-msgid "This Year"
-msgstr "今年"
-
-msgid "All Time"
-msgstr "全期間"
-
-msgid "Total Visitors"
-msgstr "総訪問者数"
-
-msgid "today"
-msgstr "今日"
-
-msgid "Since"
-msgstr "以降"
-
-msgid "vs last week"
-msgstr "先週比"
-
-msgid "vs last month"
-msgstr "先月比"
-
-msgid "Visitor Trends"
-msgstr "訪問者傾向"
-
-msgid "Integration Code"
-msgstr "統合コード"
-
-msgid "Tracking Code"
-msgstr "トラッキングコード"
-
-msgid "Display Widget"
-msgstr "表示ウィジェット"
-
+#: templates/api-docs.html:138
 msgid "Copy Code"
 msgstr "コードをコピー"
 
+#: templates/api-docs.html:140
+msgid "For more detailed installation instructions, see our"
+msgstr "より詳細なインストール手順については、次を参照してください"
+
+#: templates/api-docs.html:140
+msgid "Installation Guide"
+msgstr "インストールガイド"
+
+#: templates/api-docs.html:144
+msgid "NPM Package"
+msgstr "NPMパッケージ"
+
+#: templates/api-docs.html:145
+msgid "We also offer an NPM package for easier integration:"
+msgstr "より簡単な統合のためにNPMパッケージも提供しています："
+
+#: templates/api-docs.html:150
+msgid "For more information about our NPM package, visit our"
+msgstr "NPMパッケージの詳細については、次を参照してください"
+
+#: templates/api-docs.html:150
+msgid "GitHub repository"
+msgstr "GitHubリポジトリ"
+
+#: templates/api-docs.html:154
+msgid "Error Handling"
+msgstr "エラー処理"
+
+#: templates/api-docs.html:155
+msgid "The API returns standard HTTP status codes:"
+msgstr "APIは標準のHTTPステータスコードを返します："
+
+#: templates/api-docs.html:157
+msgid "The request was successful."
+msgstr "リクエストは成功しました。"
+
+#: templates/api-docs.html:158
+msgid "The request was invalid."
+msgstr "リクエストが無効でした。"
+
+#: templates/api-docs.html:159
+msgid "The requested resource was not found."
+msgstr "要求されたリソースが見つかりませんでした。"
+
+#: templates/api-docs.html:160
+msgid "An error occurred on the server."
+msgstr "サーバーでエラーが発生しました。"
+
+#: templates/api-docs.html:162
+msgid "Error Response Format"
+msgstr "エラーレスポンス形式"
+
+#: templates/api-docs.html:170
+msgid "Rate Limiting - Generous Limits"
+msgstr "レート制限 - 寛大な制限"
+
+#: templates/api-docs.html:171
+msgid "The API is rate limited to 100 requests per minute per IP address, which is more than enough for most websites."
+msgstr "APIはIPアドレスごとに1分あたり100リクエストに制限されていますが、これはほとんどのウェブサイトにとって十分すぎるほどです。"
+
+#: templates/api-docs.html:172
+msgid "If you exceed this limit, you will receive a 429 Too Many Requests response."
+msgstr "この制限を超えると、429 Too Many Requestsレスポンスを受け取ります。"
+
+#: templates/api-docs.html:176
+msgid "CORS Policy"
+msgstr "CORSポリシー"
+
+#: templates/api-docs.html:177
+msgid "Our API allows cross-origin requests from any domain."
+msgstr "私たちのAPIは、任意のドメインからのクロスオリジンリクエストを許可しています。"
+
+#: templates/api-docs.html:181
+msgid "Ready to Get Started?"
+msgstr "始める準備はできましたか？"
+
+#: templates/api-docs.html:182
+msgid "Start tracking your website visitors today."
+msgstr "今日からウェブサイトの訪問者を追跡しましょう。"
+
+#: templates/api-docs.html:184
+msgid "View Dashboard"
+msgstr "ダッシュボードを表示"
+
+#: templates/api-docs.html:198
 msgid "Copied!"
 msgstr "コピーしました！"
 
-msgid "visitors"
-msgstr "訪問者"
+#: templates/dashboard.html:3
+msgid "Free Dashboard"
+msgstr "無料ダッシュボード"
 
-msgid "Visitors"
-msgstr "訪問者"
+#: templates/dashboard.html:8
+msgid "Week"
+msgstr "週"
 
-msgid "Not Found"
-msgstr "見つかりません"
+#: templates/dashboard.html:9
+msgid "Month"
+msgstr "月"
 
-msgid "Website Not Found"
-msgstr "ウェブサイトが見つかりません"
+#: templates/dashboard.html:10
+msgid "Year"
+msgstr "年"
 
-msgid "We couldn't find any visitor data for the domain you entered."
-msgstr "入力されたドメインの訪問者データが見つかりませんでした。"
+#: templates/dashboard.html:11
+msgid "All"
+msgstr "すべて"
 
-msgid "This could be because:"
-msgstr "これは以下の理由が考えられます："
+#: templates/dashboard.html:20
+msgid "Total Visitors"
+msgstr "総訪問者数"
 
-msgid "The domain has not been registered with our service yet."
-msgstr "ドメインがまだサービスに登録されていません。"
+#: templates/dashboard.html:29
+msgid "Today"
+msgstr "今日"
 
-msgid "You may have mistyped the domain name."
-msgstr "ドメイン名を誤入力した可能性があります。"
+#: templates/dashboard.html:32
+msgid "vs yesterday"
+msgstr "昨日比"
 
-msgid "The tracking script has not been installed on your website."
-msgstr "ウェブサイトに追跡スクリプトがインストールされていません。"
+#: templates/dashboard.html:41
+msgid "This Week"
+msgstr "今週"
 
-msgid "Try Again"
-msgstr "再試行"
+#: templates/dashboard.html:44
+msgid "vs last week"
+msgstr "先週比"
 
+#: templates/dashboard.html:53
+msgid "This Month"
+msgstr "今月"
+
+#: templates/dashboard.html:56
+msgid "vs last month"
+msgstr "先月比"
+
+#: templates/dashboard.html:65
+msgid "Recent Posts"
+msgstr "最近の投稿"
+
+#: templates/dashboard.html:70
+msgid "Title"
+msgstr "タイトル"
+
+#: templates/dashboard.html:71
+msgid "URL Path"
+msgstr "URLパス"
+
+#: templates/dashboard.html:72
+msgid "Referrer"
+msgstr "リファラー"
+
+#: templates/dashboard.html:73
+msgid "Search Query"
+msgstr "検索クエリ"
+
+#: templates/dashboard.html:74
+msgid "Time"
+msgstr "時間"
+
+#: templates/dashboard.html:82
+msgid "No Title"
+msgstr "タイトルなし"
+
+#: templates/dashboard.html:84
+msgid "Direct"
+msgstr "直接"
+
+#: templates/dashboard.html:89
+msgid "No recent posts"
+msgstr "最近の投稿はありません"
+
+#: templates/dashboard.html:98
+msgid "Visitor Trends"
+msgstr "訪問者トレンド"
+
+#: templates/dashboard.html:104
+msgid "Popular Posts"
+msgstr "人気の投稿"
+
+#: templates/dashboard.html:111 templates/dashboard.html:130 templates/dashboard.html:149 templates/dashboard.html:168
+msgid "Visits"
+msgstr "訪問"
+
+#: templates/dashboard.html:122
+msgid "No popular posts this week"
+msgstr "今週の人気投稿はありません"
+
+#: templates/dashboard.html:141
+msgid "No popular posts this month"
+msgstr "今月の人気投稿はありません"
+
+#: templates/dashboard.html:160
+msgid "No popular posts this year"
+msgstr "今年の人気投稿はありません"
+
+#: templates/dashboard.html:179
+msgid "No popular posts"
+msgstr "人気の投稿はありません"
+
+#: templates/dashboard.html:187
+msgid "Visitor Sources"
+msgstr "訪問者ソース"
+
+#: templates/dashboard.html:271
+msgid "Weekly Visitors"
+msgstr "週間訪問者"
+
+#: templates/dashboard.html:276
+msgid "Monthly Visitors"
+msgstr "月間訪問者"
+
+#: templates/dashboard.html:281
+msgid "Yearly Visitors"
+msgstr "年間訪問者"
+
+#: templates/dashboard.html:286
+msgid "All Time Visitors"
+msgstr "全期間訪問者"
+
+#: templates/dashboard.html:294
+msgid "No data available for this range."
+msgstr "この範囲のデータはありません。"
+
+#: templates/dashboard.html:394
+msgid "No referrer data available."
+msgstr "リファラーデータはありません。"
+
+#: templates/error.html:3 templates/error.html:11
 msgid "Error"
 msgstr "エラー"
 
+#: templates/error.html:3 templates/login.html:3
+msgid "Free Visitor Counter"
+msgstr "無料訪問者カウンター"
+
+#: templates/error.html:13
 msgid "The page you are looking for does not exist."
 msgstr "お探しのページは存在しません。"
 
+#: templates/error.html:15
 msgid "An internal server error occurred."
 msgstr "内部サーバーエラーが発生しました。"
 
+#: templates/error.html:17
 msgid "An error occurred."
 msgstr "エラーが発生しました。"
 
+#: templates/error.html:21
 msgid "Go Home"
 msgstr "ホームに戻る"
 
+#: templates/error.html:22
 msgid "Go Back"
 msgstr "戻る"
 
-msgid "Visitor Counter. All rights reserved."
-msgstr "訪問者カウンター。全著作権所有。"
+#: templates/index.html:3
+msgid "Visitor Counter - 100% Free Website Analytics Tool"
+msgstr "訪問者カウンター - 100%無料ウェブサイト分析ツール"
+
+#: templates/index.html:4
+msgid "A completely free, lightweight visitor counter for your website with a beautiful dashboard and API. No hidden costs, no premium features."
+msgstr "美しいダッシュボードとAPIを備えた、完全に無料の軽量な訪問者カウンター。隠れたコストやプレミアム機能はありません。"
+
+#: templates/index.html:9
+msgid "100% Free Website Visitor Counter"
+msgstr "100%無料ウェブサイト訪問者カウンター"
+
+#: templates/index.html:10
+msgid "A lightweight visitor counter for your website with a beautiful dashboard and API. No hidden costs, no premium features, just completely free."
+msgstr "美しいダッシュボードとAPIを備えた、ウェブサイト用の軽量訪問者カウンター。隠��たコストやプレミアム機能はなく、完全に無料です。"
+
+#: templates/index.html:12
+msgid "Get Started"
+msgstr "始める"
+
+#: templates/index.html:18
+msgid "Features - No Premium Tiers"
+msgstr "機能 - プレミアム層なし"
+
+#: templates/index.html:24
+msgid "Real-time Tracking"
+msgstr "リアルタイム追跡"
+
+#: templates/index.html:25
+msgid "Track visitors in real-time with accurate counting and duplicate prevention."
+msgstr "正確なカウントと重複防止機能を備えたリアルタイムの訪問者追跡。"
+
+#: templates/index.html:31
+msgid "Responsive Dashboard"
+msgstr "レスポンシブダッシュボード"
+
+#: templates/index.html:32
+msgid "View your visitor statistics on any device with our responsive dashboard."
+msgstr "レスポンシブダッシュボードで任意のデバイスから訪問者統計を表示。"
+
+#: templates/index.html:38
+msgid "Easy Integration"
+msgstr "簡単な統合"
+
+#: templates/index.html:39
+msgid "Simple API makes it easy to integrate with any website or application."
+msgstr "シンプルなAPIで任意のウェブサイトやアプリケーションと簡単に統合。"
+
+#: templates/index.html:45
+msgid "Multiple Websites"
+msgstr "複数のウェブサイト"
+
+#: templates/index.html:46
+msgid "Track visitors across multiple domains with a single account."
+msgstr "単一のアカウントで複数のドメインにわたる訪問者を追跡。"
+
+#: templates/index.html:52
+msgid "Multilingual Support"
+msgstr "多言語サポート"
+
+#: templates/index.html:53
+msgid "Available in English, Korean, and Japanese."
+msgstr "英語、韓国語、日本語で利用可能。"
+
+#: templates/index.html:59
+msgid "Dark/Light Theme"
+msgstr "ダーク/ライトテーマ"
+
+#: templates/index.html:60
+msgid "Switch between dark and light themes for comfortable viewing."
+msgstr "快適な閲覧のためにダークテーマとライトテーマを切り替え。"
+
+#: templates/index.html:67
+msgid "How It Works"
+msgstr "仕組み"
+
+#: templates/index.html:71
+msgid "Add the Script"
+msgstr "スクリプトを追加"
+
+#: templates/index.html:72
+msgid "Add our tracking script to your website."
+msgstr "ウェブサイトに追跡スクリプトを追加します。"
+
+#: templates/index.html:76
+msgid "Track Visitors"
+msgstr "訪問者を追跡"
+
+#: templates/index.html:77
+msgid "We automatically track unique visitors to your site."
+msgstr "サイトへのユニーク訪問者を自動的に追跡します。"
+
+#: templates/index.html:81
+msgid "View Dashboard"
+msgstr "ダッシュボードを表示"
+
+#: templates/index.html:82
+msgid "Access your dashboard to see visitor statistics."
+msgstr "ダッシュボードにアクセスして訪問者統計を確認します。"
+
+#: templates/index.html:89
+msgid "Ready to Get Started?"
+msgstr "始める準備はできましたか？"
+
+#: templates/index.html:90
+msgid "Start tracking your website visitors today at no cost."
+msgstr "今日から無料でウェブサイトの訪問者の追跡を開始しましょう。"
+
+#: templates/index.html:91
+msgid "Get Started Now"
+msgstr "今すぐ始める"
+
+#: templates/index.html:96
+msgid "Frequently Asked Questions"
+msgstr "よくある質問"
+
+#: templates/index.html:99
+msgid "Is this visitor counter really 100% free?"
+msgstr "この訪問者カウンターは本当に100%無料ですか？"
+
+#: templates/index.html:100
+msgid "Yes, our visitor counter is completely free. There are no hidden costs, premium features, or paid tiers. Everything is available at no cost."
+msgstr "はい、私たちの訪問者カウンターは完全に無料です。隠れたコスト、プレミアム機能、有料層はありません。すべてが無料で利用可能です。"
+
+#: templates/index.html:104
+msgid "How accurate is the visitor counter?"
+msgstr "訪問者カウンターはどれくらい正確ですか？"
+
+#: templates/index.html:105
+msgid "Our counter uses advanced techniques to ensure accurate counting. We prevent duplicate counts from the same visitor within a 20-minute window and track unique visitors based on their IP and user agent."
+msgstr "私たちのカウンターは正確なカウントを確保するために高度な技術を使用しています。20分以内の同じ訪問者からの重複カウントを防止し、IPとユーザーエージェントに基づいてユニーク訪問者を追跡します。"
+
+#: templates/index.html:109
+msgid "Can I track multiple websites?"
+msgstr "複数のウェブサイトを追跡できますか？"
+
+#: templates/index.html:110
+msgid "Yes, you can track as many websites as you want. Each domain is tracked separately, and you can access statistics for each site individually."
+msgstr "はい、好きなだけ多くのウェブサイトを追跡できます。各ドメインは個別に追跡され、各サイトの統計に個別にアクセスできます。"
+
+#: templates/index.html:114
+msgid "Does the visitor counter slow down my website?"
+msgstr "訪問者カウンターは私のウェブサイトを遅くしますか？"
+
+#: templates/index.html:115
+msgid "No, our script is extremely lightweight and loads asynchronously, so it will not affect your website's performance or loading speed."
+msgstr "いいえ、私たちのスクリプトは非常に軽量で非同期に読み込まれるため、ウェブサイトのパフォーマンスや読み込み速度に影響を与えません。"
+
+#: templates/index.html:119
+msgid "What statistics does the dashboard show?"
+msgstr "ダッシュボードはどのような統計を表示しますか？"
+
+#: templates/index.html:120
+msgid "Our dashboard shows total visitor count, today's visitors, weekly and monthly trends, popular pages, referrer sources, and search queries."
+msgstr "私たちのダッシュボードは、総訪問者数、今日の訪問者、週間および月間のトレンド、人気のページ、リファラーソース、検索クエリを表示します。"
+
+#: templates/installation.html:3
+msgid "Installation Guide - Visitor Counter Setup"
+msgstr "インストールガイド - 訪問者カウンターのセットアップ"
+
+#: templates/installation.html:4
+msgid "Complete installation guide for our visitor counter. Easy setup instructions to add a visitor counter to any website in minutes."
+msgstr "訪問者カウンターの完全なインストールガイド。数分で任意のウェブサイトに訪問者カウンターを追加するための簡単なセットアップ手順。"
+
+#: templates/installation.html:8
+msgid "Visitor Counter Installation Guide - 100% Free Forever"
+msgstr "訪問者カウンターインストールガイド - 永久に100%無料"
+
+#: templates/installation.html:10
+msgid "Quick Start"
+msgstr "クイックスタート"
+
+#: templates/installation.html:11
+msgid "Follow these simple steps to add the visitor counter to your website:"
+msgstr "次の簡単な手順に従って、ウェブサイトに訪問者カウンターを追加してください："
+
+#: templates/installation.html:14
+msgid "Add the Script to Your Website"
+msgstr "ウェブサイトにスクリプトを追加する"
+
+#: templates/installation.html:15
+msgid "Copy and paste the following script into your HTML, just before the closing body tag:"
+msgstr "次のスクリプトをHTMLの閉じるbodyタグの直前にコピーして貼り付けてください："
+
+#: templates/installation.html:64
+msgid "Display the Counter (Optional)"
+msgstr "カウンターを表示する（オプション）"
+
+#: templates/installation.html:65
+msgid "If you want to display the visitor count on your page, add this HTML where you want the counter to appear:"
+msgstr "ページに訪問者数を表示したい場合は、カウンターを表示したい場所にこのHTMLを追加してください："
+
+#: templates/installation.html:68
+msgid "Visitors:"
+msgstr "訪問者："
+
+#: templates/installation.html:77
+msgid "Access Your Dashboard"
+msgstr "ダッシュボードにアクセスする"
+
+#: templates/installation.html:78
+msgid "Visit your dashboard to see detailed visitor statistics:"
+msgstr "詳細な訪問者統計を確認するためにダッシュボードを訪問してください："
+
+#: templates/installation.html:79
+msgid "Go to Dashboard"
+msgstr "ダッシュボードに移動"
+
+#: templates/installation.html:85
+msgid "Advanced Installation Options"
+msgstr "高度なインストールオプション"
+
+#: templates/installation.html:87
+msgid "Using NPM Package"
+msgstr "NPMパッケージの使用"
+
+#: templates/installation.html:88
+msgid "Install our official NPM package for easier integration with JavaScript frameworks:"
+msgstr "JavaScriptフレームワークとの簡単な統合のために公式NPMパッケージをインストールしてください："
+
+#: templates/installation.html:93
+msgid "Then import and use it in your code:"
+msgstr "そしてコードにインポートして使用してください："
+
+#: templates/installation.html:123
+msgid "For more information, visit the"
+msgstr "詳細については、次を参照してください"
+
+#: templates/installation.html:127
+msgid "Custom Implementation"
+msgstr "カスタム実装"
+
+#: templates/installation.html:128
+msgid "For custom implementations, you can use our API directly:"
+msgstr "カスタム実装のために、APIを直接使用できます："
+
+#: templates/installation.html:155
+msgid "Troubleshooting"
+msgstr "トラブルシューティング"
+
+#: templates/installation.html:157
+msgid "The counter is not updating"
+msgstr "カウンターが更新されない"
+
+#: templates/installation.html:158
+msgid "Make sure your domain is correctly detected. Check the browser console for any errors."
+msgstr "ドメインが正しく検出されていることを確認してください。ブラウザコンソールでエラーを確認してください。"
+
+#: templates/installation.html:161
+msgid "CORS errors in console"
+msgstr "コンソールのCORSエラー"
+
+#: templates/installation.html:162
+msgid "Our API allows cross-origin requests. If you're seeing CORS errors, it might be due to network restrictions or browser extensions."
+msgstr "私たちのAPIはクロスオリジンリクエストを許可しています。CORSエラーが表示される場合は、ネットワーク制限やブラウザ拡張機能が原因かもしれません。"
+
+#: templates/installation.html:165
+msgid "Need more help?"
+msgstr "さらに助けが必要ですか？"
+
+#: templates/installation.html:166
+msgid "Please open an issue on our"
+msgstr "次の場所で問題を開いてください"
+
+#: templates/installation.html:171
+msgid "Frequently Asked Questions About Installation"
+msgstr "インストールに関するよくある質問"
+
+#: templates/installation.html:173
+msgid "Is this visitor counter really free to install?"
+msgstr "この訪問者カウンターは本当に無料でインストールできますか？"
+
+#: templates/installation.html:174
+msgid "Yes, our visitor counter is completely free to install and use. There are no hidden costs, premium features, or paid tiers."
+msgstr "はい、私たちの訪問者カウンターは完全に無料でインストールして使用できます。隠れたコスト、プレミアム機能、有料層はありません。"
+
+#: templates/installation.html:177
+msgid "Do I need to create an account to use the counter?"
+msgstr "カウンターを使用するためにアカウントを作成する必要がありますか？"
+
+#: templates/installation.html:178
+msgid "No, you don't need to create an account. Simply add the script to your website and it will start tracking visitors immediately."
+msgstr "いいえ、アカウントを作成する必要はありません。ウェブサイトにスクリプトを追加するだけで、すぐに訪問者の追跡を開始します。"
+
+#: templates/installation.html:181
+msgid "Will the counter work with any website?"
+msgstr "カウンターはどのウェブサイトでも動作しますか？"
+
+#: templates/installation.html:182
+msgid "Yes, our visitor counter works with any website, regardless of the platform or technology used. It's compatible with WordPress, Shopify, Wix, custom HTML sites, and more."
+msgstr "はい、私たちの訪問者カウンターは、使用されているプラットフォームや技術に関係なく、どのウェブサイトでも動作します。WordPress、Shopify、Wix、カスタムHTMLサイトなどと互換性があります。"
+
+#: templates/installation.html:185
+msgid "How do I customize the appearance of the counter?"
+msgstr "カウンターの外観をどのようにカスタマイズしますか？"
+
+#: templates/installation.html:186
+msgid "You can customize the appearance of the counter by styling the HTML element that displays the count. You can use CSS to change the font, color, size, and more."
+msgstr "カウントを表示するHTML要素のスタイルを設定することで、カウンターの外観をカスタマイズできます。CSSを使用してフォント、色、サイズなどを変更できます。"
+
+#: templates/installation.html:189
+msgid "Can I use the counter with a single-page application (SPA)?"
+msgstr "シングルページアプリケーション（SPA）でカウンターを使用できますか？"
+
+#: templates/installation.html:190
+msgid "Yes, our visitor counter works with single-page applications. You can use our NPM package for easier integration with React, Vue, Angular, and other JavaScript frameworks."
+msgstr "はい、私たちの訪問者カウンターはシングルページアプリケーションで動作します。React、Vue、Angular、その他のJavaScriptフレームワークとの簡単な統合のために、NPMパッケージを使用できます。"
+
+#: templates/login.html:3
+msgid "Dashboard Login - Access Your Visitor Statistics"
+msgstr "ダッシュボードログイン - 訪問者統計にアクセス"
+
+#: templates/login.html:4
+msgid "Access your visitor counter dashboard. View detailed statistics about your website visitors at no cost - completely free with no registration required."
+msgstr "訪問者カウンターダッシュボードにアクセスしてください。ウェブサイトの訪問者に関する詳細な統計を無料で表示 - 登録不要で完全に無料です。"
+
+#: templates/login.html:9
+msgid "Access Your Dashboard"
+msgstr "ダッシュボードにアクセスする"
+
+#: templates/login.html:10
+msgid "Enter your website domain to view your visitor statistics. No registration or payment required - completely free."
+msgstr "訪問者統計を表示するにはウェブサイトのドメインを入力してください。登録や支払いは不要 - 完全に無料です。"
+
+#: templates/login.html:13
+msgid "Website Domain"
+msgstr "ウェブサイトドメイン"
+
+#: templates/login.html:18
+msgid "or"
+msgstr "または"
+
+#: templates/login.html:20
+msgid "Coming soon: User accounts for managing multiple websites."
+msgstr "近日公開：複数のウェブサイトを管理するためのユーザーアカウント。"
+
+#: templates/login.html:23
+msgid "Benefits of Our Visitor Counter Dashboard"
+msgstr "私たちの訪問者カウンターダッシュボードの利点"
+
+#: templates/login.html:25
+msgid "100% Free: No hidden costs or premium features"
+msgstr "100%無料：隠れたコストやプレミアム機能なし"
+
+#: templates/login.html:26
+msgid "Real-time Statistics: See visitor data as it happens"
+msgstr "リアルタイム統計：訪問者データをリアルタイムで確認"
+
+#: templates/login.html:27
+msgid "Detailed Analytics: View trends, popular pages, and referrers"
+msgstr "詳細な分析：トレンド、人気ページ、リファラーを表示"
+
+#: templates/login.html:28
+msgid "No Registration: Just enter your domain to access"
+msgstr "登録不要：アクセスするにはドメインを入力するだけ"
+
+#: templates/login.html:29
+msgid "Mobile Friendly: Check stats on any device"
+msgstr "モバイルフレンドリー：どのデバイスでも統計を確認"
+
+#: templates/not-found.html:3
+msgid "Not Found"
+msgstr "見つかりません"
+
+#: templates/not-found.html:9
+msgid "Website Not Found"
+msgstr "ウェブサイトが見つかりません"
+
+#: templates/not-found.html:10
+msgid "We couldn't find any visitor data for the domain you entered."
+msgstr "入力されたドメインの訪問者データが見つかりませんでした。"
+
+#: templates/not-found.html:11
+msgid "This could be because:"
+msgstr "これは次の理由によるものかもしれません："
+
+#: templates/not-found.html:13
+msgid "The domain has not been registered with our service yet."
+msgstr "ドメインがまだ私たちのサービスに登録されていません。"
+
+#: templates/not-found.html:14
+msgid "You may have mistyped the domain name."
+msgstr "ドメイン名を誤って入力した可能性があります。"
+
+#: templates/not-found.html:15
+msgid "The tracking script has not been installed on your website."
+msgstr "追跡スクリプトがウェブサイトにインストールされていません。"
+
+#: templates/not-found.html:18
+msgid "Try Again"
+msgstr "再試行"
+
+#: templates/not-found.html:19
+msgid "View API Docs"
+msgstr "APIドキュメントを表示"
+
+#: templates/layout.html:3
+msgid "Visitor Counter - 100% Free Website Analytics"
+msgstr "訪問者カウンター - 100%無料ウェブサイト分析"
+
+#: templates/layout.html:4
+msgid "A completely free visitor counter for websites with a beautiful dashboard and API. No hidden costs, no premium features."
+msgstr "美しいダッシュボードとAPIを備えた、完全に無料のウェブサイト訪問者カウンター。隠れたコストやプレミアム機能はありません。"
+
+#: templates/layout.html:254
+msgid "Home"
+msgstr "ホーム"
+
+#: templates/layout.html:255
+msgid "Installation"
+msgstr "インストール"
+
+#: templates/layout.html:256
+msgid "Docs"
+msgstr "ドキュメント"
+
+#: templates/layout.html:257
+msgid "Dashboard"
+msgstr "ダッシュボード"
+
+#: templates/layout.html:280
+msgid "A lightweight visitor counter for websites with a beautiful dashboard and API. No hidden costs."
+msgstr "美しいダッシュボードとAPIを備えた、軽量なウェブサイト訪問者カウンター。隠れたコストはありません。"
+
+#: templates/layout.html:285
+msgid "Product"
+msgstr "製品"
+
+#: templates/layout.html:287
+msgid "Home"
+msgstr "ホーム"
+
+#: templates/layout.html:288
+msgid "Installation"
+msgstr "インストール"
+
+#: templates/layout.html:289
+msgid "API Docs"
+msgstr "APIドキュメント"
+
+#: templates/layout.html:290
+msgid "Dashboard"
+msgstr "ダッシュボード"
+
+#: templates/layout.html:294
+msgid "Connect"
+msgstr "接続"
+
+#: templates/layout.html:300
+msgid "Language"
+msgstr "言語"
+
+#: templates/layout.html:312
+msgid "All rights reserved."
+msgstr "全著作権所有。"
+
+#: templates/layout.html:313
+msgid "Visitor Counter - 100% Free Website Analytics"
+msgstr "訪問者カウンター - 100%無料ウェブサイト分析"

@@ -1,4 +1,4 @@
-# Free Visitor Counter (API, Dashboard)
+# Free Visitor Counter API with Dashboard
 > 🇰🇷 [한국어 README 보기](README.md)
 
 A lightweight, **free** visitor counter for websites with a beautiful dashboard and API.
@@ -98,42 +98,6 @@ Go to `https://visitor.6developer.com/login` and enter your domain to see your v
 ## 📦 NPM Package
 
 Use our official NPM package for easy integration with JavaScript frameworks:
-
-```bash
-npm install @rundevelrun/free-visitor-counter
-# or
-yarn add @rundevelrun/free-visitor-counter
-```
-
-### Using with React
-
-```jsx
-import { VisitorCounter } from '@rundevelrun/free-visitor-counter';
-
-function App() {
-  return (
-    <div>
-      <h1>My Website</h1>
-      <VisitorCounter />
-    </div>
-  );
-}
-```
-
-### Using with JavaScript
-
-```javascript
-import { trackVisit, displayCounter } from '@rundevelrun/free-visitor-counter';
-
-// Track visit
-trackVisit().then(data => {
-  console.log('Visitor count:', data);
-});
-
-// Display counter in element with id "visitor-counter"
-displayCounter('visitor-counter');
-```
-
 For more information, visit the [NPM package repository](https://github.com/rundevelrun/free-visitor-counter).
 
 ## 📊 API Documentation

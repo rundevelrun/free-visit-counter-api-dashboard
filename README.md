@@ -1,4 +1,4 @@
-# 무료 방문자 카운터 (API, 대시보드)
+# Free Visitor Counter API with Dashboard
 > 🇺🇸 [English README](README.en.md)
 
 웹사이트를 위한 가볍고 **완전 무료**인 방문자 카운터와 아름다운 대시보드, API를 제공합니다.
@@ -61,6 +61,7 @@
       } else if (url.hostname.includes('duckduckgo.com')) {
         search_query = url.searchParams.get('q') || '';
       }
+      // 원하는 검색 엔진 추가
     } catch (e) {
       // 유효하지 않은 URL, 무시
     }
@@ -97,43 +98,7 @@
 
 ## 📦 NPM 패키지
 
-JavaScript 프레임워크와 쉽게 통합할 수 있는 공식 NPM 패키지를 사용하세요:
-
-```bash
-npm install @rundevelrun/free-visitor-counter
-# 또는
-yarn add @rundevelrun/free-visitor-counter
-```
-
-### React에서 사용하기
-
-```jsx
-import { VisitorCounter } from '@rundevelrun/free-visitor-counter';
-
-function App() {
-  return (
-    <div>
-      <h1>내 웹사이트</h1>
-      <VisitorCounter />
-    </div>
-  );
-}
-```
-
-### JavaScript에서 사용하기
-
-```javascript
-import { trackVisit, displayCounter } from '@rundevelrun/free-visitor-counter';
-
-// 방문 추적
-trackVisit().then(data => {
-  console.log('방문자 수:', data);
-});
-
-// "visitor-counter" ID를 가진 요소에 카운터 표시
-displayCounter('visitor-counter');
-```
-
+JavaScript 프레임워크와 쉽게 통합할 수 있는 공식 NPM 패키지를 사용하세요
 자세한 정보는 [NPM 패키지 저장소](https://github.com/rundevelrun/free-visitor-counter)를 참조하세요.
 
 ## 📊 API 문서

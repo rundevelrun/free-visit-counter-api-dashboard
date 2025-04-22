@@ -98,6 +98,7 @@ Go to `https://visitor.6developer.com/login` and enter your domain to see your v
 ## 📦 NPM Package
 
 Use our official NPM package for easy integration with JavaScript frameworks:
+
 For more information, visit the [NPM package repository](https://github.com/rundevelrun/free-visitor-counter).
 
 ## 📊 API Documentation

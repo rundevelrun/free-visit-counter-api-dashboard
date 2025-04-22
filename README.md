@@ -99,6 +99,7 @@
 ## 📦 NPM 패키지
 
 JavaScript 프레임워크와 쉽게 통합할 수 있는 공식 NPM 패키지를 사용하세요
+
 자세한 정보는 [NPM 패키지 저장소](https://github.com/rundevelrun/free-visitor-counter)를 참조하세요.
 
 ## 📊 API 문서

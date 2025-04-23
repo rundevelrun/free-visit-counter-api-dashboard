@@ -8,13 +8,26 @@
         <div class="auth-form">
             <h1>{{ _('Access Your Dashboard') }}</h1>
             <p>{{ _('Enter your website domain to view your visitor statistics. No registration or payment required - completely free.') }}</p>
-            <form action="{{ url_for('dashboard') }}" method="get">
+            <form action="{{ url_for('dashboard') }}" method="get" id="login-form">
                 <div class="form-group">
                     <label for="domain">{{ _('Website Domain') }}</label>
                     <input id="domain" name="domain" placeholder="example.com" required type="text"/>
                 </div>
+                <input type="hidden" id="timezone" name="timezone" value="UTC">
                 <button class="btn btn-primary btn-block" type="submit">{{ _('View Dashboard') }}</button>
             </form>
         </div>
     </div>
+
+    <script>
+        // 사용자의 시간대 정보를 자동으로 감지하여 폼에 추가
+        document.addEventListener('DOMContentLoaded', function() {
+            try {
+                const timezone = Intl.DateTimeFormat().resolvedOptions().timeZone;
+                document.getElementById('timezone').value = timezone;
+            } catch (e) {
+                console.error('Failed to detect timezone:', e);
+            }
+        });
+    </script>
 {% endblock %}

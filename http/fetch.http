@@ -3,11 +3,14 @@ Content-Type: application/json
 
 {
   "domain": "6developer.com",
-  "timezone": "Asia/Seoul",
-  "page_path": "/spring-jwt-aop-log-null-error",
-  "page_title": "Spring AOP + JWT logger is null 수정",
-  "referrer": "https://google.com",
-  "search_query": "spring jwt"
+  "timezone": "Asia/Seoul"
 }
+
+###
+
+GET http://127.0.0.1:5000/visit?domain=6developer.com
+Content-Type: application/json
+
+{}
 
 ###

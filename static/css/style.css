@@ -1178,7 +1178,15 @@ ol {
 }
 
 .ellipsis-table td {
-    white-space: nowrap; /* 텍스트가 한 줄로 표시되도록 */
-    overflow: hidden; /* 넘치는 텍스트는 잘리도록 */
-    text-overflow: ellipsis; /* 잘린 텍스트에 '...'을 표시 */
+  white-space: nowrap; /* 텍스트가 한 줄로 표시되도록 */
+  overflow: hidden; /* 넘치는 텍스트는 잘리도록 */
+  text-overflow: ellipsis; /* 잘린 텍스트에 '...'을 표시 */
+}
+
+/* 인기페이지 및 최근 방문 페이지 테이블의 텍스트 처리를 위한 CSS 추가 */
+.ellipsis-table td {
+  white-space: nowrap; /* 텍스트가 한 줄로 표시되도록 */
+  overflow: hidden; /* 넘치는 텍스트는 잘리도록 */
+  text-overflow: ellipsis; /* 잘린 텍스트에 '...'을 표시 */
+  max-width: 250px; /* 최대 너비 설정 */
 }

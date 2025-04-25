@@ -135,8 +135,8 @@
                     <tbody>
                         {% for post in popular_posts_week %}
                         <tr>
-                            <td>{{ post.page_title or _('No Title') }}</td>
-                            <td>{{ post.page_path }}</td>
+                            <td title="{{ post.page_title or _('No Title') }}">{{ post.page_title or _('No Title') }}</td>
+                            <td title="{{ post.page_path }}">{{ post.page_path }}</td>
                             <td>{{ post.visit_count }}</td>
                         </tr>
                         {% else %}
@@ -148,7 +148,7 @@
                 </table>
             </div>
             <div class="table-container view-month" style="display: none;">
-                <table class="data-table">
+                <table class="data-table ellipsis-table">
                     <thead>
                         <tr>
                             <th>{{ _('Title') }}</th>
@@ -159,8 +159,8 @@
                     <tbody>
                         {% for post in popular_posts_month %}
                         <tr>
-                            <td>{{ post.page_title or _('No Title') }}</td>
-                            <td>{{ post.page_path }}</td>
+                            <td title="{{ post.page_title or _('No Title') }}">{{ post.page_title or _('No Title') }}</td>
+                            <td title="{{ post.page_path }}">{{ post.page_path }}</td>
                             <td>{{ post.visit_count }}</td>
                         </tr>
                         {% else %}
@@ -172,7 +172,7 @@
                 </table>
             </div>
             <div class="table-container view-year" style="display: none;">
-                <table class="data-table">
+                <table class="data-table ellipsis-table">
                     <thead>
                         <tr>
                             <th>{{ _('Title') }}</th>
@@ -183,8 +183,8 @@
                     <tbody>
                         {% for post in popular_posts_year %}
                         <tr>
-                            <td>{{ post.page_title or _('No Title') }}</td>
-                            <td>{{ post.page_path }}</td>
+                            <td title="{{ post.page_title or _('No Title') }}">{{ post.page_title or _('No Title') }}</td>
+                            <td title="{{ post.page_path }}">{{ post.page_path }}</td>
                             <td>{{ post.visit_count }}</td>
                         </tr>
                         {% else %}
@@ -196,7 +196,7 @@
                 </table>
             </div>
             <div class="table-container view-all" style="display: none;">
-                <table class="data-table">
+                <table class="data-table ellipsis-table">
                     <thead>
                         <tr>
                             <th>{{ _('Title') }}</th>
@@ -207,8 +207,8 @@
                     <tbody>
                         {% for post in popular_posts_all %}
                         <tr>
-                            <td>{{ post.page_title or _('No Title') }}</td>
-                            <td>{{ post.page_path }}</td>
+                            <td title="{{ post.page_title or _('No Title') }}">{{ post.page_title or _('No Title') }}</td>
+                            <td title="{{ post.page_path }}">{{ post.page_path }}</td>
                             <td>{{ post.visit_count }}</td>
                         </tr>
                         {% else %}

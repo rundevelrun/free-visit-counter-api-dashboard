@@ -732,12 +732,40 @@ def get_referrers(site_id, start_date=None, end_date=None, limit=10):
         VisitLog.referrer
     ).order_by(
         func.count(VisitLog.id).desc()
-    ).limit(limit).all()
+    ).all()
 
-    # Row 객체를 리스트로 변환 (referrer, count 튜플)
-    return [
-        [row.referrer, row.visit_count] for row in results
-    ]
+    # 도메인별로 그룹화
+    domain_counts = {}
+    for row in results:
+        referrer = row.referrer
+        count = row.visit_count
+
+        # 도메인 추출
+        domain = extract_domain(referrer)
+
+        # 도메인별로 카운트 합산
+        if domain in domain_counts:
+            domain_counts[domain] += count
+        else:
+            domain_counts[domain] = count
+
+    # 카운트 ���준으로 정렬하고 상위 N개 반환
+    sorted_domains = sorted(domain_counts.items(), key=lambda x: x[1], reverse=True)
+    return sorted_domains[:limit]
+
+
+def extract_domain(url):
+    """URL에서 도메인만 추출"""
+    if not url:
+        return None  # 직접 방문인 경우
+
+    try:
+        from urllib.parse import urlparse
+        parsed_url = urlparse(url)
+        return parsed_url.netloc or url  # netloc이 없으면 원래 URL 반환
+    except:
+        # URL 파싱 실패 시 원래 값 반환
+        return url
 
 
 def get_recent_posts(site_id, limit=10):

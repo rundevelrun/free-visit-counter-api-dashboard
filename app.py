@@ -665,8 +665,10 @@ def record_visit():
                 func.date(VisitLog.timestamp) == today
             ).scalar() or 0
 
-        # Update the site's today_count to match the actual count
-        site.today_count = today_count
+
+        # ✨ 여기 추가 (총 방문자 수 강제 갱신)
+        site.total_count = db.session.query(func.count(VisitLog.id)).filter_by(site_id=site.id).scalar()
+
         db.session.commit()
 
         return jsonify({

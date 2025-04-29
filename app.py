@@ -107,6 +107,8 @@ def dashboard():
     domain = request.args.get('domain')
     timezone = request.args.get('timezone', 'UTC')  # 시간대 파라미터 추가
 
+    timezone = 'UTC'
+
     if not domain:
         return redirect(url_for('login'))
 

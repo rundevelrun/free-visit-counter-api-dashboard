@@ -3,23 +3,6 @@
 {% block title %}{{ _('Free Dashboard') }} - {{ site.domain }}{% endblock %}
 
 {% block content %}
-    <script>
-     // 현재 페이지의 URL을 가져옵니다
-        const currentUrl = new URL(window.location.href);
-
-        // 시간대 정보가 없으면 자동으로 감지하여 추가합니다
-        if (!currentUrl.searchParams.has('timezone')) {
-            try {
-                const timezone = Intl.DateTimeFormat().resolvedOptions().timeZone;
-                currentUrl.searchParams.set('timezone', timezone);
-                // URL을 업데이트합니다
-                window.location.replace(currentUrl.toString());
-            } catch (e) {
-                console.error('Failed to detect timezone:', e);
-            }
-        }
-
-    </script>
     <div class="dashboard-container">
         <div class="dashboard-header">
             <h1>{{ site.domain }} {{ _('Free Dashboard') }} (Timezone: UTC)</h1>

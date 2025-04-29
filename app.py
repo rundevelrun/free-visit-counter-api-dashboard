@@ -130,7 +130,7 @@ def dashboard():
         yesterday = today - datetime.timedelta(days=1)
 
     # Current week (based on user timezone)
-    week_start = today - datetime.timedelta(days=today.weekday())
+    week_start = today - datetime.timedelta(days=today.weekday() + 1)
     week_end = week_start + datetime.timedelta(days=6)
 
     # Previous week

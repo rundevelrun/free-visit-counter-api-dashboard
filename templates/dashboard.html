@@ -3,7 +3,7 @@
 {% block title %}{{ _('Free Dashboard') }} - {{ site.domain }}{% endblock %}
 
 {% block content %}
-    <script>
+   {# <script>
      // 현재 페이지의 URL을 가져옵니다
         const currentUrl = new URL(window.location.href);
 
@@ -19,10 +19,10 @@
             }
         }
 
-    </script>
+    </script>#}
     <div class="dashboard-container">
         <div class="dashboard-header">
-            <h1>{{ site.domain }} {{ _('Free Dashboard') }}</h1>
+            <h1>{{ site.domain }} {{ _('Free Dashboard') }} (Timezone: UTC)</h1>
             <div class="chart-controls">
                 <button class="btn btn-secondary" onclick="changeView('week')">{{ _('Week') }}</button>
                 <button class="btn btn-secondary" onclick="changeView('month')">{{ _('Month') }}</button>
